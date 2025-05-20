@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 const PARALLAX_INTENSITY = 30;
 
-export default function ProjectCard({ title, year, image, viewButtonText }) {
+export default function ProjectCard({ title, path, year, image, viewButtonText }) {
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -34,7 +34,7 @@ export default function ProjectCard({ title, year, image, viewButtonText }) {
                 />
             </motion.div>
             <Link
-                href={`/works/${title.toLowerCase()}`}
+                href={path}
                 className="absolute inset-0 z-10 flex items-center p-10"
             >
                 <div className="leading-none">

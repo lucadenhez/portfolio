@@ -24,6 +24,7 @@ export default function UIUX() {
                         <div className="pb-5" key={index}>
                             <ProjectCard
                                 title={lang(`projects.${project.title}`)}
+                                path={project.path}
                                 year={project.year}
                                 image={project.image}
                                 viewButtonText={lang("projectViewButton")}

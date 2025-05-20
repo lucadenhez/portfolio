@@ -1,6 +1,7 @@
 import ArticleHeader from "@/app/components/article/ArticleHeader";
 import CodeBlock from "@/app/components/article/CodeBlock";
 import ProjectInfo from "@/app/components/article/ProjectInfo";
+import ReturnButton from "@/app/components/article/ReturnButton";
 import ParallaxImage from "@/app/components/ParallaxImage";
 
 // Title, year, subtitle
@@ -17,10 +18,6 @@ export default function CorvoCribs() {
                 year={2025}
                 title="Corvo Cribs"
             />
-
-            <div className="w-full h-screen">
-                <ParallaxImage image="/works/honesty/cover_laptop.png" />
-            </div>
 
             <ProjectInfo
                 team={[
@@ -54,8 +51,13 @@ export default function CorvoCribs() {
                         avatar: "/tools/figma.svg"
                     },
                 ]}
-                services={["Product Design", "UI / UX Design", "Web Development", "User Authentication"]}
+                services={["Product Design", "UI / UX Design", "Full Stack Development"]}
             />
+
+             <div className="w-full h-screen">
+                <ReturnButton />
+                <ParallaxImage image="/works/honesty/cover_laptop.png" />
+            </div>
 
             <div className="h-[40rem] bg-gray-200" />
         </div>
