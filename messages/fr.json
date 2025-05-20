@@ -5,7 +5,7 @@
         "about": "À propos de moi"
     },
     "ui": {
-        "introduction": "Bonjour! Je m'appelle Luca. Je suis designer, développeur, et tinkerer.",
+        "introduction": "Bonjour! Je m'appelle Luca. Je suis concepteur, développeur, et tinkerer.",
         "city": "Seattle, État de Washington",
         "university": "Université de Seattle",
         "projectViewButton": "Voir le Projet",
@@ -17,7 +17,7 @@
             "Geddit": "Geddit"
         },
         "footer": {
-            "createdBy": "Crée par Luca Denhez",
+            "createdBy": "Designé et développé avec ❤️",
             "builtWith": "Construit avec React et Next.js"
         }
     }

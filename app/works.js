@@ -1,7 +1,7 @@
 const works = [
     {
         title: "Honesty",
-        image: "/testing/discovery.jpeg",
+        image: "/works/honesty/cover.png",
         year: 2025
     },
     {
