@@ -1,0 +1,24 @@
+{
+    "nav": {
+        "works": "Projets",
+        "resume": "CV",
+        "about": "À propos de moi"
+    },
+    "ui": {
+        "introduction": "Bonjour! Je m'appelle Luca. Je suis designer, développeur, et tinkerer.",
+        "city": "Seattle, État de Washington",
+        "university": "Université de Seattle",
+        "projectViewButton": "Voir le Projet",
+        "works": "Projets",
+        "projects": {
+            "Honesty": "Honesty" ,
+            "Wardrobe": "Wardrobe",
+            "Desperate": "Desperate",
+            "Geddit": "Geddit"
+        },
+        "footer": {
+            "createdBy": "Crée par Luca Denhez",
+            "builtWith": "Construit avec React et Next.js"
+        }
+    }
+}

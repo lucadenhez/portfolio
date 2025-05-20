@@ -1,0 +1,4 @@
+- Fix navigation internationalization not changing on language change
+- Make project cards prettier
+- Design interactive banner
+- Design project blogs
