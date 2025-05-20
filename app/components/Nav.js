@@ -57,7 +57,9 @@ export default function Nav({ items }) {
             style={{ padding: "inherit", margin: "inherit" }}
         >
             <div>
-                <p>Luca Denhez</p>
+                <Link href="/">
+                    <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }}>Luca Denhez</motion.p>
+                </Link>
                 <LanguageSwitcher locale={locale} setLocale={setLocale} />
             </div>
 

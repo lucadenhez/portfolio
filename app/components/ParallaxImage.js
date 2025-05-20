@@ -1,26 +1,37 @@
-
 "use client";
+
+import Image from "next/image";
 
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 
-const INTENSITY = 75;
+const PARALLAX_INTENSITY = 30;
 
-export default function ParallaxImage({ path, rounded = false }) {
+export default function ParallaxImage({ image }) {
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start end", "end start"]
+        offset: ["start end", "end start"] // Get more practice with this
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [`-${INTENSITY}vh`, `${INTENSITY}vh`]);
+    const y = useTransform(scrollYProgress, [0, 1], [`-${PARALLAX_INTENSITY}vh`, `${PARALLAX_INTENSITY}vh`]);
 
     return (
-        <div ref={container} className={ "relative h-screen overflow-hidden" + (rounded ? " rounded-3xl" : "") }>
-            <motion.div style={{ y }} className="h-full">
-                <img className="object-cover w-full h-full" src={path} alt="Parallax Image" />
+        <motion.div
+            className="h-screen relative overflow-hidden"
+            ref={container}
+        >
+            <motion.div style={{ y }} className="absolute inset-0">
+                <Image
+                    src={image}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    alt="Image of project"
+                    className="w-full h-full brightness-100"
+                    quality={100}
+                />
             </motion.div>
-        </div>
+        </motion.div>
     );
 }

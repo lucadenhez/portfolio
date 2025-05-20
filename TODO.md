@@ -2,3 +2,5 @@
 - Make project cards prettier
 - Design interactive banner
 - Design project blogs
+- Add logo to each project with animation when hovering on card
+- Shrink project card contents on hover

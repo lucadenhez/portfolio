@@ -40,7 +40,7 @@ export default function UIUX() {
                                 <span className="pl-2">🌖</span>
                             </p>
                         ) : (
-                            <p className="bg-gradient-to-bl from-gray-400 to-gray-100 text-white p-3 rounded-xl w-fit">It is currently {currentTime} in Seattle
+                            <p className="bg-gradient-to-bl from-gray-400 to-gray-300 text-white p-3 rounded-xl w-fit">It is currently {currentTime} in Seattle
                                 <span className="pl-2">🌧️</span>
                             </p>
                         )}

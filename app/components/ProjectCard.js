@@ -30,15 +30,16 @@ export default function ProjectCard({ title, year, image, viewButtonText }) {
                     style={{ objectFit: "cover" }}
                     alt={`Image of ${title} project`}
                     className="w-full h-full brightness-100"
+                    quality={100}
                 />
             </motion.div>
             <Link
-                href={`/projects/${title}`}
+                href={`/works/${title.toLowerCase()}`}
                 className="absolute inset-0 z-10 flex items-center p-10"
             >
                 <div className="leading-none">
-                    <p className="font-medium text-black bg-white p-5 text-[5rem] tracking-tight">{title}</p>
-                    <div className="mt-5 p-5 bg-white w-fit hover:invert transition-all duration-300 ease-in-out">
+                    <p className="font-medium text-black bg-white p-5 text-[5rem] tracking-tight rounded-xl">{title}</p>
+                    <div className="mt-5 p-5 bg-white w-fit hover:invert transition-all duration-300 ease-in-out rounded-xl">
                         <p className="text-black tracking-tight font-medium uppercase">{viewButtonText}</p>
                     </div>
                 </div>
