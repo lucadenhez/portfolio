@@ -33,7 +33,7 @@ export default function Honesty() {
                 team={[
                     {
                         name: "Luca Denhez",
-                        avatar: "/avatars/luca.jpg"
+                        avatar: "/avatars/luca.png"
                     },
                 ]}
                 tools={[

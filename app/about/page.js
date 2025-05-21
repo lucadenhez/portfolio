@@ -7,7 +7,7 @@ export default function About() {
         <div className="mx-5 mt-20">
             <div className="flex gap-5">
                 <div className="w-1/3 h-full overflow-hidden relative">
-                    <Image src="/avatars/luca_uncropped.jpg"
+                    <Image src="/avatars/luca_uncropped.png"
                         width={0}
                         height={0}
                         sizes="(max-width: 768px) 100vw, 66vw"

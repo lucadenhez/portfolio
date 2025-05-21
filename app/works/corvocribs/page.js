@@ -25,17 +25,17 @@ export default function CorvoCribs() {
                     {
                         name: "Luca Denhez",
                         role: "Designer, Developer",
-                        avatar: "/avatars/luca.jpg"
+                        avatar: "/avatars/luca.png"
                     },
                     {
                         name: "Tristan Goehring",
                         role: "Designer, Developer",
-                        avatar: "/avatars/luca.jpg"
+                        avatar: "/avatars/luca.png"
                     },
                     {
                         name: "Ally Chen",
                         role: "Designer, Artist",
-                        avatar: "/avatars/luca.jpg"
+                        avatar: "/avatars/luca.png"
                     },
                 ]}
                 tools={[
