@@ -58,7 +58,7 @@ export default function Honesty() {
                 <ParallaxImage image="/works/honesty/mockups/front_iphone.png" />
             </div>
 
-            <Paragraph title="Context" color="#dbeafe">
+            <Paragraph title="Context">
                 {
                     `When looking for a secondhand car on Craigslist, Facebook Marketplace, or OfferUp, I always run into the same problem. Scams.
                     Maybe the cars odometer has been rolled back, or 'the hood just won't latch' is another way to say the car had a front-end collision. You never know.
@@ -69,7 +69,7 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <Paragraph title="Research" color="#fef3c7">
+            <Paragraph title="Research">
                 {
                     `Existing service history websites like Carfax get all their information via the cars VIN number, which is not sufficient because it only returns work done by official shops.
                     
@@ -84,7 +84,7 @@ export default function Honesty() {
                 <p>Image of existing tool comparisons</p>
             </div>
 
-            <Paragraph title="User's Needs" color="#ffe4e6">
+            <Paragraph title="User's Needs">
                 {
                     `I have a lot of friends who scroll through Facebook Marketplace looking at cars they can't afford, during class.
                     I asked them what they wanted to help make a secondhand car purchase feel more secure.
@@ -105,7 +105,7 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <Paragraph title="Features" color="#d1fae5">
+            <Paragraph title="Features">
                 {
                     ``
                 }

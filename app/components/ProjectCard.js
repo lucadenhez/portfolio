@@ -20,7 +20,7 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
 
     return (
         <motion.div
-            className="h-screen relative overflow-hidden"
+            className="h-[50rem] relative overflow-hidden"
             ref={container}
         >
             <motion.div style={{ y }} className="absolute inset-0" whileHover={{ scale: 1.1 }}>
@@ -29,21 +29,23 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
                     fill
                     style={{ objectFit: "cover" }}
                     alt={`Image of ${title} project`}
-                    className="w-full h-full brightness-100"
+                    className="w-full h-full brightness-[90%]"
                     quality={100}
                 />
             </motion.div>
             <Link
                 href={path}
-                className="absolute inset-0 z-10 flex items-center p-10"
+                className="absolute inset-0 z-10 flex items-center p-10 sm:justify-start justify-center"
             >
-                <div className="leading-none">
-                    <p className="font-medium text-black bg-white p-5 text-[5rem] tracking-tight rounded-xl">{title}</p>
-                    <div className="mt-5 p-5 bg-white w-fit hover:invert transition-all duration-300 ease-in-out rounded-xl">
-                        <p className="text-black tracking-tight font-medium uppercase">{viewButtonText}</p>
-                    </div>
-                </div>
-
+                <motion.div
+                    className="flex items-center gap-1 bg-white px-5 py-2 rounded-xl"
+                    whileHover={{ opacity: 0.5, scale: 0.98 }}
+                >
+                    <p className="text-black text-2xl">{title}</p>
+                    <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </motion.div>
             </Link>
         </motion.div>
     );

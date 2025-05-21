@@ -17,10 +17,27 @@ export const metadata = {
   description: "Nice to meet you.",
 };
 
-const locale = await getLocale();
-const messages = await getMessages();
-
 export default async function RootLayout({ children }) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const navLang = await getTranslations("nav");
+
+  const navItems = [
+    {
+      label: navLang("works"),
+      path: "/ui"
+    },
+    {
+      label: navLang("resume"),
+      path: "https://drive.google.com/file/d/1NkNNd8anpsazWsdjcZxsyFWvMHu63pOJ/view?usp=sharing",
+      outside: true,
+    },
+    {
+      label: navLang("about"),
+      path: "/about"
+    },
+  ];
+
   return (
     <html lang={locale}>
       <body
@@ -29,7 +46,7 @@ export default async function RootLayout({ children }) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroll>
             <header className="p-5">
-              <Nav />
+              <Nav items={navItems} />
             </header>
             {children}
             <Footer />

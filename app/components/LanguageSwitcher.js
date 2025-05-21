@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 
 
-export default function LanguageSwitcher({ locale, setLocale }) {
-    // const [locale, setLocale] = useState("");
+export default function LanguageSwitcher() {
+    const [locale, setLocale] = useState("");
     const router = useRouter();
 
     useEffect(() => {

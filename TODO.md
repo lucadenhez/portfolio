@@ -1,7 +1,11 @@
-- Fix navigation internationalization not changing on language change
-- Make project cards prettier
-- Design interactive banner
-- Design project blogs
-- Add logo to each project with animation when hovering on card
-- Shrink project card contents on hover
 - Fix responsiveness problem with code block
+- Update latest translations
+- About page
+- Update landing page, create Playground
+
+### Animations!
+
+- Wiggle code block when hovered
+- Animate all items in, staggered
+- Shrink project card contents on hover
+- Design interactive banner

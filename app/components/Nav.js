@@ -9,25 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 
 export default function Nav({ items }) {
-    const [locale, setLocale] = useState("");
-
     const lang = useTranslations("nav");
-
-    const navItems = [
-        {
-            label: lang("works"),
-            path: "/ui"
-        },
-        {
-            label: lang("resume"),
-            path: "https://drive.google.com/file/d/1NkNNd8anpsazWsdjcZxsyFWvMHu63pOJ/view?usp=sharing",
-            outside: true,
-        },
-        {
-            label: lang("about"),
-            path: "/about"
-        },
-    ];
 
     // ALWAYS USE CURLY BRACES FOR useScroll. I assume because there is scrollX and scrollY.
     const { scrollY } = useScroll();
@@ -61,15 +43,15 @@ export default function Nav({ items }) {
                 <Link href="/">
                     <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }}>Luca Denhez</motion.p>
                 </Link>
-                <LanguageSwitcher locale={locale} setLocale={setLocale} />
+                <LanguageSwitcher />
             </div>
 
             <div className="text-right">
-                {navItems.map((item, index) => (
+                {items.map((item, index) => (
                     <Link href={item.path} key={index} target={item.outside ? "_blank" : ""}>
                         {item.outside ? (
                             <motion.div
-                                className="flex items-center gap-1"
+                                className="flex items-center justify-end gap-1"
                                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
                             >
                                 <p className="text-black/50">{item.label}</p>
