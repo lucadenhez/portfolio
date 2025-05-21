@@ -5,6 +5,7 @@ import "./globals.css";
 
 import localFont from 'next/font/local';
 import { NextIntlClientProvider, useTranslations } from "next-intl";
+import Footer from "./components/Footer";
 
 
 const diatypeVariable = localFont({
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
               <Nav />
             </header>
             {children}
+            <Footer />
           </SmoothScroll>
         </NextIntlClientProvider>
       </body>

@@ -42,7 +42,7 @@ export default function ProjectInfo({ team, tools, services }) {
                 </div>
             </div>
             <div className="flex flex-col items-center gap-3">
-                <p className="uppercase font-semibold text-xl">Services</p>
+                <p className="uppercase font-semibold text-xl">Aspects</p>
                 <div className="flex flex-col gap-2 text-center">
                     {services.map((service, index) => (
                         <p key={index} className="text-lg leading-none">{service}</p>

@@ -4,6 +4,10 @@
         "resume": "Resumé",
         "about": "About Me"
     },
+    "footer": {
+        "createdBy": "Created by Luca Denhez",
+        "builtWith": "Built with React and Next.js"
+    },
     "ui": {
         "introduction": "Hello! My name is Luca. I am a designer, coder, and tinkerer.",
         "city": "Seattle, WA",
@@ -11,15 +15,11 @@
         "projectViewButton": "View Project",
         "works": "Works",
         "projects": {
-            "Honesty": "Honesty" ,
+            "Honesty": "Honesty",
             "Wardrobe": "Wardrobe",
             "Desperate": "Desperate",
             "Geddit": "Geddit",
             "Corvo Cribs": "Corvo Cribs"
-        },
-        "footer": {
-            "createdBy": "Created by Luca Denhez",
-            "builtWith": "Built with React and Next.js"
         }
     }
 }

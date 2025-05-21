@@ -1,5 +1,4 @@
 import ArticleHeader from "@/app/components/article/ArticleHeader";
-import CodeBlock from "@/app/components/article/CodeBlock";
 import ProjectInfo from "@/app/components/article/ProjectInfo";
 import ReturnButton from "@/app/components/article/ReturnButton";
 import ParallaxImage from "@/app/components/ParallaxImage";
@@ -56,7 +55,7 @@ export default function CorvoCribs() {
 
              <div className="w-full h-screen">
                 <ReturnButton />
-                <ParallaxImage image="/works/honesty/cover_laptop.png" />
+                <ParallaxImage image="/works/corvocribs/cover_white.png" />
             </div>
 
             <div className="h-[40rem] bg-gray-200" />

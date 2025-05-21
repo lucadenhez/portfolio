@@ -4,6 +4,10 @@
         "resume": "CV",
         "about": "À propos de moi"
     },
+    "footer": {
+        "createdBy": "Designé et développé avec ❤️",
+        "builtWith": "Construit avec React et Next.js"
+    },
     "ui": {
         "introduction": "Bonjour! Je m'appelle Luca. Je suis concepteur, développeur, et tinkerer.",
         "city": "Seattle, État de Washington",
@@ -11,15 +15,11 @@
         "projectViewButton": "Voir le Projet",
         "works": "Projets",
         "projects": {
-            "Honesty": "Honesty" ,
+            "Honesty": "Honesty",
             "Wardrobe": "Wardrobe",
             "Desperate": "Desperate",
             "Geddit": "Geddit",
             "Corvo Cribs": "Corvo Cribs"
-        },
-        "footer": {
-            "createdBy": "Designé et développé avec ❤️",
-            "builtWith": "Construit avec React et Next.js"
         }
     }
 }
