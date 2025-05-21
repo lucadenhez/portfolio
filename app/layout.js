@@ -25,7 +25,7 @@ export default async function RootLayout({ children }) {
   const navItems = [
     {
       label: navLang("works"),
-      path: "/ui"
+      path: "/ui#works"
     },
     {
       label: navLang("resume"),

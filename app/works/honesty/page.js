@@ -80,7 +80,7 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <div className="h-[50rem] w-2/3 bg-gray-200 flex items-center justify-center">
+            <div className="h-[50rem] sm:w-2/3 w-full bg-gray-200 flex items-center justify-center">
                 <p>Image of existing tool comparisons</p>
             </div>
 
@@ -139,13 +139,16 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <div className="h-[40rem] w-2/3 bg-gray-200 flex items-center justify-center">
-                <p>Image of flow</p>
+            <div className="space-y-5 sm:w-2/3 w-full">
+                <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
+                    <p>Image of flow</p>
+                </div>
+
+                <div className="h-[20rem] w-full bg-gray-200 flex items-center justify-center">
+                    <p>Image of UUID shareable URL</p>
+                </div>
             </div>
 
-            <div className="h-[20rem] w-2/3 bg-gray-200 flex items-center justify-center">
-                <p>Image of UUID shareable URL</p>
-            </div>
 
             <Paragraph title="Design Language">
                 {
@@ -155,19 +158,21 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <div className="h-[40rem] w-2/3 bg-gray-200 flex items-center justify-center">
-                <p>Figma Design Language</p>
-            </div>
+            <div className="sm:w-2/3 w-full space-y-5">
+                <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
+                    <p>Figma Design Language</p>
+                </div>
 
-            <div className="flex gap-10 w-2/3">
-                <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
-                    <p>Screen</p>
-                </div>
-                <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
-                    <p>Screen</p>
-                </div>
-                <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
-                    <p>Screen</p>
+                <div className="flex sm:flex-row flex-col gap-x-10 gap-y-5 w-full">
+                    <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
+                        <p>Screen</p>
+                    </div>
+                    <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
+                        <p>Screen</p>
+                    </div>
+                    <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
+                        <p>Screen</p>
+                    </div>
                 </div>
             </div>
 
@@ -181,8 +186,8 @@ export default function Honesty() {
                 }
             </Paragraph>
 
-            <div className="flex flex-col gap-20 items-center ">
-                <div className="flex gap-20">
+            <div className="flex flex-col gap-20 items-center">
+                <div className="flex sm:flex-row flex-col gap-20">
                     <Coding
                         className="rotate-[3deg]"
                         language={codeSnippets.titleCard.language}
