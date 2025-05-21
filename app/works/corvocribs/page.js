@@ -1,4 +1,5 @@
 import ArticleHeader from "@/app/components/article/ArticleHeader";
+import Paragraph from "@/app/components/article/Paragraph";
 import ProjectInfo from "@/app/components/article/ProjectInfo";
 import ReturnButton from "@/app/components/article/ReturnButton";
 import ParallaxImage from "@/app/components/ParallaxImage";
@@ -54,12 +55,21 @@ export default function CorvoCribs() {
                 services={["Product Design", "UI / UX Design", "Full Stack Development"]}
             />
 
-             <div className="w-full h-screen">
+            <div className="w-full h-screen">
                 <ReturnButton />
                 <ParallaxImage image="/works/corvocribs/cover_white.png" />
             </div>
 
-            <div className="h-[40rem] bg-gray-200" />
+            <div className="w-2/3 pt-20">
+                <Paragraph title="Status">
+                    {
+                        `This is currently a work in progress! Check back soon for a finished product...`
+                    }
+                </Paragraph>
+            </div>
+
+
+            <div className="h-[20rem] bg-gray-200" />
         </div>
     );
 }

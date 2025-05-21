@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ArticleImage({ image }) {
     return (
-        <div className="w-2/3 h-[100%] overflow-hidden relative">
+        <div className="w-2/3 h-full overflow-hidden relative">
             <Image src={image}
                 width={0}
                 height={0}

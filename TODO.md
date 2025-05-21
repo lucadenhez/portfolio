@@ -2,6 +2,7 @@
 - Update latest translations
 - About page
 - Update landing page, create Playground
+- Parallax images are messed up on mobile
 
 ### Animations!
 
