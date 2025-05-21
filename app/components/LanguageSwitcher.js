@@ -31,7 +31,7 @@ export default function LanguageSwitcher({ locale, setLocale }) {
         <div className="flex gap-1">
             <motion.p
                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
-                className={locale == "fr" ? "text-black" : "text-black/30"}
+                className={locale == "fr" ? "text-black" : "text-black/50"}
                 onClick={() => {
                     setLocale("fr");
                     document.cookie = "LOCALE=fr;";
@@ -41,7 +41,7 @@ export default function LanguageSwitcher({ locale, setLocale }) {
             <p>/</p>
             <motion.p
                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
-                className={locale == "en" ? "text-black" : "text-black/30"}
+                className={locale == "en" ? "text-black" : "text-black/50"}
                 onClick={() => {
                     setLocale("en");
                     document.cookie = "LOCALE=en;";

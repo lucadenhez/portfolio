@@ -1,19 +1,23 @@
 "use client";
 
-import { CodeBlock, a11yLight } from "react-code-blocks";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export default function Coding({ filename, code, language }) {
+export default function Coding(props) {
     return (
-        <div className="space-y-2">
-            <p className="text-black/50">{filename}</p>
-            <div className="border-4 border-black/10 rounded-lg">
-                <CodeBlock text={code}
-                    codeBlock
+        <div className="space-y-2" {...props}>
+            <p className="text-black/50">{props.filename}</p>
+            <div className="rounded-lg">
+                <SyntaxHighlighter
+                    language={props.language}
+                    style={oneLight}
+                    wrapLines
                     showLineNumbers
-                    theme={a11yLight}
-                    language={language}
-                />
+                    className={"shadow-sm"}
+                >
+                    {props.code}
+                </SyntaxHighlighter>
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ProjectInfo({ team, tools, services }) {
     return (
-        <div className="flex justify-between w-2/3">
+        <div className="flex flex-col sm:flex-row gap-y-20 justify-between w-2/3">
             <div className="flex flex-col items-center gap-3">
                 <p className="uppercase font-semibold text-xl">Team</p>
                 <div className="space-y-3">

@@ -15,6 +15,7 @@ export default function CorvoCribs() {
         <div className="mx-5 pt-20 flex flex-col items-center gap-20">
             <ArticleHeader
                 year={2025}
+                month="April"
                 title="Corvo Cribs"
             />
 

@@ -15,8 +15,8 @@
     "next": "15.3.2",
     "next-intl": "^4.1.0",
     "react": "^19.0.0",
-    "react-code-blocks": "^0.1.6",
     "react-dom": "^19.0.0",
+    "react-syntax-highlighter": "^15.6.1",
     "split-type": "^0.3.4"
   },
   "devDependencies": {
