@@ -55,7 +55,7 @@ export default function Honesty() {
 
             <div className="w-full h-screen mb-20">
                 <ReturnButton />
-                <ParallaxImage image="/works/honesty/cover.png" />
+                <ParallaxImage image="/works/honesty/mockups/front_iphone.png" />
             </div>
 
             <Paragraph title="Context" color="#dbeafe">
@@ -214,6 +214,21 @@ export default function Honesty() {
 
             <Paragraph title="User Interaction" />
 
+            <div className="w-full h-screen mb-20">
+                <ParallaxImage image="/works/honesty/mockups/front_laptop.png" />
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-10 items-center mb-20">
+                <ArticleImage image="/works/honesty/flow/iphone/home.png" />
+                <ArticleImage image="/works/honesty/flow/iphone/modifications_history.png" />
+                <ArticleImage image="/works/honesty/flow/iphone/service_details.png" />
+            </div>
+
+            <div className="h-screen w-full space-y-5 mb-[65rem]">
+                <ParallaxImage image="/works/honesty/mockups/front_half_laptop_navy.png" />
+                <ParallaxImage image="/works/honesty/mockups/laptop_perspective_narrow.png" />
+            </div>
+
             <Paragraph title="Next Steps">
                 {
                     `This project has been super helpful in assisting me to sell my car. I sent the link to each interested buyer, and they appreciated the thorough detail of what's been done to the car.
@@ -243,5 +258,3 @@ export default function Honesty() {
         </div>
     );
 }
-
-//  <ArticleImage image="/works/honesty/cover.png" />
