@@ -163,7 +163,7 @@ export default function Honesty() {
                     <p>Figma Design Language</p>
                 </div>
 
-                <div className="flex sm:flex-row flex-col gap-x-10 gap-y-5 w-full">
+                <div className="flex xl:flex-row flex-col gap-x-10 gap-y-5 w-full">
                     <div className="h-[40rem] w-full bg-gray-200 flex items-center justify-center">
                         <p>Screen</p>
                     </div>
@@ -187,15 +187,13 @@ export default function Honesty() {
             </Paragraph>
 
             <div className="flex flex-col gap-20 items-center">
-                <div className="flex sm:flex-row flex-col gap-20">
+                <div className="flex lg:flex-row flex-col gap-20">
                     <Coding
-                        className="rotate-[3deg]"
                         language={codeSnippets.titleCard.language}
                         filename={codeSnippets.titleCard.filename}
                         code={codeSnippets.titleCard.code}
                     />
                     <Coding
-                        className="rotate-[-3deg]"
                         language={codeSnippets.photoCarousel.language}
                         filename={codeSnippets.photoCarousel.filename}
                         code={codeSnippets.photoCarousel.code}
@@ -203,13 +201,11 @@ export default function Honesty() {
                 </div>
                 <div className="flex flex-col gap-20 items-center">
                     <Coding
-                        className="rotate-[-2deg]"
                         language={codeSnippets.serviceEntry.language}
                         filename={codeSnippets.serviceEntry.filename}
                         code={codeSnippets.serviceEntry.code}
                     />
                     <Coding
-                        className="rotate-[2deg]"
                         language={codeSnippets.modificationEntry.language}
                         filename={codeSnippets.modificationEntry.filename}
                         code={codeSnippets.modificationEntry.code}
@@ -223,7 +219,7 @@ export default function Honesty() {
                 <ParallaxImage image="/works/honesty/mockups/front_laptop.png" />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-10 items-center mb-20">
+            <div className="flex flex-col lg:flex-row gap-10 items-center mb-20 w-4/5">
                 <ArticleImage image="/works/honesty/flow/iphone/home.png" />
                 <ArticleImage image="/works/honesty/flow/iphone/modifications_history.png" />
                 <ArticleImage image="/works/honesty/flow/iphone/service_details.png" />

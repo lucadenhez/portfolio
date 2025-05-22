@@ -10,7 +10,7 @@
     },
     "ui": {
         "introduction": "Bonjour! Je m'appelle Luca. Je suis concepteur, développeur, et tinkerer.",
-        "city": "Seattle, État de Washington",
+        "city": "Seattle",
         "university": "Université de Seattle",
         "projectViewButton": "Voir le Projet",
         "works": "Projets",
@@ -23,6 +23,6 @@
         }
     },
     "about": {
-        "bio": "Bonjour! Je m'appelle Luca.\n\nJe viens de Seattle, État de Washington et j'aime bien créer des choses."
+        "bio": "Bonjour! Je m'appelle Luca.\n\nJe viens de Seattle et j'aime bien créer des choses."
     }
 }

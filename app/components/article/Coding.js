@@ -1,9 +1,37 @@
+"use client";
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { motion } from "motion/react";
+import { useState, useEffect } from 'react';
+
 
 export default function Coding(props) {
+    const getRandomRotation = () => (Math.random() * 8 - 4).toFixed(2); // -4deg to +4deg
+    const [hoverRotation, setHoverRotation] = useState(0);
+
+    const initialRotation = getRandomRotation();
+
+    useEffect(() => {
+        let hoverRotationTemp = getRandomRotation();
+
+        while (hoverRotationTemp === initialRotation) {
+            hoverRotationTemp = getRandomRotation();
+        }
+
+        setHoverRotation(hoverRotationTemp);
+    }, []);
+
     return (
-        <div className="space-y-2" {...props}>
+        <motion.div
+            className="space-y-2" {...props}
+            initial={"initial"}
+            whileHover={"hover"}
+            variants={{
+                initial: { rotate: `${initialRotation}deg` },
+                hover: { rotate: `${hoverRotation}deg`, scale: 1.02 }
+            }}
+        >
             <p className="text-black/50">{props.filename}</p>
             <div className="rounded-lg w-full max-w-full">
                 <SyntaxHighlighter
@@ -23,6 +51,6 @@ export default function Coding(props) {
                     {props.code}
                 </SyntaxHighlighter>
             </div>
-        </div>
+        </motion.div>
     );
 }
