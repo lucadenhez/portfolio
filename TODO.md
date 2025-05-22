@@ -3,6 +3,7 @@
 - About page
 - Update landing page, create Playground
 - Parallax images are messed up on mobile (maybe replace with normal article image on mobile?)
+- Fix dark mode!! (force light?)
 
 ### Animations!
 

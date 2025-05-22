@@ -29,7 +29,6 @@ export default function ParallaxImage({ image }) {
                     style={{ objectFit: "cover" }}
                     alt="Image of project"
                     className="w-full h-full brightness-100"
-                    quality={100}
                 />
             </motion.div>
         </motion.div>

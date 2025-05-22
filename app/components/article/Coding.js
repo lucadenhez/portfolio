@@ -8,11 +8,12 @@ import { useState, useEffect } from 'react';
 
 export default function Coding(props) {
     const getRandomRotation = () => (Math.random() * 8 - 4).toFixed(2); // -4deg to +4deg
+
+    const [initialRotation, setInitialRotation] = useState(0);
     const [hoverRotation, setHoverRotation] = useState(0);
 
-    const initialRotation = getRandomRotation();
-
     useEffect(() => {
+        setInitialRotation(getRandomRotation());
         let hoverRotationTemp = getRandomRotation();
 
         while (hoverRotationTemp === initialRotation) {

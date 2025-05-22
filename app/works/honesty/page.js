@@ -54,7 +54,10 @@ export default function Honesty() {
             />
 
             <div className="w-full h-screen mb-20">
-                <ReturnButton />
+                <div className="pb-5">
+                    <ReturnButton />
+                </div>
+
                 <ParallaxImage image="/works/honesty/mockups/front_iphone.png" />
             </div>
 
@@ -255,7 +258,14 @@ export default function Honesty() {
                     `
                 }
             </Paragraph>
-            <div className="h-[20rem] bg-gray-200" />
+
+            <div className="flex justify-center w-2/3">
+                <div className="bg-gray-100 rounded-lg px-3 py-2">
+                    <ReturnButton />
+                </div>
+            </div>
+
+            <div className="h-[5rem] bg-gray-200" />
         </div>
     );
 }
