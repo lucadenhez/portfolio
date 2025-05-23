@@ -7,7 +7,14 @@ import { useState, useEffect } from 'react';
 
 
 export default function Coding(props) {
-    const getRandomRotation = () => (Math.random() * 8 - 4).toFixed(2); // -4deg to +4deg
+    const getRandomRotation = () => {
+        const ranges = [
+            { min: -5, max: -2 },
+            { min: 2, max: 5 }
+        ];
+        const range = ranges[Math.floor(Math.random() * ranges.length)];
+        return (Math.random() * (range.max - range.min) + range.min).toFixed(2);
+    };
 
     const [initialRotation, setInitialRotation] = useState(0);
     const [hoverRotation, setHoverRotation] = useState(0);
@@ -26,12 +33,8 @@ export default function Coding(props) {
     return (
         <motion.div
             className="space-y-2" {...props}
-            initial={"initial"}
-            whileHover={"hover"}
-            variants={{
-                initial: { rotate: `${initialRotation}deg` },
-                hover: { rotate: `${hoverRotation}deg`, scale: 1.02 }
-            }}
+            style={{rotate: `${initialRotation}deg`}}
+            whileHover={{ rotate: `${hoverRotation}deg`, scale: 1.02 }}
         >
             <p className="text-black/50">{props.filename}</p>
             <div className="rounded-lg w-full max-w-full">

@@ -2,14 +2,14 @@
 
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTransitionRouter } from "next-view-transitions";
 
 
 export default function Nav({ items }) {
-    const lang = useTranslations("nav");
+    const router = useTransitionRouter();
 
     // ALWAYS USE CURLY BRACES FOR useScroll. I assume because there is scrollX and scrollY.
     const { scrollY } = useScroll();
@@ -36,11 +36,14 @@ export default function Nav({ items }) {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-white flex justify-between items-start fixed top-0 left-0 w-full z-50 box-border"
+            className="bg-white flex justify-between items-start fixed top-0 left-0 w-full z-40 box-border"
             style={{ padding: "inherit", margin: "inherit" }}
         >
             <div>
-                <Link href="/">
+                <Link href="/" onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/");
+                }}>
                     <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }}>Luca Denhez</motion.p>
                 </Link>
                 <LanguageSwitcher />
@@ -48,7 +51,14 @@ export default function Nav({ items }) {
 
             <div className="text-right">
                 {items.map((item, index) => (
-                    <Link href={item.path} key={index} target={item.outside ? "_blank" : ""}>
+                    <Link href={item.path} key={index} onClick={(e) => {
+                        e.preventDefault();
+                        if (item.outside) {
+                            window.open(item.path, "_blank");
+                        } else {
+                            router.push(item.path,);
+                        }
+                    }}>
                         {item.outside ? (
                             <motion.div
                                 className="flex items-center justify-end gap-1"

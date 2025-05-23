@@ -2,7 +2,8 @@
     "nav": {
         "works": "Projets",
         "resume": "CV",
-        "about": "À propos de moi"
+        "about": "À propos de moi",
+        "home": "Enchanté."
     },
     "footer": {
         "createdBy": "Designé et développé avec ❤️",
@@ -15,11 +16,11 @@
         "projectViewButton": "Voir le Projet",
         "works": "Projets",
         "projects": {
-            "Honesty": "Honesty",
-            "Wardrobe": "Wardrobe",
-            "Desperate": "Desperate",
-            "Geddit": "Geddit",
-            "Corvo Cribs": "Corvo Cribs"
+            "honesty": "Honesty",
+            "wardrobe": "Wardrobe",
+            "desperate": "Desperate",
+            "geddit": "Geddit",
+            "corvo_cribs": "Corvo Cribs"
         }
     },
     "about": {

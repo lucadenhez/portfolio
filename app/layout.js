@@ -1,11 +1,13 @@
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { ViewTransitions } from "next-view-transitions";
+import localFont from 'next/font/local';
+
 import Nav from "./components/Nav";
 import SmoothScroll from "./components/SmoothScroll";
-import "./globals.css";
-
-import localFont from 'next/font/local';
-import { NextIntlClientProvider, useTranslations } from "next-intl";
 import Footer from "./components/Footer";
+
+import "./globals.css";
 
 
 const diatypeVariable = localFont({
@@ -39,20 +41,20 @@ export default async function RootLayout({ children }) {
   ];
 
   return (
-    <html lang={locale}>
-      <body
-        className={`antialiased ${diatypeVariable.className}`}
-      >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <SmoothScroll>
-            <header className="p-5">
-              <Nav items={navItems} />
-            </header>
-            {children}
-            <Footer />
-          </SmoothScroll>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang={locale}>
+        <body className={`antialiased ${diatypeVariable.className}`}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <SmoothScroll>
+              <header className="p-5">
+                <Nav items={navItems} />
+              </header>
+              {children}
+              <Footer />
+            </SmoothScroll>
+          </NextIntlClientProvider>
+        </body>
+      </html >
+    </ViewTransitions>
   );
 }

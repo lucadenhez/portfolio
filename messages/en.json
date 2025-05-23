@@ -2,7 +2,8 @@
     "nav": {
         "works": "Works",
         "resume": "Resumé",
-        "about": "About Me"
+        "about": "About Me",
+        "home": "Nice to meet you."
     },
     "footer": {
         "createdBy": "Designed and developed with ❤️",
@@ -15,14 +16,14 @@
         "projectViewButton": "View Project",
         "works": "Works",
         "projects": {
-            "Honesty": "Honesty",
-            "Wardrobe": "Wardrobe",
-            "Desperate": "Desperate",
-            "Geddit": "Geddit",
-            "Corvo Cribs": "Corvo Cribs"
+            "honesty": "Honesty",
+            "wardrobe": "Wardrobe",
+            "desperate": "Desperate",
+            "geddit": "Geddit",
+            "corvo_cribs": "Corvo Cribs"
         }
     },
     "about": {
-        "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things."
+        "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things.\nI am a product designer and web developer with experience in React and Swift.\n\nI have always appreciated design that is simple and intuitive, and I hope to build tools and experiences for people that are thoughtful and help the world."
     }
 }

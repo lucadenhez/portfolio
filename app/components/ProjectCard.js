@@ -5,10 +5,12 @@ import Link from "next/link";
 
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
+import { useTransitionRouter } from "next-view-transitions";
 
 const PARALLAX_INTENSITY = 30;
 
 export default function ProjectCard({ title, path, year, image, viewButtonText }) {
+    const router = useTransitionRouter();
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -36,7 +38,10 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
             <Link
                 href={path}
                 className="absolute inset-0 z-10 flex items-center p-10 sm:justify-start justify-center"
-            >
+                onClick={(e) => {
+                    e.preventDefault();
+                    router.push(path);
+                }}>
                 <motion.div
                     className="flex items-center gap-1 bg-white px-5 py-2 rounded-xl"
                     whileHover={{ opacity: 0.5, scale: 0.98 }}
