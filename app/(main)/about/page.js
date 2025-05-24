@@ -11,14 +11,14 @@ import { motion } from "motion/react";
 
 export default function About() {
     const lang = useTranslations("about");
-    const navLang = useTranslations("nav");
+
     return (
-        <PageAnimation randomPrefix title={navLang("about")}>
+        <PageAnimation title="Let's learn a little about me">
             <div className="mx-5 mt-30">
                 <div className="flex flex-col-reverse items-center gap-20">
                     <div className="flex sm:flex-row flex-col translate-x-5 w-[70vw]">
                         <motion.div
-                            className="w-full h-full overflow-hidden rounded-3xl rotate-3 shadow-md"
+                            className="rotate-3 w-full h-full overflow-hidden rounded-3xl shadow-md"
                             whileHover={{ y: -10, scale: 1.01 }}
                         >
                             <Image src="/avatars/luca_uncropped.png"
@@ -30,7 +30,7 @@ export default function About() {
                             />
                         </motion.div>
                         <motion.div
-                            className="z-10 -translate-x-15 translate-y-20 w-full h-full overflow-hidden rounded-3xl -rotate-4 shadow-md"
+                            className="z-10 sm:-translate-x-15 -translate-x-10 sm:translate-y-20 -translate-y-5 -rotate-4 w-full h-full overflow-hidden rounded-3xl shadow-md"
                             whileHover={{ y: -10, scale: 1.01 }}
                         >
                             <Image src="/images/doggies.png"

@@ -7,11 +7,11 @@ export default function ReturnButton() {
     const router = useTransitionRouter();
 
     return (
-        <Link href="/ui#works"
+        <Link href="/works"
             className="inline-flex items-center transition-all duration-300 ease-in-out hover:opacity-50"
             onClick={(e) => {
                 e.preventDefault();
-                router.push("/ui#works");
+                router.push("/works");
             }}>
             <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
