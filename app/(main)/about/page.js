@@ -13,7 +13,7 @@ export default function About() {
     const lang = useTranslations("about");
     const navLang = useTranslations("nav");
     return (
-        <PageAnimation title={navLang("about")}>
+        <PageAnimation randomPrefix title={navLang("about")}>
             <div className="mx-5 mt-30">
                 <div className="flex flex-col-reverse items-center gap-20">
                     <div className="flex sm:flex-row flex-col translate-x-5 w-[70vw]">

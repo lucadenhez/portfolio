@@ -1,9 +1,9 @@
-import ArticleHeader from "@/app/components/article/ArticleHeader";
-import Paragraph from "@/app/components/article/Paragraph";
-import ProjectInfo from "@/app/components/article/ProjectInfo";
-import ReturnButton from "@/app/components/article/ReturnButton";
-import PageAnimation from "@/app/components/PageAnimation";
-import ParallaxImage from "@/app/components/ParallaxImage";
+import ArticleHeader from "@/app/(main)/components/article/ArticleHeader";
+import Paragraph from "@/app/(main)/components/article/Paragraph";
+import ProjectInfo from "@/app/(main)/components/article/ProjectInfo";
+import ReturnButton from "@/app/(main)/components/article/ReturnButton";
+import PageAnimation from "@/app/(main)/components/PageAnimation";
+import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 import { useTranslations } from "next-intl";
 
 // Title, year, subtitle
@@ -17,7 +17,7 @@ export default function CorvoCribs() {
     const projectsLang = useTranslations("ui.projects");
 
     return (
-        <PageAnimation title={projectsLang("corvo_cribs")}>
+        <PageAnimation randomPrefix title={projectsLang("corvo_cribs")}>
             <div className="mx-5 pt-20 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}

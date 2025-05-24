@@ -1,16 +1,16 @@
-import ArticleHeader from "@/app/components/article/ArticleHeader";
-import ArticleImage from "@/app/components/article/ArticleImage";
-import Checklist from "@/app/components/article/Checklist";
-import Coding from "@/app/components/article/Coding";
-import InlineLink from "@/app/components/article/InlineLink";
-import Keywords from "@/app/components/article/Keywords";
-import Paragraph from "@/app/components/article/Paragraph";
-import ProjectInfo from "@/app/components/article/ProjectInfo";
-import ReturnButton from "@/app/components/article/ReturnButton";
-import ParallaxImage from "@/app/components/ParallaxImage";
+import ArticleHeader from "@/app/(main)/components/article/ArticleHeader";
+import ArticleImage from "@/app/(main)/components/article/ArticleImage";
+import Checklist from "@/app/(main)/components/article/Checklist";
+import Coding from "@/app/(main)/components/article/Coding";
+import InlineLink from "@/app/(main)/components/article/InlineLink";
+import Keywords from "@/app/(main)/components/article/Keywords";
+import Paragraph from "@/app/(main)/components/article/Paragraph";
+import ProjectInfo from "@/app/(main)/components/article/ProjectInfo";
+import ReturnButton from "@/app/(main)/components/article/ReturnButton";
+import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 
 import codeSnippets from "./CodeSnippets";
-import PageAnimation from "@/app/components/PageAnimation";
+import PageAnimation from "@/app/(main)/components/PageAnimation";
 import { useTranslations } from "next-intl";
 
 /*
@@ -26,7 +26,7 @@ export default function Honesty() {
     const projectsLang = useTranslations("ui.projects");
 
     return (
-        <PageAnimation title={projectsLang("honesty")}>
+        <PageAnimation randomPrefix title={projectsLang("honesty")}>
             <div className="mx-5 pt-20 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}

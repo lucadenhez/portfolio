@@ -7,7 +7,7 @@ import SplitType from "split-type";
 
 import { useState } from "react";
 
-export default function PageAnimation({ title, randomPrefix = true, children }) {
+export default function PageAnimation({ title, randomPrefix = false, children }) {
     const messages = [
         "Sailing the seas to",
         "Teleporting to",
@@ -38,7 +38,7 @@ export default function PageAnimation({ title, randomPrefix = true, children }) 
     return (
         <div>
             <div className="page-transition fixed inset-0 z-50 bg-black flex items-center justify-center">
-                <p className="transition-text text-white tracking-tight text-[2rem]">{randomPrefix ? (`${messages[0]} ${title}`) : (title)}</p>
+                <p className="whitespace-pre-line transition-text text-white tracking-tight sm:text-[2rem] text-[1.75rem]">{randomPrefix ? (`${messages[0]} ${title}`) : (title)}</p>
             </div>
             <div className="relative z-0">
                 <motion.div>
