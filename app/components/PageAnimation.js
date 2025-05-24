@@ -1,21 +1,45 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import SplitText from "../animations/SplitText";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, stagger, animate } from "motion/react";
+import { useEffect } from "react";
+import SplitType from "split-type";
 
 
-export default function PageAnimation({ title, children }) {
+import { useState } from "react";
+
+export default function PageAnimation({ title, randomPrefix = true, children }) {
+    const messages = [
+        "Sailing the seas to",
+        "Teleporting to",
+        "Charting a course for",
+        "Launching you towards",
+        "Opening the portal to",
+    ];
+
+    // messages[Math.floor(Math.random() * messages.length)]
+
+    useEffect(() => {
+            const splitText = new SplitType(".transition-text", { types: "lines, words, chars", lineClass: "line" }).words;
+            const sequence = [
+                [splitText,
+                    { opacity: 1, y: ["120%", 0] },
+                    { duration: 1, delay: stagger(0.1), ease: [0.76, 0, 0.24, 1] }],
+                [".page-transition", { y: "-200%" }, { duration: 1.2, ease: [0.76, 0, 0.24, 1] }],
+            ];
+
+            animate(sequence);
+
+            // If it ain't broke, don't fix it!
+            setTimeout(() => {
+                window.scrollTo({ top: 0 });
+            }, 1000);
+    }, []);
+
     return (
-        <div className="relative h-screen">
-            <motion.div
-                className="fixed inset-0 z-50 bg-black flex"
-                initial={{}}
-                animate={{ y: "-200%" }}
-                transition={{ delay: 0.5, duration: 2, ease: [0.6, 0.01, -0.05, 0.95] }}
-            >
-                <p className="text-white tracking-tight text-[5rem] grow flex justify-center items-center">{title}</p>
-            </motion.div>
+        <div>
+            <div className="page-transition fixed inset-0 z-50 bg-black flex items-center justify-center">
+                <p className="transition-text text-white tracking-tight text-[2rem]">{randomPrefix ? (`${messages[0]} ${title}`) : (title)}</p>
+            </div>
             <div className="relative z-0">
                 <motion.div>
                     {children}

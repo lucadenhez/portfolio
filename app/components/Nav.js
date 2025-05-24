@@ -56,7 +56,7 @@ export default function Nav({ items }) {
                         if (item.outside) {
                             window.open(item.path, "_blank");
                         } else {
-                            router.push(item.path,);
+                            router.push(item.path);
                         }
                     }}>
                         {item.outside ? (

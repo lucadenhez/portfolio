@@ -1,12 +1,12 @@
 import Image from "next/image";
 import LandingPage from "./LandingPage/page";
-import UIUX from "./ui/page";
 import PageAnimation from "./components/PageAnimation";
+import Works from "./works/page";
 
 export default function Home() {
   return (
-    <PageAnimation title="Nice to meet you.">
-      <UIUX />
+    <PageAnimation randomPrefix={false} title="Nice to meet you.">
+      <Works />
     </PageAnimation>
   );
 }
