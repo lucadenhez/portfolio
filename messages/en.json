@@ -1,15 +1,20 @@
 {
+    "home": {
+        "worksCard": "Works",
+        "playgroundCard": "Playground",
+        "transitionMessage": "Nice to meet you!"
+    },
     "nav": {
         "works": "Works",
         "resume": "Resumé",
-        "about": "About Me",
-        "home": "Nice to meet you."
+        "about": "About Me"
     },
     "footer": {
         "createdBy": "Designed and developed with ❤️",
         "builtWith": "Built with React and Next.js"
     },
     "ui": {
+        "interactivePlaceholder": "Interactive demo in the works...",
         "introduction": "Hello! My name is Luca. I am a designer, coder, and tinkerer.",
         "city": "Seattle, WA",
         "university": "Seattle University",
@@ -25,5 +30,41 @@
     },
     "about": {
         "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things.\nI am a product designer and web developer with experience in React and Swift.\n\nI have always appreciated design that is simple and intuitive, and I hope to build tools and experiences for people that are thoughtful and help the world."
+    },
+    "corvoCribs": {
+        "transitionMessage": "Helping OSU students find affordable housing",
+        "month": "April",
+        "aspects": {
+            "productDesign": "Product Design",
+            "uxUIDesign": "UX / UI Design",
+            "fullStack": "Full Stack Development"
+        },
+        "roles": {
+            "luca": "Designer, Developer",
+            "tristan": "Designer, Developer",
+            "ally": "Designer, Artist"
+        }
+    },
+    "honesty": {
+        "transitionMessage": "Say goodbye to scams",
+        "month": "May",
+        "aspects": {
+            "productDesign": "Product Design",
+            "uxUIDesign": "UX / UI Design",
+            "webDevelopment": "Web Development",
+            "userAuth": "User Authentication"
+        },
+        "paragraphs": [
+            {
+                "title": "Context",
+                "content": ""
+            }
+        ]
+    },
+    "projectInfo": {
+        "team": "Team",
+        "tools": "Tools",
+        "aspects": "Aspects",
+        "returnButtonText": "Back to all works"
     }
 }

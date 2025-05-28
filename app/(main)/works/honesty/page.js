@@ -10,27 +10,19 @@ import ReturnButton from "@/app/(main)/components/article/ReturnButton";
 import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 
 import codeSnippets from "./CodeSnippets";
-import PageAnimation from "@/app/(main)/components/PageAnimation";
+import PageAnimation from "@/app/(main)/components/transitions/TextTransition";
 import { useTranslations } from "next-intl";
-
-/*
-
-Context
-Research
-
-
-*/
 
 
 export default function Honesty() {
-    const projectsLang = useTranslations("ui.projects");
+    const lang = useTranslations("honesty");
 
     return (
-        <PageAnimation randomPrefix title={projectsLang("honesty")}>
+        <PageAnimation title={lang("transitionMessage")}>
             <div className="mx-5 pt-20 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}
-                    month="May"
+                    month={lang("month")}
                     title="Honesty"
                 />
 
@@ -55,7 +47,12 @@ export default function Honesty() {
                             avatar: "/tools/figma.svg"
                         },
                     ]}
-                    services={["Product Design", "UI / UX Design", "Web Development", "User Authentication"]}
+                    services={[
+                        lang("aspects.productDesign"),
+                        lang("aspects.uxUIDesign"),
+                        lang("aspects.webDevelopment"),
+                        lang("aspects.userAuth")
+                    ]}
                 />
 
                 <div className="w-full h-screen mb-20">

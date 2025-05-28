@@ -1,11 +1,11 @@
-- Page transitions
 - Update latest translations
-- About page
-- Update landing page, create Playground
+- Update bio on about page
+- Create Playground
 - Parallax images are messed up on mobile (maybe replace with normal article image on mobile?)
 - Fix dark mode!! (force light?)
 - Project card smaller height on mobile view?
 - Add link to site for each project
+- Add favicon
 
 ### Animations!
 

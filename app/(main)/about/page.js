@@ -5,15 +5,16 @@ import Image from "next/image";
 import InlineLink from "../components/article/InlineLink";
 import Paragraph from "../components/article/Paragraph";
 import { useTranslations } from "next-intl";
-import PageAnimation from "../components/PageAnimation";
+import PageAnimation from "../components/transitions/TextTransition";
 import { motion } from "motion/react";
+import ShortTransition from "../components/transitions/ShortTransition";
 
 
 export default function About() {
     const lang = useTranslations("about");
 
     return (
-        <PageAnimation title="Let's learn a little about me">
+        <ShortTransition>
             <div className="mx-5 mt-30">
                 <div className="flex flex-col-reverse items-center gap-20">
                     <div className="flex sm:flex-row flex-col translate-x-5 w-[70vw]">
@@ -56,6 +57,6 @@ export default function About() {
 
                 <div className="h-[10rem]" />
             </div>
-        </PageAnimation>
+        </ShortTransition>
     );
 }

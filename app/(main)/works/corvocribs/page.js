@@ -2,26 +2,20 @@ import ArticleHeader from "@/app/(main)/components/article/ArticleHeader";
 import Paragraph from "@/app/(main)/components/article/Paragraph";
 import ProjectInfo from "@/app/(main)/components/article/ProjectInfo";
 import ReturnButton from "@/app/(main)/components/article/ReturnButton";
-import PageAnimation from "@/app/(main)/components/PageAnimation";
+import PageAnimation from "@/app/(main)/components/transitions/TextTransition";
 import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 import { useTranslations } from "next-intl";
 
-// Title, year, subtitle
-
-// Tools, Team
-
-// 
-
 
 export default function CorvoCribs() {
-    const projectsLang = useTranslations("ui.projects");
+    const lang = useTranslations("corvoCribs");
 
     return (
-        <PageAnimation randomPrefix title={projectsLang("corvo_cribs")}>
+        <PageAnimation title={lang("transitionMessage")}>
             <div className="mx-5 pt-20 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}
-                    month="April"
+                    month={lang("month")}
                     title="Corvo Cribs"
                 />
 
@@ -29,17 +23,17 @@ export default function CorvoCribs() {
                     team={[
                         {
                             name: "Luca Denhez",
-                            role: "Designer, Developer",
+                            role: lang("roles.luca"),
                             avatar: "/avatars/luca.png"
                         },
                         {
                             name: "Tristan Goehring",
-                            role: "Designer, Developer",
+                            role: lang("roles.tristan"),
                             avatar: "/avatars/tristan.png"
                         },
                         {
                             name: "Ally Chen",
-                            role: "Designer, Artist",
+                            role: lang("roles.ally"),
                             avatar: "/avatars/ally.png"
                         },
                     ]}
@@ -57,7 +51,11 @@ export default function CorvoCribs() {
                             avatar: "/tools/figma.svg"
                         },
                     ]}
-                    services={["Product Design", "UI / UX Design", "Full Stack Development"]}
+                    services={[
+                        lang("aspects.productDesign"),
+                        lang("aspects.uxUIDesign"),
+                        lang("aspects.fullStack")
+                    ]}
                 />
 
                 <div className="w-full h-screen">

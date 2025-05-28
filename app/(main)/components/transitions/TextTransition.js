@@ -7,7 +7,7 @@ import SplitType from "split-type";
 
 import { useState } from "react";
 
-export default function PageAnimation({ title, randomPrefix = false, children }) {
+export default function TextTransition({ title, randomPrefix = false, children }) {
     const messages = [
         "Sailing the seas to",
         "Teleporting to",

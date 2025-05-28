@@ -1,15 +1,20 @@
 {
+    "home": {
+        "worksCard": "Projets",
+        "playgroundCard": "Terrain de jeux",
+        "transitionMessage": "Enchanté !"
+    },
     "nav": {
         "works": "Projets",
         "resume": "CV",
-        "about": "À propos de moi",
-        "home": "Enchanté."
+        "about": "À propos de moi"
     },
     "footer": {
         "createdBy": "Designé et développé avec ❤️",
         "builtWith": "Construit avec React et Next.js"
     },
     "ui": {
+        "interactivePlaceholder": "Démo interactif bientôt...",
         "introduction": "Bonjour! Je m'appelle Luca. Je suis concepteur, développeur, et tinkerer.",
         "city": "Seattle",
         "university": "Université de Seattle",
@@ -25,5 +30,41 @@
     },
     "about": {
         "bio": "Bonjour! Je m'appelle Luca.\n\nJe viens de Seattle et j'aime bien créer des choses."
+    },
+    "corvoCribs": {
+        "month": "Avril",
+        "transitionMessage": "Pour aider les étudiants de l'OSU à trouver le logement abordable",
+        "aspects": {
+            "productDesign": "Conception de Produit",
+            "uxUIDesign": "Conception UX / UI",
+            "fullStack": "Développement « Full Stack »"
+        },
+        "roles": {
+            "luca": "Concepteur, Développeur",
+            "tristan": "Concepteur, Développeur",
+            "ally": "Conceptrice, Artiste"
+        }
+    },
+    "honesty": {
+        "month": "Mai",
+        "transitionMessage": "Au revoir aux arnaques",
+        "aspects": {
+            "productDesign": "Conception de Produit",
+            "uxUIDesign": "Conception UX / UI",
+            "webDevelopment": "Développement Web",
+            "userAuth": "Authentification de l'utilisateur"
+        },
+        "paragraphs": [
+            {
+                "title": "Context",
+                "content": ""
+            }
+        ]
+    },
+    "projectInfo": {
+        "team": "Équipe",
+        "tools": "Outils",
+        "aspects": "Aspects",
+        "returnButtonText": "Retournez aux projets"
     }
 }

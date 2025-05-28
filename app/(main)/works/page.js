@@ -2,7 +2,8 @@ import ProjectCard from "../components/ProjectCard";
 import InteractiveHero from "../components/InteractiveHero";
 import works from ".";
 import { useTranslations } from "next-intl";
-import PageAnimation from "../components/PageAnimation";
+import PageAnimation from "../components/transitions/TextTransition";
+import ShortTransition from "../components/transitions/ShortTransition";
 
 
 export default function Works() {
@@ -10,7 +11,7 @@ export default function Works() {
     const navLang = useTranslations("nav");
 
     return (
-        <PageAnimation title={`08 — Good design is thorough down to the last detail.`} isAnchor>
+        <ShortTransition>
             <div className="mx-5 my-10">
                 <main className="pt-20">
                     <p>{lang("introduction")}</p>
@@ -35,6 +36,6 @@ export default function Works() {
                     </div>
                 </main>
             </div >
-        </PageAnimation>
+        </ShortTransition>
     );
 }
