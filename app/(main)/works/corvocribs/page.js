@@ -73,7 +73,6 @@ export default function CorvoCribs() {
                     </Paragraph>
                 </div>
 
-
                 <div className="h-[20rem] bg-gray-200" />
             </div>
         </PageAnimation>

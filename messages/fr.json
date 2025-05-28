@@ -61,6 +61,9 @@
             }
         ]
     },
+    "playground": {
+        "placeholderText": "Revenez bientôt! Quelques projets de cool (seront) ici..."
+    },
     "projectInfo": {
         "team": "Équipe",
         "tools": "Outils",

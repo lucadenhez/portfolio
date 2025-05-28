@@ -61,6 +61,9 @@
             }
         ]
     },
+    "playground": {
+        "placeholderText": "Come back soon! Fun projects (will be) waiting..."
+    },
     "projectInfo": {
         "team": "Team",
         "tools": "Tools",
