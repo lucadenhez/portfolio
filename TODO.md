@@ -1,5 +1,4 @@
-- Update latest translations
-- Update bio on about page
+- Put project paragraphs into lang
 - Create Playground
 - Parallax images are messed up on mobile (maybe replace with normal article image on mobile?)
 - Fix dark mode!! (force light?)

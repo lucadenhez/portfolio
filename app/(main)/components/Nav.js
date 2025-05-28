@@ -36,7 +36,7 @@ export default function Nav({ items }) {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-white flex justify-between items-start fixed top-0 left-0 w-full z-40 box-border"
+            className="bg-white dark:invert flex justify-between items-start fixed top-0 left-0 w-full z-40 box-border"
             style={{ padding: "inherit", margin: "inherit" }}
         >
             <div>
@@ -44,7 +44,7 @@ export default function Nav({ items }) {
                     e.preventDefault();
                     router.push("/");
                 }}>
-                    <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }}>Luca Denhez</motion.p>
+                    <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }} className="text-black">Luca Denhez</motion.p>
                 </Link>
                 <LanguageSwitcher />
             </div>
@@ -61,7 +61,7 @@ export default function Nav({ items }) {
                     }}>
                         {item.outside ? (
                             <motion.div
-                                className="flex items-center justify-end gap-1"
+                                className="text-black flex items-center justify-end gap-1"
                                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
                             >
                                 <p className="text-black/50">{item.label}</p>

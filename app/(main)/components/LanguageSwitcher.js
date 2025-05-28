@@ -38,7 +38,7 @@ export default function LanguageSwitcher() {
                     router.refresh();
                 }}
             >FR</motion.p>
-            <p>/</p>
+            <p className="text-black">/</p>
             <motion.p
                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
                 className={locale == "en" ? "text-black" : "text-black/50"}

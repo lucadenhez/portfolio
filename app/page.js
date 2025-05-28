@@ -26,7 +26,7 @@ export default function Home() {
             }}
           >
             <motion.div
-              className="aspect-square w-full h-full rounded-xl bg-black text-white text-center flex items-end leading-none tracking-tighter px-5 py-4 text-[4.5rem] font-semibold"
+              className="aspect-square w-full h-full rounded-xl bg-black dark:invert text-white text-center flex items-end leading-none tracking-tighter px-5 py-4 text-[4.5rem] font-semibold"
               whileHover={{ scale: 0.9 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
