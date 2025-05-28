@@ -15,7 +15,7 @@ export default function Works() {
             <div className="mx-5 my-10">
                 <main className="pt-20">
                     <p>{lang("introduction")}</p>
-                    <p className="pb-10 text-black/50 dark:text-white">{lang("city")} · <span className="text-red-700 dark:text-red-500">{lang("university")}</span></p>
+                    <p className="pb-10 text-black/50 dark:text-white">{lang("city")} · <span className="text-red-700 dark:text-red-400">{lang("university")}</span></p>
 
                     <InteractiveHero />
 

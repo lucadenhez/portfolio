@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ProjectInfo({ team, tools, services }) {
     const lang = useTranslations("projectInfo");
-    
+
     return (
         <div className="flex flex-col sm:flex-row gap-y-20 justify-between w-2/3">
             <div className="flex flex-col items-center gap-3">
@@ -38,6 +38,7 @@ export default function ProjectInfo({ team, tools, services }) {
                                 width={25}
                                 height={25}
                                 alt={`Photo of the ${tool.name} logo`}
+                                className={tool.name == "Next.js" ? "invert" : ""}
                             />
                             <p className="text-lg">{tool.name}</p>
                         </div>

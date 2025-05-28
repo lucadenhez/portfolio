@@ -59,7 +59,9 @@ export default function CorvoCribs() {
                 />
 
                 <div className="w-full h-screen">
-                    <ReturnButton />
+                    <div className="pb-5">
+                        <ReturnButton />
+                    </div>
                     <ParallaxImage image="/works/corvocribs/cover_white.png" />
                 </div>
 

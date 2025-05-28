@@ -262,9 +262,7 @@ export default function Honesty() {
                 </Paragraph>
 
                 <div className="flex justify-center w-2/3">
-                    <div className="bg-gray-100 rounded-lg px-3 py-2">
-                        <ReturnButton />
-                    </div>
+                    <ReturnButton background />
                 </div>
 
                 <div className="h-[5rem] bg-gray-200" />

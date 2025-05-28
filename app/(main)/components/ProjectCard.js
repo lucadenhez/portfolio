@@ -48,7 +48,7 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
                 >
                     <p className="text-black text-2xl">{title}</p>
                     <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
                 </motion.div>
             </Link>
