@@ -21,7 +21,7 @@ export default function ProjectInfo({ team, tools, services }) {
                             />
                             <div className="leading-none">
                                 <p className="text-lg">{member.name}</p>
-                                <p className="text-black/50">{member.role}</p>
+                                <p className="text-black/50 dark:text-white/70">{member.role}</p>
                             </div>
 
                         </div>
@@ -38,7 +38,7 @@ export default function ProjectInfo({ team, tools, services }) {
                                 width={25}
                                 height={25}
                                 alt={`Photo of the ${tool.name} logo`}
-                                className={tool.name == "Next.js" ? "invert" : ""}
+                                className={(tool.name == "Next.js") ? "dark:invert" : ""}
                             />
                             <p className="text-lg">{tool.name}</p>
                         </div>
