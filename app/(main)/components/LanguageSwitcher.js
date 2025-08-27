@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
     }, [router, locale]);
 
     return (
-        <div className="flex gap-1">
+        <div className="flex gap-1 dark:invert">
             <motion.p
                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
                 className={locale == "fr" ? "text-black" : "text-black/50"}

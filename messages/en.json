@@ -5,6 +5,7 @@
         "transitionMessage": "Nice to meet you!"
     },
     "nav": {
+        "home": "Home",
         "works": "Works",
         "resume": "Resumé",
         "about": "About Me"

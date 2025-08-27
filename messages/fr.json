@@ -5,6 +5,7 @@
         "transitionMessage": "Enchanté !"
     },
     "nav": {
+        "home": "Accueil",
         "works": "Projets",
         "resume": "CV",
         "about": "À propos de moi"
@@ -33,7 +34,7 @@
     },
     "corvoCribs": {
         "month": "Avril",
-        "transitionMessage": "Pour aider les étudiants de l'OSU à trouver le logement abordable",
+        "transitionMessage": "Pour aider les étudiants de l'université OSU à trouver le logement abordable",
         "aspects": {
             "productDesign": "Conception de Produit",
             "uxUIDesign": "Conception UX / UI",

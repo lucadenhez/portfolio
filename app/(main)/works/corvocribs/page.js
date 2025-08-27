@@ -12,7 +12,7 @@ export default function CorvoCribs() {
 
     return (
         <PageAnimation title={lang("transitionMessage")}>
-            <div className="mx-5 pt-20 flex flex-col items-center gap-20">
+            <div className="mx-15 pt-25 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}
                     month={lang("month")}

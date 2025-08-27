@@ -2,6 +2,7 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ViewTransitions } from "next-view-transitions";
 import localFont from 'next/font/local';
+import { isMobile } from 'react-device-detect';
 
 import Nav from "./components/Nav";
 import SmoothScroll from "./components/SmoothScroll";
@@ -26,6 +27,10 @@ export default async function WorksLayout({ children }) {
 
   const navItems = [
     {
+      label: navLang("home"),
+      path: "/"
+    },
+    {
       label: navLang("works"),
       path: "/works"
     },
@@ -40,13 +45,25 @@ export default async function WorksLayout({ children }) {
     },
   ];
 
-  return (
-    <SmoothScroll>
-      <header className="p-5">
-        <Nav items={navItems} />
-      </header>
-      {children}
-      <Footer />
-    </SmoothScroll>
-  );
+  if (isMobile) {
+    return (
+      <>
+        <header className="px-20 py-5">
+          <Nav items={navItems} />
+        </header>
+        {children}
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <SmoothScroll>
+        <header className="px-15 py-10">
+          <Nav items={navItems} />
+        </header>
+        {children}
+        <Footer />
+      </SmoothScroll>
+    );
+  }
 }

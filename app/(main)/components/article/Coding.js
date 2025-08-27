@@ -37,7 +37,7 @@ export default function Coding(props) {
             whileHover={{ rotate: `${hoverRotation}deg`, scale: 1.02 }}
         >
             <p className="text-black/50">{props.filename}</p>
-            <div className="rounded-lg w-full max-w-full">
+            <div className="rounded-lg w-full max-w-full dark:invert">
                 <SyntaxHighlighter
                     language={props.language}
                     style={oneLight}

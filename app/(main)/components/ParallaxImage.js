@@ -19,7 +19,7 @@ export default function ParallaxImage({ image }) {
 
     return (
         <motion.div
-            className="h-screen relative overflow-hidden"
+            className="h-screen relative overflow-hidden rounded-xl"
             ref={container}
         >
             <motion.div style={{ y }} className="absolute inset-0">

@@ -40,13 +40,9 @@ export default function Nav({ items }) {
             style={{ padding: "inherit", margin: "inherit" }}
         >
             <div>
-                <Link href="/" onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
-                }}>
-                    <motion.p whileHover={{ opacity: 0.25, cursor: "pointer" }} className="text-black">Luca Denhez</motion.p>
-                </Link>
-                <LanguageSwitcher />
+                <div className="dark:invert">
+                    <LanguageSwitcher />
+                </div>
             </div>
 
             <div className="text-right">
