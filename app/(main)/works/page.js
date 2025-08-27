@@ -64,7 +64,7 @@ export default function Works() {
                         <div className="flex sm:flex-row flex-col justify-between gap-20 items-center pb-10">
                             <div className="flex flex-col sm:gap-5 gap-10 sm:items-start items-center">
                                 <p className="text-[3rem] font-medium tracking-tighter leading-none">Luca Denhez</p>
-                                <div className="text-center sm:text-left space-y-2">
+                                <div className="text-center sm:text-left space-y-1">
                                     <p>{lang("introduction")}</p>
                                     <p className="text-black/50 dark:text-white">{lang("city")} · <span className="text-red-700 dark:text-red-400">{lang("university")}</span></p>
                                 </div>

@@ -24,8 +24,8 @@ export default function Home() {
 
     return (
         <PageAnimation randomPrefix={false} title={lang("transitionMessage")}>
-            <div className="mx-15 flex items-center justify-between">
-                <div className="flex justify-center flex-col h-screen">
+            <div className="mx-5 sm:mx-15 flex sm:flex-row flex-col sm:items-center items-start justify-between">
+                <div className="pr-15 flex sm:justify-center justify-end flex-col sm:h-screen h-[50vh] sm:pb-0 pb-5">
                     <div>
                         <div className="pb-5">
                             <LanguageSwitcher />
@@ -73,7 +73,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="max-h-[75vh] max-w-[60vw] overflow-hidden rounded-xl">
+                <div className="max-h-[75vh] sm:max-w-[60vw] max-w-full overflow-hidden rounded-xl">
                     <Image src={images[currentImage]}
                         width={0}
                         height={0}

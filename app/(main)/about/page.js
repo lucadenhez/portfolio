@@ -28,7 +28,7 @@ export default function About() {
                 <div className="flex flex-col-reverse items-center gap-20">
                     <div className="flex sm:flex-row flex-col translate-x-5 w-[70vw]">
                         <motion.div
-                            className="rotate-3 w-2/3 h-full overflow-hidden rounded-3xl shadow-md"
+                            className="rotate-1 w-2/3 h-full overflow-hidden rounded-3xl"
                             whileHover={{ y: -10, scale: 1.01 }}
                         >
                             <Image src="/avatars/luca_sunny.jpeg"
@@ -43,7 +43,7 @@ export default function About() {
                             initial={{ y: 20 }}
                             animate={{ y: 0 }}
 
-                            className="-z-10 sm:translate-x-10 -translate-x-10 sm:translate-y-30 -translate-y-5 -rotate-4 w-full h-full overflow-hidden rounded-3xl shadow-md"
+                            className="-z-10 sm:translate-x-10 -translate-x-10 sm:translate-y-30 -translate-y-5 -rotate-2 w-full h-full overflow-hidden rounded-3xl"
                             whileHover={{ y: -10, scale: 1.01 }}
                         >
                             <Image src="/images/doggies.png"
