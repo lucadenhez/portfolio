@@ -24,6 +24,9 @@ export default async function RootLayout({ children }) {
     return (
         <ViewTransitions>
             <html lang={locale}>
+                <head>
+                    <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
+                </head>
                 <body
                     className={`antialiased ${diatypeVariable.className}`}
                 >
