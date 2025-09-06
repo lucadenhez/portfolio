@@ -6,8 +6,9 @@ import InlineLink from "../components/article/InlineLink";
 import Paragraph from "../components/article/Paragraph";
 import { useTranslations } from "next-intl";
 import PageAnimation from "../components/transitions/TextTransition";
-import { motion, stagger } from "motion/react";
+import { motion, stagger, animate } from "motion/react";
 import ShortTransition from "../components/transitions/ShortTransition";
+import BentoSquare from "../components/bento/BentoSquare";
 
 /* Old photo of me
 <Image src="/avatars/luca_uncropped.png"
@@ -57,7 +58,7 @@ export default function About() {
                     </div>
 
                     <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
-                        <p className="flex whitespace-pre-line sm:w-3/4 w-full">{lang("bio")}</p>
+                        <p className="text-lg flex whitespace-pre-line sm:w-3/4 w-full">{lang("bio")}</p>
 
                         <div className="flex flex-col sm:items-start items-center">
                             <InlineLink label="Linkedin" url="https://linkedin.com/in/lucadenhez" />
@@ -66,6 +67,59 @@ export default function About() {
                         </div>
                     </div>
                 </div>
+
+                <motion.div
+                    // whileInView={() => animate(".bento-square", { opacity: [0, 1] }, { delay: stagger(0.1, { startDelay: 1 }) })}
+                    className="flex gap-3 flex-col justify-center mx-20 mt-30 rounded-2xl"
+                >
+                    <p className="pb-10 tracking-tighter text-5xl font-medium">Bento about my favorite things <span className="px-1">🍱</span></p>
+                    <div className="flex gap-3">
+                        <BentoSquare
+                            width={20}
+                            height={10}
+                            header="Fragrance"
+                            title="Thé Noir 29"
+                            subtitle="Le Labo"
+                            image="/bento/fragrance.jpeg"
+                        />
+
+                        <BentoSquare
+                            width={30}
+                            height={10}
+                            header="Café"
+                            title="Oddfellows"
+                            subtitle="1525 10th Ave, Seattle WA 98122"
+                            image="/bento/cafe.jpg"
+                        />
+                        <BentoSquare
+                            width={30}
+                            height={10}
+                            header="Grocery Store"
+                            title="DeLaurenti Food & Wine"
+                            subtitle="4135 1st Ave, Seattle WA 98101"
+                            image="/bento/grocery.jpg"
+                        />
+                    </div>
+                    <div className="flex gap-3">
+                        <BentoSquare
+                            width={30}
+                            height={10}
+                            header="Sunset"
+                            title="Richmond Beach Saltwater Park"
+                            subtitle="2021 NW 190th St, Shoreline WA 98177"
+                            image="/bento/sunset.jpg"
+                        />
+
+                        <BentoSquare
+                            width={30}
+                            height={10}
+                            header="Boba"
+                            title="bobaup"
+                            subtitle="4141 University Wy NE, Seattle WA 98105"
+                            image="/bento/boba.jpeg"
+                        />
+                    </div>
+                </motion.div>
 
                 <div className="h-[10rem]" />
             </div>
