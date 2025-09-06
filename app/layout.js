@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { ViewTransitions } from "next-view-transitions";
 import localFont from 'next/font/local';
 import { getSelectorsByUserAgent } from "react-device-detect"
+import { headers } from "next/headers"
 
 import SmoothScroll from "./(main)/components/SmoothScroll";
 
