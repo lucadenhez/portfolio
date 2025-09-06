@@ -2,7 +2,7 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ViewTransitions } from "next-view-transitions";
 import localFont from 'next/font/local';
-import { isMobile } from 'react-device-detect';
+import { getSelectorsByUserAgent } from "react-device-detect"
 
 import SmoothScroll from "./(main)/components/SmoothScroll";
 
@@ -44,6 +44,10 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+    const { isMobile } = getSelectorsByUserAgent(
+        headers().get("user-agent") ?? ""
+    );
+
     const locale = await getLocale();
     const messages = await getMessages();
 
@@ -66,7 +70,7 @@ export default async function RootLayout({ children }) {
                                 </div>
                                 <p className="mt-20 text-white font-medium">Basically I am slow at coding.</p>
                             </div>
-                            
+
                         </NextIntlClientProvider>
                     </body>
                 </html >
