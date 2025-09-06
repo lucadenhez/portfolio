@@ -92,7 +92,7 @@ export default function Works() {
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 3, duration: 0.5 }}
                                     className="text-4xl opacity-0"
-                                >Hi! I'm Luca Denhez. I'm a undergraduate student at <span className="text-red-700 dark:text-red-400">{lang("university")}</span> studying Computer Science 💻 and Design 🎨 .</motion.p>
+                                >Hi! I'm Luca Denhez. I'm an undergraduate student at <span className="text-red-700 dark:text-red-400">{lang("university")}</span> studying Computer Science 💻 and Design 🎨 .</motion.p>
                             </div>
                         </div>
                     </div>

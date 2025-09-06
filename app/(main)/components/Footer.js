@@ -11,11 +11,11 @@ export default function Footer() {
 
         <footer>
             <div
-                className='relative h-[400px] bg-black text-white'
+                className='relative h-[450px] bg-black text-white'
                 style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             >
-                <div className='relative h-[calc(100vh+400px)] -top-[100vh]'>
-                    <div className='flex flex-col space-2 justify-between w-full p-15 h-[400px] sticky top-[calc(100vh-400px)]'>
+                <div className='relative h-[calc(100vh+450px)] -top-[100vh]'>
+                    <div className='flex flex-col space-2 justify-between w-full p-15 h-[450px] sticky top-[calc(100vh-450px)]'>
                         <div>
                             <p className="text-[9rem] leading-none tracking-tighter font-medium">Like what you saw?</p>
 
