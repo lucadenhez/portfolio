@@ -15,18 +15,14 @@ export default function Home() {
     const router = useTransitionRouter();
     const lang = useTranslations("home");
 
-    const images = {
-        "works": "/landing/bluff.jpeg",
-        "playground": "/landing/osu_dorm.jpeg"
-    };
-
-    const [currentImage, setCurrentImage] = useState("works");
+    const [works, setWorks] = useState(false);
+    const [playground, setPlayground] = useState(false);
 
     return (
         <PageAnimation randomPrefix={false} title={lang("transitionMessage")}>
-            <div className="mx-5 sm:mx-15 flex sm:flex-row flex-col sm:items-center items-start justify-between">
-                <div className="pr-15 flex sm:justify-center justify-end flex-col sm:h-screen h-[50vh] sm:pb-0 pb-5">
-                    <div>
+            <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between">
+                <div className="flex sm:justify-center justify-end flex-col sm:h-screen h-[50vh] sm:pb-0 pb-5">
+                    <div className="mx-5 sm:mx-15">
                         <div className="pb-5">
                             <LanguageSwitcher />
                         </div>
@@ -38,18 +34,13 @@ export default function Home() {
                                     e.preventDefault();
                                     router.push("/works");
                                 }}
-                                onMouseOver={() => {
-                                    setCurrentImage("works")
-                                }}
+                                onMouseOver={() => setWorks(true)}
+                                onMouseLeave={() => setWorks(false)}
                             >
-                                <motion.div
-                                    className="flex w-fit gap-3 items-end font-medium tracking-tighter text-[3rem]"
-                                    whileHover={{ x: 5, opacity: 0.5 }}
-                                    transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                                >
-                                    <p className="p-0 m-0 leading-none">{lang("worksCard")}</p>
-                                    <ArrowIcon />
-                                </motion.div>
+                                <div
+                                    className="leading-none font-medium tracking-tighter text-[10rem]">
+                                    <p className="p-0 m-0 leading-none text-black hover:text-white">{lang("worksCard")}</p>
+                                </div>
                             </Link>
                             <Link
                                 href="/playground"
@@ -57,31 +48,61 @@ export default function Home() {
                                     e.preventDefault();
                                     router.push("/playground");
                                 }}
-                                onMouseOver={() => {
-                                    setCurrentImage("playground")
-                                }}
+                                onMouseOver={() => setPlayground(true)}
+                                onMouseLeave={() => setPlayground(false)}
                             >
-                                <motion.div
-                                    className="flex w-fit gap-3 items-end font-medium tracking-tighter text-[3rem]"
-                                    whileHover={{ x: 5, opacity: 0.5 }}
-                                    transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                                >
-                                    <p className="p-0 m-0 leading-none">{lang("playgroundCard")}</p>
-                                    <ArrowIcon />
-                                </motion.div>
+                                <div className="-translate-y-5 leading-none font-medium tracking-tighter text-[10rem]">
+                                    <p className="p-0 m-0 leading-none text-black hover:text-white">{lang("playgroundCard")}</p>
+                                </div>
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="max-h-[75vh] sm:max-w-[60vw] max-w-full overflow-hidden rounded-xl">
-                    <Image src={images[currentImage]}
-                        width={0}
-                        height={0}
+                <motion.div
+                    className="absolute h-full w-full -z-10 overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={works ? { opacity: 1, scale: 1 } : undefined}
+                    transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
+                >
+                    <Image
+                        src="/works/honesty/mockups/front_iphone.png"
+                        width={1920}
+                        height={1080}
                         sizes="(max-width: 768px) 100vw, 66vw"
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        alt="Photo of Luca"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            imageRendering: "auto"
+                        }}
+                        alt="Photo of a project"
+                        priority
+                        quality={90}
                     />
-                </div>
+                </motion.div>
+
+                <motion.div
+                    className="absolute h-full w-full -z-10 overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={playground ? { opacity: 1, scale: 1 } : undefined}
+                    transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
+                >
+                    <Image
+                        src="/landing/works.jpeg"
+                        width={1920}
+                        height={1080}
+                        sizes="(max-width: 768px) 100vw, 66vw"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            imageRendering: "auto"
+                        }}
+                        alt="Photo of a project"
+                        priority
+                        quality={90}
+                    />
+                </motion.div>
             </div>
         </PageAnimation >
     );
