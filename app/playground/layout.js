@@ -7,10 +7,6 @@ import SmoothScroll from "../(main)/components/SmoothScroll";
 import "../globals.css";
 
 
-const diatypeVariable = localFont({
-  src: '../../public/fonts/ABCDiatypeVariable-Trial.woff2',
-});
-
 export const metadata = {
   title: "Luca Denhez",
   description: "Nice to meet you.",

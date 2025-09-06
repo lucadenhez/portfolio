@@ -10,11 +10,6 @@ import Footer from "./components/Footer";
 
 import "../globals.css";
 
-
-const diatypeVariable = localFont({
-  src: '../../public/fonts/ABCDiatypeVariable-Trial.woff2',
-});
-
 export const metadata = {
   title: "Luca Denhez",
   description: "Nice to meet you.",
