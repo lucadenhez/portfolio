@@ -61,7 +61,7 @@ export default function ProjectCard({ mobile = false, title, path, year, image, 
                     initial={{ opacity: 0 }}
                     animate={hovered ? { opacity: 1, scale: 1.3 } : { opacity: 0, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                    whileHover={{ opacity: 0.8, scale: 1.27 }}
+                    whileHover={{ backgroundColor: "#f7f7f7", scale: 1.27 }}
                 >
                     <p className="text-black text-2xl">{title}</p>
                     <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
