@@ -63,6 +63,13 @@ export default function Honesty() {
                     <ParallaxImage image="/works/honesty/mockups/front_iphone.png" />
                 </div>
 
+                <Paragraph title="Disclaimer" color="#fff1bf">
+                    {
+                        `This article is a work in progress! Placeholder images will be replaced soon.
+                    `
+                    }
+                </Paragraph>
+
                 <Paragraph title="Context">
                     {
                         `When looking for a secondhand car on Craigslist, Facebook Marketplace, or OfferUp, I always run into the same problem. Scams.
