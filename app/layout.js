@@ -8,11 +8,36 @@ import { headers } from "next/headers"
 import SmoothScroll from "./(main)/components/SmoothScroll";
 
 import "./globals.css";
+import Whoops from "./(main)/whoops/page";
 
 
 const diatypeVariable = localFont({
     src: '../public/fonts/ABCDiatypeVariable-Trial.woff2',
 });
+
+
+/*
+
+MOBILE DETECTION
+
+if (isMobile) {
+        return (
+            <ViewTransitions>
+                <html lang={locale}>
+                    <head>
+                        <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
+                    </head>
+                    <body>
+                        <NextIntlClientProvider locale={locale} messages={messages}>
+                            <Whoops />
+                        </NextIntlClientProvider>
+                    </body>
+                </html >
+            </ViewTransitions>
+        );
+    } else {
+
+*/
 
 const helveticaVariable = localFont({
     src: [
@@ -53,49 +78,23 @@ export default async function RootLayout({ children }) {
     const locale = await getLocale();
     const messages = await getMessages();
 
-    if (isMobile) {
-        return (
-            <ViewTransitions>
-                <html lang={locale}>
-                    <head>
-                        <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
-                    </head>
-                    <body
-                        className={`antialiased ${helveticaVariable.className}`}
-                    >
-                        <NextIntlClientProvider locale={locale} messages={messages}>
-                            <div className="text-center flex flex-col justify-center items-center h-screen bg-[#150DF7]">
-                                <div className="space-y-3 m-10">
-                                    <p className="text-[5rem] tracking-tighter mb-5 font-medium leading-none text-white">Whoops!</p>
-                                    <p className="text-xl leading-none text-white">Please view on a desktop device, apologies for the inconvienence.</p>
-                                    <p className="text-xl leading-none text-white">Mobile website under construction.</p>
-                                </div>
-                                <p className="mt-20 text-white font-medium">Basically I am slow at coding.</p>
-                            </div>
 
-                        </NextIntlClientProvider>
-                    </body>
-                </html >
-            </ViewTransitions>
-        );
-    } else {
-        return (
-            <ViewTransitions>
-                <html lang={locale}>
-                    <head>
-                        <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
-                    </head>
-                    <body
-                        className={`antialiased ${helveticaVariable.className}`}
-                    >
-                        <NextIntlClientProvider locale={locale} messages={messages}>
-                            <SmoothScroll>
-                                {children}
-                            </SmoothScroll>
-                        </NextIntlClientProvider>
-                    </body>
-                </html >
-            </ViewTransitions>
-        );
-    }
+    return (
+        <ViewTransitions>
+            <html lang={locale}>
+                <head>
+                    <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
+                </head>
+                <body
+                    className={`antialiased ${helveticaVariable.className}`}
+                >
+                    <NextIntlClientProvider locale={locale} messages={messages}>
+                        <SmoothScroll>
+                            {children}
+                        </SmoothScroll>
+                    </NextIntlClientProvider>
+                </body>
+            </html >
+        </ViewTransitions>
+    );
 }

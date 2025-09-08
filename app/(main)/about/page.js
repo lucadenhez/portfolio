@@ -70,10 +70,10 @@ export default function About() {
 
                 <motion.div
                     // whileInView={() => animate(".bento-square", { opacity: [0, 1] }, { delay: stagger(0.1, { startDelay: 1 }) })}
-                    className="flex gap-3 flex-col justify-center mx-20 mt-30 rounded-2xl"
+                    className="flex gap-3 flex-col justify-center sm:mx-20 mx-0 mt-30 rounded-2xl"
                 >
-                    <p className="pb-10 tracking-tighter text-5xl font-medium">Bento about my favorite things <span className="px-1">🍱</span></p>
-                    <div className="flex gap-3">
+                    <p className="pb-10 tracking-tighter sm:text-5xl text-4xl font-medium">Bento about my favorite things <span className="px-1">🍱</span></p>
+                    <div className="flex sm:flex-row flex-col gap-3">
                         <BentoSquare
                             width={20}
                             height={10}
@@ -100,7 +100,7 @@ export default function About() {
                             image="/bento/grocery.jpg"
                         />
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex sm:flex-row flex-col gap-3">
                         <BentoSquare
                             width={30}
                             height={10}

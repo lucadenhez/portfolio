@@ -27,7 +27,7 @@ export default function Home() {
                             <LanguageSwitcher />
                         </div>
 
-                        <div>
+                        <div className="flex flex-col">
                             <Link
                                 href="/works"
                                 onClick={(e) => {
@@ -38,8 +38,8 @@ export default function Home() {
                                 onMouseLeave={() => setWorks(false)}
                             >
                                 <div
-                                    className="leading-none font-medium tracking-tighter text-[10rem]">
-                                    <p className="p-0 m-0 leading-none text-black hover:text-white">{lang("worksCard")}</p>
+                                    className="leading-none font-medium tracking-tight sm:text-[10rem] text-[3rem]">
+                                    <p className="p-0 m-0 leading-none text-black dark:text-white hover:invert">{lang("worksCard")}</p>
                                 </div>
                             </Link>
                             <Link
@@ -51,8 +51,8 @@ export default function Home() {
                                 onMouseOver={() => setPlayground(true)}
                                 onMouseLeave={() => setPlayground(false)}
                             >
-                                <div className="-translate-y-5 leading-none font-medium tracking-tighter text-[10rem]">
-                                    <p className="p-0 m-0 leading-none text-black hover:text-white">{lang("playgroundCard")}</p>
+                                <div className="sm:-translate-y-5 translate-y-0 leading-none font-medium tracking-tight sm:text-[10rem] text-[3rem]">
+                                    <p className="p-0 m-0 leading-none text-black dark:text-white hover:invert">{lang("playgroundCard")}</p>
                                 </div>
                             </Link>
                         </div>

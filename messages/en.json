@@ -1,4 +1,10 @@
 {
+    "whoops": {
+        "whoops": "Whoops!",
+        "message": "Please view on a desktop device, apologies for the inconvienence.",
+        "construction": "Mobile website under construction.",
+        "easter_egg": "Basically I am slow at coding."
+    },
     "home": {
         "worksCard": "Works",
         "playgroundCard": "Playground",
@@ -12,11 +18,17 @@
     },
     "footer": {
         "createdBy": "Designed and developed with ❤️",
-        "builtWith": "Built with React and Next.js"
+        "builtWith": "Built with React and Next.js",
+        "hi": "Hi there!",
+        "liked_my_work": "If you liked any on my projects, feel free to reach out.",
+        "contact_me": "Let's talk"
     },
-    "ui": {
+    "works": {
         "interactivePlaceholder": "Interactive demo in the works...",
-        "introduction": "Hello! My name is Luca. I am a designer, coder, and tinkerer.",
+        "introduction_1": "Hi! I'm Luca Denhez. I'm an undergraduate student at",
+        "introduction_2": "studying Computer Science 💻 and Design 🎨 .",
+        "bubble_top": "Studying CS & Design @ SU",
+        "bubble_bottom": "Probably opening Pokémon booster packs...", 
         "city": "Seattle, WA",
         "university": "Seattle University",
         "projectViewButton": "View Project",
@@ -30,7 +42,8 @@
         }
     },
     "about": {
-        "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things.\nI am a product designer and web developer with experience in React and Swift.\n\nI have always appreciated design that is simple and intuitive, and I love building tools and experiences for people that are thoughtful and help the world."
+        "old_bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things.\nI am a product designer and web developer with experience in React and Swift.\n\nI have always appreciated design that is simple and intuitive, and I love building tools and experiences for people that are thoughtful and help the world.",
+        "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things. I am an undergraduate university student and aspiring Product Designer.\n\nI thrive on prototyping hands-on with CAD and 3D printing, coding engaging experiences with React and SwiftUI, and bringing fun and exciting design into the products we use today.\n\nWith equal love for programming and design, I bring versatility and a Swiss army knife approach to creating technology that is accessible, natural, and fun."
     },
     "corvoCribs": {
         "transitionMessage": "Helping OSU students find affordable housing",

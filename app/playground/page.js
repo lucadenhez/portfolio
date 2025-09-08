@@ -9,7 +9,7 @@ export default function Playground() {
     return (
         <ShortTransition>
             <div className="flex flex-col justify-center items-center h-screen bg-[#f0542e] gap-5">
-                <p className="text-lg text-white">{lang("placeholderText")}</p>
+                <p className="text-lg text-white sm:mx-0 mx-10 text-center">{lang("placeholderText")}</p>
                 <div className="invert">
                     <ReturnButton />
                 </div>

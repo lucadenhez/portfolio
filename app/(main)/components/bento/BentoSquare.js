@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function BentoSquare({ header, title, subtitle, image, width, height }) {
     return (
         <div
-            className="bento-square bg-zinc-100 rounded-xl p-5 gap-5 flex items-center justify-between relative"
+            className="bento-square text-black bg-zinc-100 rounded-xl p-5 gap-5 flex items-center justify-between relative"
             style={{ width: `${width}rem`, height: `${height}rem` }}
         >
             <div className="flex flex-col gap-5">

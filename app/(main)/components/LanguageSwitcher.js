@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ dark }) {
     const [locale, setLocale] = useState("");
     const router = useRouter();
 
@@ -28,7 +28,10 @@ export default function LanguageSwitcher() {
     }, [router, locale]);
 
     return (
-        <div className="flex gap-1 dark:invert">
+        <div
+            className="flex gap-1 dark:invert"
+            style={dark ? { filter: "invert(100%)" } : undefined}
+        >
             <motion.p
                 whileHover={{ opacity: 0.25, cursor: "pointer" }}
                 className={locale == "fr" ? "text-black" : "text-black/50"}

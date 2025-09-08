@@ -5,10 +5,10 @@ import works from ".";
 import { useTranslations } from "next-intl";
 import ShortTransition from "../components/transitions/ShortTransition";
 import Image from "next/image";
-import { isMobile } from 'react-device-detect';
 import { motion, useAnimation } from "motion/react";
 import ScrollText from "../components/animations/ScrollText";
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 
 const container = {
@@ -46,7 +46,7 @@ export default function Works() {
         });
     }, [controls]);
 
-    const lang = useTranslations("ui");
+    const lang = useTranslations("works");
     const navLang = useTranslations("nav");
 
     return (
@@ -71,18 +71,18 @@ export default function Works() {
                                     variants={child}
                                     animate={floating ? { rotate: [0, -3, 0, 3], y: [0, -8, 0, 8, 0], x: [0, 4, 0, -4, 0] } : undefined}
                                     transition={floating ? { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0 } : undefined}
-                                    className="absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-25 -translate-y-15  w-fit px-5 py-3 border-2 rounded-2xl bg-red-400"
+                                    className="text-black absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-10 sm:-translate-x-25 sm:-translate-y-15 -translate-y-20  w-fit px-5 py-3 border-2 rounded-2xl bg-red-400"
                                 >
-                                    <p>Studying CS & Design @ SU</p>
+                                    <p>{lang("bubble_top")}</p>
                                 </motion.div>
 
                                 <motion.div
                                     variants={child}
                                     animate={floating ? { rotate: [0, -3, 0, 3], y: [0, 6, -6, 0], x: [0, -3, 3, 0] } : undefined}
                                     transition={floating ? { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0 } : undefined}
-                                    className="flex gap-5 absolute bottom-0 right-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 translate-x-35 translate-y-5 w-fit px-5 py-3 border-2 rounded-2xl bg-amber-200"
+                                    className="text-black flex gap-5 absolute bottom-0 right-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 sm:translate-x-35 translate-x-10 sm:translate-y-5 translate-y-20 w-fit px-5 py-3 border-2 rounded-2xl bg-amber-200"
                                 >
-                                    <p>Probably opening Pokémon booster packs...</p>
+                                    <p>{lang("bubble_bottom")}</p>
                                 </motion.div>
                             </motion.div>
 
@@ -91,8 +91,8 @@ export default function Works() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 3, duration: 0.5 }}
-                                    className="text-4xl opacity-0"
-                                >Hi! I'm Luca Denhez. I'm an undergraduate student at <span className="text-red-700 dark:text-red-400">{lang("university")}</span> studying Computer Science 💻 and Design 🎨 .</motion.p>
+                                    className="sm:text-4xl text-2xl opacity-0 sm:text-left"
+                                >{lang("introduction_1")}<span className="text-red-700 dark:text-red-400">{lang("university")}</span> {lang("introduction_2")}</motion.p>
                             </div>
                         </div>
                     </div>
@@ -108,6 +108,7 @@ export default function Works() {
                                     year={project.year}
                                     image={project.image}
                                     viewButtonText={lang("projectViewButton")}
+                                    mobile={isMobile}
                                 />
                             </div>
                         ))}

@@ -1,4 +1,10 @@
 {
+     "whoops": {
+        "whoops": "Hop-là !",
+        "message": "Veuillez voir le site sur un ordinateur de bureau, je m'excuse pour le désagrément.",
+        "construction": "Site mobile en construction",
+        "easter_egg": "Bah ça veut dire que je suis lent"
+    },
     "home": {
         "worksCard": "Projets",
         "playgroundCard": "Terrain de jeux",
@@ -12,11 +18,17 @@
     },
     "footer": {
         "createdBy": "Designé et développé avec ❤️",
-        "builtWith": "Construit avec React et Next.js"
+        "builtWith": "Construit avec React et Next.js",
+        "hi": "Oh, je vous ai pas vu !",
+        "liked_my_work": "Si vous avez aimé mes projets, n'hésitez pas me contacter.",
+        "contact_me": "Discutons"
     },
-    "ui": {
+    "works": {
         "interactivePlaceholder": "Démo interactif bientôt...",
-        "introduction": "Bonjour! Je m'appelle Luca. Je suis concepteur, développeur, et tinkerer.",
+        "introduction_1": "Bonjour ! Je m'appelle Luca Denhez. Je suis étudiant à l'",
+        "introduction_2": ". J'étudie l'Informatique 💻 et le Dessin 🎨 .",
+        "bubble_top": "J'étudie l'Informatique & le Dessin @ SU",
+        "bubble_bottom": "J'ouvre probablement un booster Pokémon mtn...", 
         "city": "Seattle",
         "university": "Université de Seattle",
         "projectViewButton": "Voir le Projet",
@@ -30,7 +42,8 @@
         }
     },
     "about": {
-        "bio": "Bonjour! Je m'appelle Luca.\n\nJe viens de Seattle et j'aime créer des choses. Je suis concepteur de produits et développeur web, avec de l'expérience en React et Swift.\n\nJ'ai toujours apprécié les conceptions simples et intuitives, et j'adore créer des outils et des expériences réfléchies qui aident les gens et améliorent le monde."
+        "old_bio": "Bonjour! Je m'appelle Luca.\n\nJe viens de Seattle et j'aime créer des choses. Je suis concepteur de produits et développeur web, avec de l'expérience en React et Swift.\n\nJ'ai toujours apprécié les conceptions simples et intuitives, et j'adore créer des outils et des expériences réfléchies qui aident les gens et améliorent le monde.",
+        "bio": "Bonjour ! Je m'appelle Luca.\n\nJ'habite à Seattle, WA et j'aime bien créer. Je suis étudiant et Designer de Produits en herbe.\n\nJ'adore prototyper avecs mes mains en CAD et impression 3D, je code les expériences engageantes avec React et SwiftUI, et j'aime introduire le design amusant aux produits qu'on utilise aujourd'hui.\n\nAvec l'amour entre le coding et le design, j'apporte de la versitilité et une manière couteau Swiss pour créer la technologie accessible, naturelle, et amusante."
     },
     "corvoCribs": {
         "month": "Avril",
