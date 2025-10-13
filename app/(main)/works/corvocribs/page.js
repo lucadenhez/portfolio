@@ -68,7 +68,7 @@ export default function CorvoCribs() {
                 <div className="w-2/3 pt-20">
                     <Paragraph title="Status">
                         {
-                            `This is currently a work in progress! Check back soon for a finished product...`
+                            `This is currently a work in progress! Check back for a finished product...`
                         }
                     </Paragraph>
                 </div>
