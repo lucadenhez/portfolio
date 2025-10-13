@@ -27,14 +27,14 @@ export default function CorvoCribs() {
                             avatar: "/avatars/luca.png"
                         },
                         {
-                            name: "Tristan Goehring",
-                            role: lang("roles.tristan"),
-                            avatar: "/avatars/tristan.png"
-                        },
-                        {
                             name: "Ally Chen",
                             role: lang("roles.ally"),
                             avatar: "/avatars/ally.png"
+                        },
+                        {
+                            name: "Tristan Goehring",
+                            role: lang("roles.tristan"),
+                            avatar: "/avatars/tristan.png"
                         },
                     ]}
                     tools={[

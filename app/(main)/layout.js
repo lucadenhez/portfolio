@@ -31,7 +31,7 @@ export default async function WorksLayout({ children }) {
     },
     {
       label: navLang("resume"),
-      path: "https://drive.google.com/file/d/1CASbAy2L16gpB2Wrug37BkBhPT5IO2jd/view?usp=sharing",
+      path: "https://drive.google.com/file/d/1p1VhbxUHyBK9kVlCmV0yNrbwC0jwFRtF/view?usp=sharing",
       outside: true,
     },
     {

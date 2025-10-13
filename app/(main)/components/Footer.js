@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <footer>
             <div
-                className='relative h-[450px] bg-gray-200 text-black'
+                className='relative h-[450px] bg-[#f0542e] text-white'
                 style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             >
                 <div className='relative h-[calc(100vh+450px)] -top-[100vh]'>
@@ -21,10 +21,10 @@ export default function Footer() {
                         </div>
 
                         <div className="flex sm:flex-row flex-col sm:gap-0 gap-5 justify-between items-end">
-                            <p className="z-0 sm:text-[5rem] md:text-[7rem] lg:text-[5rem] text-[3rem] font-medium tracking-tighter leading-none"
+                            <p className="z-0 sm:text-[5rem] md:text-[7rem] lg:text-[10rem] text-[3rem] font-medium tracking-tighter leading-none"
                             >{lang("hi")}</p>
 
-                            <div className="sm:text-right text-left flex text-black leading-none gap-3">
+                            <div className="sm:text-right text-left flex leading-none gap-3">
                                 <p> {lang("createdBy")}</p>
                                 <p> — </p>
                                 <p>{lang("builtWith")}</p>

@@ -2,21 +2,20 @@ import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-const secondaryColor = "#2d4535";
 
 export default function BookAppt() {
     const lang = useTranslations("footer");
 
     useEffect(() => {
-    (async function () {
-        const cal = await getCalApi();
-        cal("ui", {
-        theme: "light",
-        styles: {
-            branding: { brandColor: secondaryColor },
-        },
-        });
-    })();
+        (async function () {
+            const cal = await getCalApi();
+            cal("ui", {
+                theme: "light",
+                styles: {
+                    branding: { brandColor: "#f0542e" },
+                },
+            });
+        })();
     }, []);
 
     return (
