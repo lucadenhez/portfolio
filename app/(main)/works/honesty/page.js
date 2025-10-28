@@ -12,6 +12,7 @@ import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 import codeSnippets from "./CodeSnippets";
 import PageAnimation from "@/app/(main)/components/transitions/TextTransition";
 import { useTranslations } from "next-intl";
+import ViewButton from "../../components/article/ViewButton";
 
 
 export default function Honesty() {
@@ -19,7 +20,7 @@ export default function Honesty() {
 
     return (
         <PageAnimation title={lang("transitionMessage")}>
-            <div className="mx-15 pt-25 flex flex-col items-center gap-20">
+            <div className="mx-5 md:mx-15 pt-25 flex flex-col items-center gap-20">
                 <ArticleHeader
                     year={2025}
                     month={lang("month")}
@@ -56,8 +57,9 @@ export default function Honesty() {
                 />
 
                 <div className="w-full h-screen mb-20">
-                    <div className="pb-5">
+                    <div className="flex justify-between pb-5">
                         <ReturnButton />
+                        <ViewButton url="https://honesty.lucadenhez.com" />
                     </div>
 
                     <ParallaxImage image="/works/honesty/mockups/front_iphone.png" />

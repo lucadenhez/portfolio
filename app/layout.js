@@ -70,11 +70,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-    const headersList = await headers();
-    const { isMobile } = getSelectorsByUserAgent(
-        headersList.get("user-agent") ?? ""
-    );
-
     const locale = await getLocale();
     const messages = await getMessages();
 

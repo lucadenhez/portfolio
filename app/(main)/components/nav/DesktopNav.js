@@ -4,11 +4,11 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 import { useTransitionRouter } from "next-view-transitions";
 
 
-export default function Nav({ items }) {
+export default function DesktopNav({ items }) {
     const router = useTransitionRouter();
 
     // ALWAYS USE CURLY BRACES FOR useScroll. I assume because there is scrollX and scrollY.
@@ -39,13 +39,11 @@ export default function Nav({ items }) {
             className="bg-white dark:invert flex justify-between items-start fixed top-0 left-0 w-full z-40 box-border"
             style={{ padding: "inherit", margin: "inherit" }}
         >
-            <div>
-                <div className="dark:invert">
-                    <LanguageSwitcher />
-                </div>
+            <div className="dark:invert">
+                <LanguageSwitcher />
             </div>
 
-            <div className="text-right">
+            <div className="text-right flex gap-5">
                 {items.map((item, index) => (
                     <Link href={item.path} key={index} onClick={(e) => {
                         e.preventDefault();
@@ -73,6 +71,24 @@ export default function Nav({ items }) {
                         )}
                     </Link>
                 ))}
+            </div>
+
+            <div>
+                <Link href="" onClick={(e) => {
+                    e.preventDefault(); {
+                        window.open("https://drive.google.com/file/d/1p1VhbxUHyBK9kVlCmV0yNrbwC0jwFRtF/view?usp=sharing", "_blank");
+                    }
+                }}>
+                    <motion.div
+                        className="text-black flex items-center justify-end gap-1"
+                        whileHover={{ opacity: 0.25, cursor: "pointer" }}
+                    >
+                        <p className="text-black/50">Resume</p>
+                        <svg className="w-4 h-4 rotate-[-45deg] opacity-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </motion.div>
+                </Link>
             </div>
         </motion.nav>
     );

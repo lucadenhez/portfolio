@@ -1,14 +1,11 @@
 - Put project paragraphs into lang
 - Create Playground
-- Parallax images are messed up on mobile (maybe replace with normal article image on mobile?)
-- Fix dark mode!! (force light?)
-- Project card smaller height on mobile view?
+- Parallax images are messed up on mobile
 - Add link to site for each project
-- Add favicon
+- Cannot click on links on main page on mobile
+- Fix bento extending past viewport width on mobile
+- Make bento react better and animate in
 
 ### Animations!
 
 - Animate all items in, staggered
-- Shrink project card contents on hover
-- Design interactive banner
-- Maybe change button transparency on project card?

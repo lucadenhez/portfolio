@@ -13,11 +13,12 @@
     "nav": {
         "home": "Accueil",
         "works": "Projets",
+        "playground": "Terrain de Jeux",
         "resume": "CV",
         "about": "À propos de moi"
     },
     "footer": {
-        "createdBy": "Designé et développé avec ❤️",
+        "createdBy": "Designé et développé sans IA, avec ❤️",
         "builtWith": "Construit avec React et Next.js",
         "hi": "Oh, je vous ai pas vu !",
         "liked_my_work": "Si vous avez aimé mes projets, n'hésitez pas me contacter.",
@@ -82,6 +83,7 @@
         "team": "Équipe",
         "tools": "Outils",
         "aspects": "Aspects",
-        "returnButtonText": "Retournez aux projets"
+        "returnButtonText": "Retournez aux projets",
+        "viewButtonText": "Visitez"
     }
 }

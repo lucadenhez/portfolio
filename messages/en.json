@@ -13,14 +13,15 @@
     "nav": {
         "home": "Home",
         "works": "Works",
+        "playground": "Playground",
         "resume": "Resumé",
         "about": "About Me"
     },
     "footer": {
-        "createdBy": "Designed and developed with ❤️",
+        "createdBy": "Designed and developed without AI, with ❤️",
         "builtWith": "Built with React and Next.js",
         "hi": "Hi there!",
-        "liked_my_work": "If you liked any on my projects, feel free to reach out.",
+        "liked_my_work": "If you liked any of my projects, feel free to reach out.",
         "contact_me": "Let's talk"
     },
     "works": {
@@ -82,6 +83,7 @@
         "team": "Team",
         "tools": "Tools",
         "aspects": "Aspects",
-        "returnButtonText": "Back to all works"
+        "returnButtonText": "Back to all works",
+        "viewButtonText": "Visit site"
     }
 }

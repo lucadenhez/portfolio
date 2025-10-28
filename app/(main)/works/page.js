@@ -51,7 +51,7 @@ export default function Works() {
 
     return (
         <ShortTransition>
-            <div className="mx-15 my-10">
+            <div className="mx-5 my-0 md:mx-15 md:my-10">
                 <main className="pt-30">
                     <div className="flex justify-center">
                         <div className="flex flex-col sm:gap-5 gap-10 items-center">
@@ -92,7 +92,7 @@ export default function Works() {
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 3, duration: 0.5 }}
                                     className="sm:text-4xl text-2xl opacity-0 sm:text-left"
-                                >{lang("introduction_1")}<span className="text-red-700 dark:text-red-400">{lang("university")}</span> {lang("introduction_2")}</motion.p>
+                                >{lang("introduction_1")} <span className="text-red-700 dark:text-red-400">{lang("university")}</span> {lang("introduction_2")}</motion.p>
                             </div>
                         </div>
                     </div>
@@ -108,10 +108,11 @@ export default function Works() {
                                     year={project.year}
                                     image={project.image}
                                     viewButtonText={lang("projectViewButton")}
-                                    mobile={isMobile}
                                 />
                             </div>
                         ))}
+
+                        <div className="h-[15vh]" />
                     </div>
                 </main>
             </div >

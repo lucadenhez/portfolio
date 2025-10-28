@@ -39,7 +39,7 @@ export default function TextTransition({ title, randomPrefix = false, children }
     return (
         <div>
             <div className="page-transition fixed inset-0 z-50 bg-black flex items-center justify-center">
-                <p className="opacity-0 m-5 whitespace-pre-line transition-text text-white tracking-tight sm:text-[2rem] text-[1.75rem]">{randomPrefix ? (`${messages[0]} ${title}`) : (title)}</p>
+                <p className="text-center md:text-left opacity-0 m-5 whitespace-pre-line transition-text text-white tracking-tight sm:text-[2rem] text-[1.75rem]">{randomPrefix ? (`${messages[0]} ${title}`) : (title)}</p>
             </div>
             <div className="relative z-0">
                 <motion.div>
