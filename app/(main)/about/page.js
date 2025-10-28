@@ -13,8 +13,6 @@ export default function About() {
     <ShortTransition>
       <div className="mx-5 md:mx-15 mt-30">
         <div className="flex flex-col-reverse items-center gap-20">
-
-          {/* --- IMAGE SECTION --- */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-full">
             <motion.div
               className="rotate-1 sm:w-1/3 w-4/5 overflow-hidden rounded-3xl"
@@ -47,7 +45,6 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* --- TEXT SECTION --- */}
           <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
             <p className="text-lg flex whitespace-pre-line sm:w-3/4 w-full text-center sm:text-left">
               {lang("bio")}

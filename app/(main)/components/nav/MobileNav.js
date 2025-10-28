@@ -33,7 +33,7 @@ export default function MobileNav({ items }) {
           hidden: { y: "-100%", opacity: 0, pointerEvents: "none" },
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="absolute top-full left-0 w-full bg-white dark:invert flex flex-col items-start py-15 px-10 shadow-md -z-10"
+        className="absolute top-full left-0 w-full bg-white dark:invert flex flex-col items-start py-15 px-10 -z-10"
       >
         {items.map((item, index) => (
           <Link href={item.path} key={index} onClick={(e) => {
