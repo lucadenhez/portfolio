@@ -110,7 +110,9 @@ export default function Works() {
                                         horsepower={project.horsepower}
                                         torque={project.torque}
                                         transmission={project.transmission}
+                                        paintCode={project.paint_code}
                                         drivetrain={project.drivetrain}
+                                        forzaClass={project.forza_class}
                                         path={project.path}
                                         image={project.image}
                                     />
