@@ -80,7 +80,7 @@ export default function Works() {
                                     variants={child}
                                     animate={floating ? { rotate: [0, -3, 0, 3], y: [0, -8, 0, 8, 0], x: [0, 4, 0, -4, 0] } : undefined}
                                     transition={floating ? { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0 } : undefined}
-                                    className="text-black absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-10 sm:-translate-x-25 sm:-translate-y-15 -translate-y-20  w-fit px-5 py-3 border-2 rounded-2xl bg-red-400"
+                                    className="text-black absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-10 sm:-translate-x-25 sm:-translate-y-15 -translate-y-20  w-fit px-5 py-3 border-2 rounded-2xl bg-sky-300"
                                 >
                                     <p>{lang("bubble_top")}</p>
                                 </motion.div>
@@ -113,7 +113,7 @@ export default function Works() {
                                 <div
                                     className="pb-5 w-full"
                                     key={index}
-                                    style={{ marginTop: width > 768 ? `${index * 7}rem` : 0 }}
+                                    style={{ marginTop: width > 768 ? `${index * 10}rem` : 0 }}
                                 >
                                     <CarCard
                                         make={project.make}
@@ -124,6 +124,7 @@ export default function Works() {
                                         transmission={project.transmission}
                                         paintCode={project.paint_code}
                                         drivetrain={project.drivetrain}
+                                        forzaDrivetrain={project.forza_drivetrain}
                                         forzaClass={project.forza_class}
                                         path={project.path}
                                         image={project.image}

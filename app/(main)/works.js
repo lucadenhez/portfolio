@@ -24,7 +24,8 @@ export const mechanicalWorks = [
         torque: 650,
         transmission: "6MT",
         paint_code: "Le Mans Blue",
-        drivetrain: "rwd_front_engine",
+        drivetrain: "rwd",
+        forza_drivetrain: "rwd_front_engine",
         forza_class: "a_800",
         path: "/works/135i",
         image: "/works/135i/cover.jpeg"
@@ -37,7 +38,8 @@ export const mechanicalWorks = [
         torque: 360,
         transmission: "6MT",
         paint_code: "Pepper White",
-        drivetrain: "fwd_front_engine",
+        drivetrain: "fwd",
+        forza_drivetrain: "fwd_front_engine",
         forza_class: "b_700",
         path: "/works/r56",
         image: "/works/r56/cover.jpeg"
