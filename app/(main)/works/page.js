@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectCard from "../components/ProjectCard";
-import works from ".";
+import { designWorks, mechanicalWorks } from ".";
 import { useTranslations } from "next-intl";
 import ShortTransition from "../components/transitions/ShortTransition";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { motion, useAnimation } from "motion/react";
 import ScrollText from "../components/animations/ScrollText";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
+import CarCard from "../components/CarCard";
 
 
 const container = {
@@ -98,9 +99,31 @@ export default function Works() {
                     </div>
 
                     <div className="py-10" id="works">
-                        <p className="pb-5">{lang("works")}</p>
+                        <p className="pb-5">Mechanical Projects</p>
+                        <div className="flex flex-col md:flex-row gap-0 md:gap-5">
+                            {mechanicalWorks.map((project, index) => (
+                                <div className="pb-5 w-full" key={index}>
+                                    <CarCard
+                                        make={project.make}
+                                        model={project.model}
+                                        year={project.year}
+                                        horsepower={project.horsepower}
+                                        torque={project.torque}
+                                        transmission={project.transmission}
+                                        drivetrain={project.drivetrain}
+                                        path={project.path}
+                                        image={project.image}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="h-[15vh]" />
+                    </div>
 
-                        {works.map((project, index) => (
+                    <div className="py-10" id="works">
+                        <p className="pb-5">Design Projects</p>
+
+                        {designWorks.map((project, index) => (
                             <div className="pb-5" key={index}>
                                 <ProjectCard
                                     title={lang(`projects.${project.langTitle}`)}
