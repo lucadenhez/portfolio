@@ -146,7 +146,7 @@ export default function CarCard({
   // MOBILE VERSION (unchanged)
   // -----------------------
   return (
-    <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl">
+    <div className="sm:h-[50rem] h-[20rem] relative overflow-hidden rounded-xl">
       <div className="absolute inset-0 z-10">
         <div style={{ width: "100%", height: "100%" }}>
           <Image

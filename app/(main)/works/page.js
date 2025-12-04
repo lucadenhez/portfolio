@@ -98,7 +98,7 @@ export default function Works() {
                         </div>
                     </div>
 
-                    <div className="py-10" id="works">
+                    <div className="pt-20" id="works">
                         <p className="pb-5">Mechanical Projects</p>
                         <div className="flex flex-col md:flex-row gap-0 md:gap-5">
                             {mechanicalWorks.map((project, index) => (
@@ -117,10 +117,10 @@ export default function Works() {
                                 </div>
                             ))}
                         </div>
-                        <div className="h-[15vh]" />
+                        <div className="h-[5vh]" />
                     </div>
 
-                    <div className="py-10" id="works">
+                    <div className="pb-10" id="works">
                         <p className="pb-5">Design Projects</p>
 
                         {designWorks.map((project, index) => (
