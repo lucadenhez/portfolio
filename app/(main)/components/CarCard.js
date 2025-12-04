@@ -73,83 +73,108 @@ export default function CarCard({
 
   if (width > 768) {
     return (
-      <motion.div
-        className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl"
-        ref={container}
-      >
+      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl bg-[#111111]">
+        {/* Mask + image layer */}
         <motion.div
-          style={{ y }}
-          className="absolute inset-0 z-10"
-          animate={hovered ? { scale: safeScale - 0.05 } : { scale: safeScale }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+          ref={container}
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent, black 100px)"
+          }}
+          className="absolute inset-0"
         >
           <motion.div
-            animate={hovered ? { filter: "blur(5px)" } : { filter: "blur(0px)" }}
+            style={{ y }}
+            className="absolute inset-0 z-10"
+            animate={hovered ? { scale: safeScale - 0.05 } : { scale: safeScale }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            style={{ width: "100%", height: "100%" }}
           >
-            <Image
-              src={image}
-              fill
-              onLoadingComplete={(img) =>
-                setNaturalSize({
-                  width: img.naturalWidth,
-                  height: img.naturalHeight
-                })
-              }
-              style={{
-                objectFit: "cover",
-                objectPosition: "50% 70%"
-              }}
-              alt={`Image of Luca's ${make} ${model}.`}
-              className="w-full h-full"
-              quality={100}
-            />
+            <div className="h-full">
+              <motion.div
+                animate={hovered ? { filter: "blur(5px)" } : { filter: "blur(0px)" }}
+                transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                className="w-full h-full"
+              >
+                <Image
+                  src={image}
+                  fill
+                  onLoadingComplete={(img) =>
+                    setNaturalSize({
+                      width: img.naturalWidth,
+                      height: img.naturalHeight
+                    })
+                  }
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "50% 70%"
+                  }}
+                  alt={`Image of Luca's ${make} ${model}.`}
+                  className="w-full h-full"
+                  quality={100}
+                />
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
 
-        <Link
-          href={path}
-          className="absolute inset-0 z-10 flex items-center p-10 justify-center"
-          onMouseOver={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onClick={(e) => {
-            e.preventDefault();
-            router.push(path);
-          }}
-        >
-          <motion.div
-            className="flex items-center gap-1 bg-white px-5 py-2 rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={hovered ? { opacity: 1, scale: 1.3 } : { opacity: 0, scale: 1 }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            whileHover={{ backgroundColor: "#f7f7f7", scale: 1.27 }}
-          >
-            <p className="text-black text-2xl">{`${year} ${make} ${model}`}</p>
+        {/* TOP INFO BAR */}
+        <div className="p-5 absolute z-20 flex justify-between w-full items-center rounded-xl">
+          <div className="flex gap-1 items-end">
+            <p className="text-white text-2xl">{`${year} ${make} ${model}`}</p>
             <svg
-              className="w-5 h-5 rotate-[-45deg]"
+              className="mb-[3px] w-6 h-6 rotate-[-45deg]"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 14 10"
             >
               <path
-                stroke="#000000"
+                stroke="#ffffff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
-          </motion.div>
-        </Link>
-      </motion.div>
+          </div>
+
+          <div className="flex gap-3 items-center">
+            <p className="text-white text-xl">{transmission}</p>
+            <div className="h-7">
+              <Image
+                src={`/icons/${forzaClass}.png`}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 66vw"
+                style={{ width: "auto", height: "100%" }}
+                alt="Drivetrain icon"
+              />
+            </div>
+            <div className="h-[1.69rem]">
+              <Image
+                src={`/icons/${drivetrain}.png`}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 66vw"
+                style={{ width: "auto", height: "100%" }}
+                alt="Drivetrain icon"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM INFO BAR */}
+        <div className="p-5 bottom-0 absolute z-20 flex justify-between items-end w-full">
+          <div className="flex flex-col gap-3 w-full">
+            <p className="text-white text-2xl">{`${horsepower} bhp · ${torque} nm`}</p>
+          </div>
+          <div className="text-right w-full">
+            <p className="text-white text-2xl">{paintCode}</p>
+          </div>
+        </div>
+      </div>
     );
   }
 
-  // -----------------------
-  // MOBILE VERSION (unchanged)
-  // -----------------------
   return (
     <div className="h-[35rem] relative overflow-hidden rounded-xl">
       <Link
@@ -183,9 +208,9 @@ export default function CarCard({
         </div>
         <div className="p-5 absolute z-10 flex justify-between w-full items-center rounded-xl">
           <div className="flex gap-1 items-end">
-            <p className="text-white text-2xl">{`${year} ${make} ${model}`}</p>
+            <p className="text-white sm:text-2xl text-xl">{`${year} ${make} ${model}`}</p>
             <svg
-              className="mb-[3px] w-6 h-6 rotate-[-45deg]"
+              className="mb-[3px] w-6 h-6 rotate-[-45deg] sm:visible hidden"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -202,8 +227,8 @@ export default function CarCard({
           </div>
 
           <div className="flex gap-3 items-center">
-            <p className="text-white text-xl">{transmission}</p>
-            <div className="h-7">
+            <p className="text-white sm:text-xl text-lg">{transmission}</p>
+            <div className="sm:h-[1.69rem] h-[1.5rem]">
               <Image src={`/icons/${forzaClass}.png`}
                 width={0}
                 height={0}
@@ -212,7 +237,7 @@ export default function CarCard({
                 alt="Drivetrain icon"
               />
             </div>
-            <div className="h-[1.69rem]">
+            <div className="sm:h-[1.69rem] h-[1.5rem]">
               <Image src={`/icons/${drivetrain}.png`}
                 width={0}
                 height={0}
@@ -225,10 +250,10 @@ export default function CarCard({
         </div>
         <div className="p-5 bottom-0 absolute z-10 flex justify-between items-end w-full">
           <div className="flex flex-col gap-3 w-full">
-            <p className="text-white text-2xl">{`${horsepower} bhp · ${torque} nm`}</p>
+            <p className="text-white sm:text-2xl text-xl">{`${horsepower} bhp · ${torque} nm`}</p>
           </div>
           <div className="text-right w-full">
-            <p className="text-white text-2xl">{paintCode}</p>
+            <p className="text-white sm:text-2xl text-xl">{paintCode}</p>
           </div>
         </div>
       </Link>

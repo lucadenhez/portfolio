@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import CarCard from "../components/CarCard";
 
-
 const container = {
     hidden: { opacity: 0, y: 20 },
     show: {
@@ -38,6 +37,15 @@ const child = {
 };
 
 export default function Works() {
+    const [width, setWidth] = useState(0);
+    
+    useEffect(() => {
+        const updateWidth = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", updateWidth);
+        updateWidth();
+        return () => window.removeEventListener("resize", updateWidth);
+    }, []);
+
     const controls = useAnimation();
     const [floating, setFloating] = useState(false);
 
@@ -52,7 +60,7 @@ export default function Works() {
 
     return (
         <ShortTransition>
-            <div className="mx-5 my-0 md:mx-15 md:my-10">
+            <div className="mx-5 my-0 md:mx-25 md:my-10">
                 <main className="pt-30">
                     <div className="flex justify-center">
                         <div className="flex flex-col sm:gap-5 gap-10 items-center">
@@ -102,7 +110,11 @@ export default function Works() {
                         <p className="pb-5">Mechanical Projects</p>
                         <div className="flex flex-col md:flex-row gap-0 md:gap-5">
                             {mechanicalWorks.map((project, index) => (
-                                <div className="pb-5 w-full" key={index}>
+                                <div
+                                    className="pb-5 w-full"
+                                    key={index}
+                                    style={{ marginTop: width > 768 ? `${index * 7}rem` : 0 }}
+                                >
                                     <CarCard
                                         make={project.make}
                                         model={project.model}
