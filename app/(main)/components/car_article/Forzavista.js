@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Children } from "react";
 import { Tooltip } from "./Tooltip";
 import { MobileTooltip } from "./MobileTooltip";
 import ArticleImage from "../article/ArticleImage";
 import Image from "next/image";
+import TooltipButton from "./TooltipButton";
 
-export default function ForzaVista({ image, tooltips }) {
+export default function ForzaVista({ image, children }) {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -35,14 +36,7 @@ export default function ForzaVista({ image, tooltips }) {
         </div>
         <div className="relative w-full h-full">
           <div className="absolute inset-0 z-10">
-            {tooltips.map((tooltip, index) => (
-              <Tooltip
-                x={tooltip.x}
-                y={tooltip.y}
-                category={tooltip.category}
-                key={index}
-              />
-            ))}
+            {children}
           </div>
           <div className="z-0">
             <ArticleImage image={image} />
@@ -57,14 +51,7 @@ export default function ForzaVista({ image, tooltips }) {
       <div className="flex flex-col items-center gap-5">
         <div className="relative w-full h-full">
           <div className="absolute inset-0 z-10 w-full">
-            {tooltips.map((tooltip, index) => (
-              <MobileTooltip
-                x={tooltip.x}
-                y={tooltip.y}
-                category={tooltip.category}
-                key={index}
-              />
-            ))}
+            {children}
           </div>
           <div className="z-0">
             <ArticleImage image={image} />
@@ -87,29 +74,13 @@ export default function ForzaVista({ image, tooltips }) {
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-2 w-full">
-          {tooltips.map((tooltip, index) => {
-            const isLastOdd = tooltips.length % 2 !== 0 && index === tooltips.length - 1;
+          {Children.map(children, (child, index) => {
+            const childrenCount = Children.count(children);
+            const isLast = childrenCount % 2 !== 0 && index === childrenCount - 1;
+            const category = child?.props?.category; // prop might not be available
 
             return (
-              <button
-              onClick={() => { alert(tooltip.category) }}
-                key={index}
-                className={`hover:cursor-pointer rounded-xl py-3 px-5 bg-gray-100 flex gap-5 justify-between items-center ${isLastOdd ? "col-span-2 justify-center" : ""}`}
-              >
-                <div className="bg-white p-4 rounded-full">
-                  <div className="w-5 h-5 flex items-center justify-center">
-                    <Image
-                      src={`/icons/${tooltip.category.toLowerCase()}.svg`}
-                      alt={`${tooltip.category} icon`}
-                      width={0}
-                      height={0}
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-
-                <p className="font-medium text-sm">{tooltip.category}</p>
-              </button>
+              <TooltipButton category={category} isLast={isLast} article={child?.props?.children} />
             );
           })}
         </div>

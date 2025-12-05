@@ -7,7 +7,7 @@ import { useScroll, useTransform, motion } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { useTransitionRouter } from "next-view-transitions";
 
-const PARALLAX_INTENSITY = 20;
+const PARALLAX_INTENSITY = 30;
 
 function getSafeScale(imageRatio, containerRatio, parallaxIntensity) {
   const shift = parallaxIntensity * 2;
@@ -94,7 +94,7 @@ export default function CarCard({
             <motion.div
               style={{ y }}
               className="absolute inset-0 z-10"
-              animate={hovered ? { scale: safeScale - 0.05 } : { scale: safeScale }}
+              animate={hovered ? { scale: safeScale - 0.4 } : { scale: safeScale - 0.5 }}
               transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
             >
               <div className="h-full">

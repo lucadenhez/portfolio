@@ -8,8 +8,7 @@ const ICON_SCALE = 0.5;
 
 export function MobileTooltip({ x, y, category }) {
   return (
-    <button
-      onClick={() => { alert(category) }}
+    <div
       className="bg-white p-3 rounded-full absolute flex items-center justify-center overflow-hidden"
       style={{
         left: x,
@@ -32,6 +31,6 @@ export function MobileTooltip({ x, y, category }) {
           className="w-full h-full"
         />
       </div>
-    </button>
+    </div>
   );
 }
