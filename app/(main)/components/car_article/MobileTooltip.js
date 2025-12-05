@@ -1,20 +1,37 @@
 "use client";
 
-export function MobileTooltip({ x, y, label }) {
+import Image from "next/image";
+
+const REST_SIZE = 16;
+const HOVER_SIZE = 30;
+const ICON_SCALE = 0.5;
+
+export function MobileTooltip({ x, y, category }) {
   return (
-    <div
-      className="absolute -translate-x-1/2 -translate-y-1/2 
-                 flex items-center justify-center
-                 rounded-full bg-white text-black
-                 text-xs font-medium cursor-pointer
-                 uppercase leading-none whitespace-nowrap
-                 px-3 pt-3 pb-2"
+    <button
+      onClick={() => { alert(category) }}
+      className="bg-white p-3 rounded-full absolute flex items-center justify-center overflow-hidden"
       style={{
         left: x,
         top: y,
+        transform: "translate(-50%, -50%)",
       }}
     >
-      {label}
-    </div>
+      <div
+        style={{
+          width: `${HOVER_SIZE * ICON_SCALE}px`,
+          height: `${HOVER_SIZE * ICON_SCALE}px`,
+        }}
+        className="flex items-center justify-center"
+      >
+        <Image
+          src={`/icons/${category.toLowerCase()}.svg`}
+          alt={`${category} icon`}
+          width={HOVER_SIZE * ICON_SCALE}
+          height={HOVER_SIZE * ICON_SCALE}
+          className="w-full h-full"
+        />
+      </div>
+    </button>
   );
 }

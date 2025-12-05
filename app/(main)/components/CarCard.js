@@ -77,6 +77,8 @@ export default function CarCard({
       <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl bg-[#111111]">
         <Link
           href={path}
+          onMouseOver={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
           onClick={(e) => {
             e.preventDefault();
             router.push(path);
@@ -123,7 +125,11 @@ export default function CarCard({
             </motion.div>
           </motion.div>
 
-          <div className="p-5 absolute z-20 flex justify-between w-full items-center rounded-xl">
+          <motion.div
+            className="p-5 absolute z-20 flex justify-between w-full items-center rounded-xl"
+            animate={hovered ? { y: 0 } : { y: -100 }}
+            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+          >
             <div className="flex gap-1 items-end">
               <p className="text-white text-2xl">{`${year} ${make} ${model}`}</p>
               <svg
@@ -143,7 +149,6 @@ export default function CarCard({
               </svg>
             </div>
 
-
             <div className="h-7">
               <Image
                 src={`/icons/${forzaClass}.png`}
@@ -154,7 +159,7 @@ export default function CarCard({
                 alt="Drivetrain icon"
               />
             </div>
-          </div>
+          </motion.div>
         </Link>
       </div>
     );

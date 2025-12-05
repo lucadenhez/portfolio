@@ -22,7 +22,7 @@ export default function bmw_135i() {
 
   return (
     <PageAnimation title="14 miles per gallon on a good day">
-      <div className="mx-5 md:mx-15 pt-25 flex flex-col items-center">
+      <div className="mx-5 md:mx-15 pt-15 flex flex-col items-center">
 
         <div className="mb-20">
           <ArticleHeader
@@ -50,18 +50,9 @@ export default function bmw_135i() {
           forzaClass={bmw.forza_class}
         />
 
-        <ForzaVista
-          image="/works/135i/banner.jpeg"
-          tooltips={[
-            { x: "22%", y: "39%", label: "Engine" },
-            { x: "30%", y: "66%", label: "Drivetrain" },
-            { x: "72%", y: "30%", label: "Exterior" },
-            { x: "88%", y: "62%", label: "Exhaust" },
-            { x: "53%", y: "55%", label: "Interior" }
-          ]}
-        />
+        <ArticleImage image="/works/135i/banner.jpg" />
 
-        <div className="mt-20 w-full flex flex-col items-center">
+        <div className="mt-20 w-full flex flex-col gap-20 items-center">
           <Paragraph title="Story">
             {
               `I purchased this car from Copart, a salvage car lot where insurance companies send totaled cars. From working on the Mini, I had grown to realize how much I liked working on cars, and specifically the BMW family with all the VANOS, Valvetronic and cool efficency technology.
@@ -78,14 +69,35 @@ export default function bmw_135i() {
             }
           </Paragraph>
 
-          <div className="h-[10rem]" />
+          <Paragraph
+            title="Maintenance & Upgrades"
+            color="#ffceb0"
+          >
+            {
+              `I've played Forza my entire childhood and always loved Forzavista. It was an interactive way to view info about a car by clicking on different areas, showing upgrades and revealing parts.
+                
+              I thought it would be fun to re-create that essence to document the work I've done on my car.`
+            }
+          </Paragraph>
+
+          <div className="w-full">
+            <ForzaVista
+              image="/works/135i/forzavista.jpeg"
+              tooltips={[
+                { x: "22%", y: "39%", category: "Engine" },
+                { x: "30%", y: "66%", category: "Drivetrain" },
+                { x: "72%", y: "30%", category: "Exterior" },
+                { x: "88%", y: "62%", category: "Exhaust" },
+                { x: "53%", y: "55%", category: "Interior" }
+              ]}
+            />
+          </div>
 
           <div className="flex justify-center">
             <ReturnButton background />
           </div>
 
-          <div className="h-[10rem]" />
-
+          <div className="h-[5rem]" />
 
         </div>
       </div>

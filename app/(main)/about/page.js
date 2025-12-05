@@ -11,11 +11,11 @@ export default function About() {
 
   return (
     <ShortTransition>
-      <div className="mx-5 md:mx-15 mt-30">
-        <div className="flex flex-col-reverse items-center gap-20">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-full">
+      <div className="mx-5 md:mx-15 mt-15">
+        <div className="flex flex-col items-center gap-20">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-3/4">
             <motion.div
-              className="rotate-1 sm:w-1/3 w-4/5 overflow-hidden rounded-3xl"
+              className="z-10 rotate-1 w-full overflow-hidden rounded-3xl"
               whileHover={{ y: -10, scale: 1.01 }}
             >
               <Image
@@ -31,7 +31,7 @@ export default function About() {
             <motion.div
               initial={{ y: 20 }}
               animate={{ y: 0 }}
-              className="-z-10 sm:translate-y-10 -rotate-2 sm:w-1/3 w-4/5 overflow-hidden rounded-3xl"
+              className="z-0 sm:translate-y-10 -rotate-2 w-full overflow-hidden rounded-3xl"
               whileHover={{ y: -10, scale: 1.01 }}
             >
               <Image
