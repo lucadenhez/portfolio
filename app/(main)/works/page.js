@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import ShortTransition from "../components/transitions/ShortTransition";
 import Image from "next/image";
 import { motion, useAnimation } from "motion/react";
-import ScrollText from "../components/animations/ScrollText";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import CarCard from "../components/CarCard";
@@ -100,7 +99,7 @@ export default function Works() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 3, duration: 0.5 }}
-                                    className="sm:text-4xl text-2xl opacity-0 sm:text-left"
+                                    className="introduction sm:text-4xl text-2xl opacity-0 sm:text-left"
                                 >{lang("introduction_1")} <span className="text-red-700 dark:text-red-400">{lang("university")}</span> {lang("introduction_2")}</motion.p>
                             </div>
                         </div>
