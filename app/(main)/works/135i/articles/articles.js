@@ -1,5 +1,3 @@
-import Downpipe from "./exhaust/Downpipe";
-
 export const articles = [
   {
     category: "Drivetrain",
@@ -28,7 +26,7 @@ export const articles = [
       {
         title: "Catless Downpipe",
         date: "10.31.2025",
-        component: Downpipe
+        articlePath: "./articles/drivetrain/Downpipe.js"
       },
       {
         title: "Catless Downpipe",
