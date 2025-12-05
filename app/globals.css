@@ -35,3 +35,7 @@ body {
   line-height: 1.15;
   overflow: hidden;
 }
+
+.cal-embed {
+  padding:  0 20px;
+}
