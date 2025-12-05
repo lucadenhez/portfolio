@@ -59,13 +59,13 @@ export default function bmw_135i() {
               
               I wanted to do more engine work, and since these cars often go for quite a bit, in the $12,000 - $22,000 range, I wanted to find a more cost effective route as a college student.
               
-              I was scrolling through Copart one day and found a blue 135i, manual, with the facelift engine: the N55. The interior looked pretty good, and it said the primary damage was mechanical. First, what does mechanical mean? Does that mean a rod punched a hole through the block, or does that mean a VANOS solenoid is clogged?
+              I had heard of Copart from car repair YouTubers like Matt Armstrong and was always inspired by how they could take such a broken car, and use their knowledge to repair it and get it back on the road.
               
-              I knew nothing about this car. I ran a Carfax, insurance approved the car, I didn't hear anything bad when starting the car for the 30 minutes I was allowed to see it, and I somehow won the bid.
+              I found a blue 135i, manual, with the N55. It said the primary damage was mechanical. But what does that mean? Does that mean a rod punched a hole through the block requiring a new engine, or does that mean the flimsy integrated PCV diaphgram blew in the valve cover and I just need a new one?
               
-              This car is a miracle. And what's even more of a miracle is that the damage was a faulty reverse gear. New transmission, and it is as good as new.
+              I knew nothing about this car. I viewed it in person for 20 minutes. I won the bid for $4,100. I replaced the transmission. Now it's on the road registered with a rebuilt title and is my commuter.
               
-              I look forward to keeping this car for the years to come as my dual duty daily and german project car.`
+              I look forward to keeping this car for the years to come as my dual duty daily and german project car. 💙🚙`
             }
           </Paragraph>
 
@@ -74,9 +74,9 @@ export default function bmw_135i() {
             color="#ffceb0"
           >
             {
-              `I've played Forza my entire childhood and always loved Forzavista. It was an interactive way to view info about a car by clicking on different areas, showing upgrades and revealing parts.
-                
-              I thought it would be fun to re-create that essence to document the work I've done on my car.`
+              `View all the maintenance and upgrades I've done to the car below.
+            
+              Inspired by the Forzavista feature from my favorite childhood game, Forza.`
             }
           </Paragraph>
 
