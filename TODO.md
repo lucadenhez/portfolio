@@ -1,8 +1,8 @@
-- Put project paragraphs into lang
+- Update lang
 - Create Playground
-- Fix bento extending past viewport width on mobile
 - Make bento react better and animate in
 - Fix project image stack on mobile
+- Restore mobile tooltip
 
 ### Animations!
 

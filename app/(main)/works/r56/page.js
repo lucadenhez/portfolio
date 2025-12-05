@@ -15,7 +15,7 @@ import CarInfo from "../../components/car_article/CarInfo";
 import { mechanicalWorks } from "../../works";
 import { Tooltip } from "../../components/car_article/Tooltip";
 import ForzaVista from "../../components/car_article/Forzavista";
-import Exhaust from "./tooltips/Exhaust";
+import Exhaust from "./articles/exhaust/Downpipe";
 
 
 export default function mini_r56_jcw() {
@@ -23,11 +23,8 @@ export default function mini_r56_jcw() {
 
   return (
     <div className="bg-[#ffffff]">
-
-
       <PageAnimation title="Not reliable!">
         <div className="mx-5 md:mx-15 pt-25 flex flex-col items-center" id="root">
-
           <div className="mb-20">
             <ArticleHeader
               year={2023}
@@ -57,19 +54,19 @@ export default function mini_r56_jcw() {
           <div className="w-full">
             <ForzaVista image="/works/r56/banner.jpeg">
               <Tooltip x="93%" y="60%" category="Exhaust">
-                <Exhaust />
+                
               </Tooltip>
               <Tooltip x="29%" y="54%" category="Exterior">
-                <Exhaust />
+                
               </Tooltip>
               <Tooltip x="60%" y="37%" category="Interior">
-                <Exhaust />
+                
               </Tooltip>
               <Tooltip x="65%" y="64%" category="Drivetrain">
-                <Exhaust />
+              
               </Tooltip>
               <Tooltip x="45%" y="46%" category="Engine">
-                <Exhaust />
+               
               </Tooltip>
             </ForzaVista>
           </div>

@@ -1,20 +1,17 @@
+
+"use client";
+
 import ArticleHeader from "@/app/(main)/components/article/ArticleHeader";
 import Paragraph from "@/app/(main)/components/article/Paragraph";
-import ProjectInfo from "@/app/(main)/components/article/ProjectInfo";
 import ReturnButton from "@/app/(main)/components/article/ReturnButton";
 import PageAnimation from "@/app/(main)/components/transitions/TextTransition";
-import ParallaxImage from "@/app/(main)/components/ParallaxImage";
 import { useTranslations } from "next-intl";
 import ArticleImage from "../../components/article/ArticleImage";
-import CandidImage from "../../components/article/CandidImage";
-import CandidGallery from "../../components/article/CandidGallery";
-import Checklist from "../../components/article/Checklist";
-import Keywords from "../../components/article/Keywords";
-import ViewButton from "../../components/article/ViewButton";
 import CarInfo from "../../components/car_article/CarInfo";
 import { mechanicalWorks } from "../../works";
 import { Tooltip } from "../../components/car_article/Tooltip";
 import ForzaVista from "../../components/car_article/Forzavista";
+import { articles } from "./articles/articles";
 
 
 export default function bmw_135i() {
@@ -50,7 +47,20 @@ export default function bmw_135i() {
           forzaClass={bmw.forza_class}
         />
 
-        <ArticleImage image="/works/135i/banner.jpg" />
+        <div className="w-full">
+          <ForzaVista image="/works/135i/forzavista.jpeg">
+            {articles.map((articleCategory, index) => (
+              <Tooltip
+                x={articleCategory.x}
+                y={articleCategory.y}
+                category={articleCategory.category}
+                icon={articleCategory.icon}
+                articles={articleCategory.articles}
+                key={index}
+              />
+            ))}
+          </ForzaVista>
+        </div>
 
         <div className="mt-20 w-full flex flex-col gap-20 items-center">
           <Paragraph title="Story">
@@ -69,29 +79,7 @@ export default function bmw_135i() {
             }
           </Paragraph>
 
-          <Paragraph
-            title="Maintenance & Upgrades"
-            color="#ffceb0"
-          >
-            {
-              `View all the maintenance and upgrades I've done to the car below.
-            
-              Inspired by the Forzavista feature from my favorite childhood game, Forza.`
-            }
-          </Paragraph>
-
-          <div className="w-full">
-            <ForzaVista
-              image="/works/135i/forzavista.jpeg"
-              tooltips={[
-                { x: "22%", y: "39%", category: "Engine" },
-                { x: "30%", y: "66%", category: "Drivetrain" },
-                { x: "72%", y: "30%", category: "Exterior" },
-                { x: "88%", y: "62%", category: "Exhaust" },
-                { x: "53%", y: "55%", category: "Interior" }
-              ]}
-            />
-          </div>
+          <ArticleImage image="/works/135i/banner.jpg" />
 
           <div className="flex justify-center">
             <ReturnButton background />

@@ -1,6 +1,6 @@
 import Paragraph from "@/app/(main)/components/article/Paragraph";
 
-export default function Exhaust() {
+export default function Downpipe() {
   return (
     <div>
       <Paragraph title="Catless Downpipe">

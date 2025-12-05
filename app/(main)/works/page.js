@@ -37,7 +37,7 @@ const child = {
 
 export default function Works() {
     const [width, setWidth] = useState(0);
-    
+
     useEffect(() => {
         const updateWidth = () => setWidth(window.innerWidth);
         window.addEventListener("resize", updateWidth);
@@ -72,14 +72,14 @@ export default function Works() {
 
                                 <motion.p
                                     variants={child}
-                                    className="z-0 sm:text-[5rem] md:text-[7rem] lg:text-[12rem] text-[3rem] text-center font-medium tracking-tighter leading-none"
+                                    className="z-0 sm:text-[4rem] md:text-[5.5rem] lg:text-[8.25rem] text-[3.25rem] text-center font-medium tracking-tighter leading-none"
                                 >Luca Denhez</motion.p>
 
                                 <motion.div
                                     variants={child}
                                     animate={floating ? { rotate: [0, -3, 0, 3], y: [0, -8, 0, 8, 0], x: [0, 4, 0, -4, 0] } : undefined}
                                     transition={floating ? { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0 } : undefined}
-                                    className="text-black absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-10 sm:-translate-x-25 sm:-translate-y-15 -translate-y-20  w-fit px-5 py-3 border-2 rounded-2xl bg-sky-300"
+                                    className="text-black absolute top-0 left-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 -translate-x-10 sm:-translate-x-25 sm:-translate-y-15 -translate-y-15  w-fit px-5 py-3 border-2 rounded-2xl bg-sky-300"
                                 >
                                     <p>{lang("bubble_top")}</p>
                                 </motion.div>
@@ -88,7 +88,7 @@ export default function Works() {
                                     variants={child}
                                     animate={floating ? { rotate: [0, -3, 0, 3], y: [0, 6, -6, 0], x: [0, -3, 3, 0] } : undefined}
                                     transition={floating ? { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0 } : undefined}
-                                    className="text-black flex gap-5 absolute bottom-0 right-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 sm:translate-x-35 translate-x-10 sm:translate-y-5 translate-y-20 w-fit px-5 py-3 border-2 rounded-2xl bg-amber-200"
+                                    className="text-black flex gap-5 absolute bottom-0 right-0 h-fit sm:text-md md:text-xl lg:text-2xl text-sm z-10 -rotate-5 sm:translate-x-35 translate-x-10 sm:translate-y-5 translate-y-15 w-fit px-5 py-3 border-2 rounded-2xl bg-amber-200"
                                 >
                                     <p>{lang("bubble_bottom")}</p>
                                 </motion.div>
@@ -107,12 +107,12 @@ export default function Works() {
 
                     <div className="pt-20" id="works">
                         <p className="pb-5">Mechanical Projects</p>
-                        <div className="flex flex-col md:flex-row gap-0 md:gap-5">
+                        <div className="flex flex-col lg:flex-row gap-0 md:gap-5">
                             {mechanicalWorks.map((project, index) => (
                                 <div
                                     className="pb-5 w-full"
                                     key={index}
-                                    style={{ marginTop: width > 768 ? `${index * 10}rem` : 0 }}
+                                    style={{ marginTop: width > 1024 ? `${index * 10}rem` : 0 }}
                                 >
                                     <CarCard
                                         make={project.make}

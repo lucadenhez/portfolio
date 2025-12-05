@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, Children } from "react";
-import { Tooltip } from "./Tooltip";
-import { MobileTooltip } from "./MobileTooltip";
 import ArticleImage from "../article/ArticleImage";
 import Image from "next/image";
 import TooltipButton from "./TooltipButton";
@@ -41,9 +39,7 @@ export default function ForzaVista({ image, children }) {
           <div className="z-0">
             <ArticleImage image={image} />
           </div>
-
         </div>
-
       </div>
     );
   } else {
@@ -77,10 +73,13 @@ export default function ForzaVista({ image, children }) {
           {Children.map(children, (child, index) => {
             const childrenCount = Children.count(children);
             const isLast = childrenCount % 2 !== 0 && index === childrenCount - 1;
-            const category = child?.props?.category; // prop might not be available
+
+            const category = child?.props?.category;
+            const articles = child?.props?.articles;
+            const icon = child?.props?.icon;
 
             return (
-              <TooltipButton category={category} isLast={isLast} article={child?.props?.children} />
+              <TooltipButton category={category} isLast={isLast} articles={articles} icon={icon} />
             );
           })}
         </div>
