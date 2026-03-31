@@ -16,11 +16,20 @@ export default function MobileNav({ items }) {
   const isActive = (path) => pathname === path;
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white dark:invert z-50 box-border">
+    <div className="fixed top-0 left-0 w-full  z-50 box-border">
       <div className="flex w-full z-50 justify-between p-5">
-        <LanguageSwitcher />
+        <div className="flex items-center justify-center w-[48px] h-[48px]">
+          <LanguageSwitcher />
+        </div>
+
         <div>
-          <Hamburger toggled={open} toggle={setOpen} />
+          <Hamburger
+            toggled={open}
+            toggle={setOpen}
+            rounded
+            size={25}
+            duration={0.5}
+          />
         </div>
 
       </div>
@@ -36,15 +45,19 @@ export default function MobileNav({ items }) {
         className="absolute top-full left-0 w-full bg-white dark:invert flex flex-col items-start py-15 px-10 -z-10"
       >
         {items.map((item, index) => (
-          <Link href={item.path} key={index} onClick={(e) => {
-            e.preventDefault();
-            if (item.outside) {
-              window.open(item.path, "_blank");
-            } else {
-              router.push(item.path);
-            }
-            setOpen(false);
-          }}>
+          <Link
+            className="dark:invert"
+            href={item.path}
+            key={index}
+            onClick={(e) => {
+              e.preventDefault();
+              if (item.outside) {
+                window.open(item.path, "_blank");
+              } else {
+                router.push(item.path);
+              }
+              setOpen(false);
+            }}>
             {item.outside ? (
               <motion.div
                 className="text-black text-2xl flex items-center justify-end gap-1"

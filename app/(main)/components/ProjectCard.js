@@ -9,7 +9,7 @@ import { useTransitionRouter } from "next-view-transitions";
 
 const PARALLAX_INTENSITY = 30; // vh
 
-export default function ProjectCard({ title, path, year, image, viewButtonText }) {
+export default function ProjectCard({ title, subtitle, path, year, month, image, viewButtonText }) {
     const [width, setWidth] = useState(0);
     const [baseScale, setBaseScale] = useState(1.2);
 
@@ -59,7 +59,7 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
     if (width > 768) {
         return (
             <motion.div
-                className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl"
+                className="h-[30rem] w-3/4 relative overflow-hidden"
                 ref={container}
             >
                 <motion.div
@@ -85,28 +85,23 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
                 </motion.div>
 
                 <Link
-                    href={path}
-                    className="absolute inset-0 z-10 flex items-center p-10 justify-center"
-                    onMouseOver={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        router.push(path);
-                    }}
-                >
-                    <motion.div
-                        className="flex items-center gap-1 bg-white px-5 py-2 rounded-xl"
-                        initial={{ opacity: 0 }}
-                        animate={hovered ? { opacity: 1, scale: 1.3 } : { opacity: 0, scale: 1 }}
-                        transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
-                        whileHover={{ backgroundColor: "#f7f7f7", scale: 1.27 }}
-                    >
-                        <p className="text-black text-2xl">{title}</p>
-                        <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </motion.div>
-                </Link>
+                href={path}
+                className="absolute inset-0 z-10 flex items-end justify-start"
+                onClick={(e) => {
+                    e.preventDefault();
+                    router.push(path);
+                }}
+            >
+                <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] via-[#040404]/90 to-transparent">
+                    <div className="space-y-1 mb-5">
+                        <p className="text-2xl tracking-tight font-medium text-white">{title}</p>
+                        <p className="text-md text-white tracking-tight leading-tight">{subtitle}</p>
+                    </div>
+                    <svg className="w-7 h-7 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </div>
+            </Link>
             </motion.div>
         );
     }
@@ -114,7 +109,7 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
     // static image for mobile
     return (
         <div
-            className="sm:h-[50rem] h-[35rem] relative overflow-hidden rounded-xl"
+            className="h-[25rem] relative overflow-hidden"
             ref={container}
         >
             <div className="absolute inset-0 z-10">
@@ -130,17 +125,22 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
 
             <Link
                 href={path}
-                className="absolute inset-0 z-10 flex items-center p-10 justify-center"
+                className="absolute inset-0 z-10 flex items-end justify-start"
                 onClick={(e) => {
                     e.preventDefault();
                     router.push(path);
                 }}
             >
-                <div className="flex items-center gap-1 bg-white px-5 py-2 rounded-xl">
-                    <p className="text-black text-2xl">{title}</p>
+                <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] via-[#040404]/80 to-transparent">
                     <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
+                    <div className="space-y-1 mb-5">
+                        <p className="text-lg tracking-tight font-medium text-white">{title}</p>
+                        <p className="text-[0.8rem] text-white tracking-tight leading-tight">{subtitle}</p>
+                    </div>
+
+                    
                 </div>
             </Link>
         </div>

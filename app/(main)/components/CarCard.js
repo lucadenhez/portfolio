@@ -74,7 +74,7 @@ export default function CarCard({
 
   if (width > 768) {
     return (
-      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden rounded-xl bg-[#111111]">
+      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden bg-[#111111]">
         <Link
           href={path}
           onMouseOver={() => setHovered(true)}
@@ -86,9 +86,6 @@ export default function CarCard({
         >
           <motion.div
             ref={container}
-            style={{
-              maskImage: "linear-gradient(to bottom, transparent, black 100px)"
-            }}
             className="absolute inset-0"
           >
             <motion.div
@@ -167,7 +164,7 @@ export default function CarCard({
     return (
       <div
         ref={container}
-        className="h-[35rem] relative overflow-hidden rounded-xl"
+        className="h-[25rem] relative overflow-hidden"
       >
         <Link
           href={path}

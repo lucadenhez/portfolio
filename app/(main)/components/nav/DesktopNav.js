@@ -76,7 +76,7 @@ export default function DesktopNav({ items }) {
             <div>
                 <Link href="" onClick={(e) => {
                     e.preventDefault(); {
-                        window.open("https://drive.google.com/file/d/1p1VhbxUHyBK9kVlCmV0yNrbwC0jwFRtF/view?usp=sharing", "_blank");
+                        window.open("https://drive.google.com/file/d/1tZ5W3mghiMNkUL9GS9WbxTJuT27AfmCn/view?usp=sharing", "_blank");
                     }
                 }}>
                     <motion.div

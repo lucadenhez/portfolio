@@ -6,19 +6,19 @@ export default async function Nav() {
 
   const mobileNavItems = [
     { label: navLang("works"), path: "/works", outside: false },
-    { label: navLang("playground"), path: "/playground", outside: false },
     { label: navLang("about"), path: "/about", outside: false },
+    { label: navLang("contact"), path: "/contact", outside: false },
     {
       label: navLang("resume"),
-      path: "https://drive.google.com/file/d/1p1VhbxUHyBK9kVlCmV0yNrbwC0jwFRtF/view?usp=sharing",
+      path: "https://drive.google.com/file/d/1tZ5W3mghiMNkUL9GS9WbxTJuT27AfmCn/view?usp=sharing",
       outside: true,
     },
   ];
 
   const desktopNavItems = [
     { label: navLang("works"), path: "/works" },
-    { label: navLang("playground"), path: "/playground" },
     { label: navLang("about"), path: "/about" },
+    { label: navLang("contact"), path: "/contact" },
   ];
 
   return (

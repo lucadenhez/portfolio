@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer>
             <div
-                className="relative h-[400px] md:h-[450px] bg-[#f0542e] text-white"
+                className="relative h-[400px] md:h-[450px] bg-linear-to-t from-blue-900 to-black text-white"
                 style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             >
                 <div className="relative h-[calc(100vh+400px)] md:h-[calc(100vh+450px)] -top-[100vh]">

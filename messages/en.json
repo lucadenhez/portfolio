@@ -15,7 +15,8 @@
         "works": "Works",
         "playground": "Playground",
         "resume": "Resumé",
-        "about": "About Me"
+        "about": "About",
+        "contact": "Contact"
     },
     "footer": {
         "createdBy": "Designed and developed without AI, with ❤️",
@@ -39,7 +40,9 @@
             "wardrobe": "Wardrobe",
             "desperate": "Desperate",
             "geddit": "Geddit",
-            "corvo_cribs": "Corvo Cribs"
+            "corvo_cribs": "Corvo Cribs",
+            "speakers": "OEM like speaker integration",
+            "transmission": "Frankenstein: N55 + GS6-53BZ"
         }
     },
     "about": {

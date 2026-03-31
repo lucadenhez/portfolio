@@ -6,6 +6,7 @@ import { getSelectorsByUserAgent } from "react-device-detect"
 import { headers } from "next/headers"
 
 import SmoothScroll from "./(main)/components/SmoothScroll";
+import DarkMode from "./(main)/components/DarkMode";
 
 import "./globals.css";
 import Whoops from "./(main)/whoops/page";

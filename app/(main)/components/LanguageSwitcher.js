@@ -29,7 +29,7 @@ export default function LanguageSwitcher({ dark }) {
 
     return (
         <div
-            className="flex gap-1 dark:invert"
+            className="flex gap-1 dark:invert text-sm"
             style={dark ? { filter: "invert(100%)" } : undefined}
         >
             <motion.p
