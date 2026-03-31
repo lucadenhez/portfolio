@@ -21,7 +21,7 @@
     "footer": {
         "createdBy": "Designé et développé sans IA, avec ❤️",
         "builtWith": "Construit avec React et Next.js",
-        "hi": "Oh, je vous ai pas vu !",
+        "hi": "Bonjour",
         "liked_my_work": "Si vous avez aimé mes projets, n'hésitez pas me contacter.",
         "contact_me": "Discutons"
     },

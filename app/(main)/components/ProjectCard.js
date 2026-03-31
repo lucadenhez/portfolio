@@ -59,7 +59,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
     if (width > 768) {
         return (
             <motion.div
-                className="h-[30rem] w-3/4 relative overflow-hidden"
+                className="h-[30rem] w-3/4 relative overflow-hidden rounded-xl"
                 ref={container}
             >
                 <motion.div
@@ -85,23 +85,23 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                 </motion.div>
 
                 <Link
-                href={path}
-                className="absolute inset-0 z-10 flex items-end justify-start"
-                onClick={(e) => {
-                    e.preventDefault();
-                    router.push(path);
-                }}
-            >
-                <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] via-[#040404]/90 to-transparent">
-                    <div className="space-y-1 mb-5">
-                        <p className="text-2xl tracking-tight font-medium text-white">{title}</p>
-                        <p className="text-md text-white tracking-tight leading-tight">{subtitle}</p>
+                    href={path}
+                    className="absolute inset-0 z-10 flex items-end justify-start"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push(path);
+                    }}
+                >
+                    <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] to-transparent">
+                        <div className="space-y-1 mb-5">
+                            <p className="text-2xl leading-[1.1]tracking-tight font-medium text-white">{title}</p>
+                            <p className="text-md text-white tracking-tight leading-tight">{subtitle}</p>
+                        </div>
+                        <svg className="w-7 h-7 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
                     </div>
-                    <svg className="w-7 h-7 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </div>
-            </Link>
+                </Link>
             </motion.div>
         );
     }
@@ -109,7 +109,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
     // static image for mobile
     return (
         <div
-            className="h-[25rem] relative overflow-hidden"
+            className="h-[25rem] relative overflow-hidden rounded-xl"
             ref={container}
         >
             <div className="absolute inset-0 z-10">
@@ -125,22 +125,26 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
 
             <Link
                 href={path}
-                className="absolute inset-0 z-10 flex items-end justify-start"
+                className="absolute inset-0 z-10 flex flex-col items-start justify-between"
                 onClick={(e) => {
                     e.preventDefault();
                     router.push(path);
                 }}
             >
-                <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] via-[#040404]/80 to-transparent">
+                <div className="p-5 w-full flex justify-between">
                     <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
-                    <div className="space-y-1 mb-5">
-                        <p className="text-lg tracking-tight font-medium text-white">{title}</p>
+                    <p className="text-white text-sm">{`${month} ${year}`}</p>
+                </div>
+
+                <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-7 bg-gradient-to-t from-[#040404] to-transparent">
+                    <div className="">
+                        <p className="text-2xl leading-[1.1] tracking-tight font-medium text-white">{title}</p>
                         <p className="text-[0.8rem] text-white tracking-tight leading-tight">{subtitle}</p>
                     </div>
 
-                    
+
                 </div>
             </Link>
         </div>

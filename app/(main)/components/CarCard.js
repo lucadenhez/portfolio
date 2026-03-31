@@ -74,7 +74,7 @@ export default function CarCard({
 
   if (width > 768) {
     return (
-      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden bg-[#111111]">
+      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden bg-[#111111] rounded-xl">
         <Link
           href={path}
           onMouseOver={() => setHovered(true)}
@@ -164,7 +164,7 @@ export default function CarCard({
     return (
       <div
         ref={container}
-        className="h-[25rem] relative overflow-hidden"
+        className="h-[25rem] relative overflow-hidden rounded-xl"
       >
         <Link
           href={path}

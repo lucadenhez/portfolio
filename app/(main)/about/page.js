@@ -14,6 +14,19 @@ export default function About() {
       <div className="mx-5 md:mx-15 mt-15">
         <div className="flex flex-col items-center gap-20">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-3/4">
+            <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
+              <p className="max-w-3/4 flex whitespace-pre-line">
+                {lang("bio")}
+              </p>
+
+              <div className="flex flex-col sm:items-start items-center">
+                <InlineLink label="Linkedin" url="https://linkedin.com/in/lucadenhez" />
+                <InlineLink label="Github" url="https://github.com/lucadenhez" />
+                <InlineLink label="Instagram" url="https://instagram.com/lucadenhez" />
+              </div>
+            </div>
+            <div className="h-[5rem]" />
+
             <motion.div
               className="z-10 rotate-1 w-full overflow-hidden rounded-3xl"
               whileHover={{ y: -10, scale: 1.01 }}
@@ -43,18 +56,6 @@ export default function About() {
                 alt="Photo of my silken windhound doggies"
               />
             </motion.div>
-          </div>
-
-          <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
-            <p className="text-lg flex whitespace-pre-line sm:w-3/4 w-full text-center sm:text-left">
-              {lang("bio")}
-            </p>
-
-            <div className="flex flex-col sm:items-start items-center">
-              <InlineLink label="Linkedin" url="https://linkedin.com/in/lucadenhez" />
-              <InlineLink label="Github" url="https://github.com/lucadenhez" />
-              <InlineLink label="Instagram" url="https://instagram.com/lucadenhez" />
-            </div>
           </div>
         </div>
 

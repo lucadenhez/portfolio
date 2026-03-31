@@ -1,9 +1,8 @@
 - Update lang
 - Create Playground
-- Make bento react better and animate in
-- Fix project image stack on mobile
-- Restore mobile tooltip
-
-### Animations!
-
-- Animate all items in, staggered
+- Drop down hamburger on mobile in dark mode cant read, also weird gap
+- Car pages crashing client side
+- Work on animations
+- Smaller text on about me page
+- Brief Contact page
+- Integrate substack or better blogging method
