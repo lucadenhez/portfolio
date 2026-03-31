@@ -76,12 +76,12 @@ export default async function RootLayout({ children }) {
 
     return (
         <ViewTransitions>
-            <html lang={locale}>
+            <html lang={locale} suppressHydrationWarning>
                 <head>
                     <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
                 </head>
                 <body
-                    className={`antialiased ${helveticaVariable.className}`}
+                    className={`antialiased ${helveticaVariable.className}`} suppressHydrationWarning
                 >
                     <NextIntlClientProvider locale={locale} messages={messages}>
                         <SmoothScroll>

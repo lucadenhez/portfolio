@@ -113,7 +113,10 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
 
     // static image for mobile
     return (
-        <div className="sm:h-[50rem] h-[35rem] relative overflow-hidden rounded-xl">
+        <div
+            className="sm:h-[50rem] h-[35rem] relative overflow-hidden rounded-xl"
+            ref={container}
+        >
             <div className="absolute inset-0 z-10">
                 <Image
                     src={image}

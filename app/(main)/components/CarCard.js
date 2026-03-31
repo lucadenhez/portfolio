@@ -165,7 +165,10 @@ export default function CarCard({
     );
   } else {
     return (
-      <div className="h-[35rem] relative overflow-hidden rounded-xl">
+      <div
+        ref={container}
+        className="h-[35rem] relative overflow-hidden rounded-xl"
+      >
         <Link
           href={path}
           onClick={(e) => {
