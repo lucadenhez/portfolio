@@ -41,7 +41,7 @@ export default function ProjectCard({ title, path, year, image, viewButtonText }
         setBaseScale(requiredScale + 0.05);
     }, [width]);
 
-    // hover scale is just slightly larger
+    // hover scale is slightly larger
     const hoverScale = baseScale + 0.08;
 
     const { scrollYProgress } = useScroll({
