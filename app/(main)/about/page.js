@@ -15,7 +15,7 @@ export default function About() {
         <div className="flex flex-col items-center gap-20">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-3/4">
             <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
-              <p className="max-w-3/4 flex whitespace-pre-line">
+              <p className="flex whitespace-pre-line">
                 {lang("bio")}
               </p>
 

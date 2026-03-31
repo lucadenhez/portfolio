@@ -9,7 +9,7 @@ export default function Contact() {
                 <p>+12067397225</p>
             </div>
 
-            <div className="h-[5rem]" />
+            <div className="h-[10rem]" />
         </div>
     );
 }

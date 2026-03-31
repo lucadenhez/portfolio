@@ -16,9 +16,10 @@ export default function MobileNav({ items }) {
   const isActive = (path) => pathname === path;
 
   return (
-    <div className="fixed top-0 left-0 w-full  z-50 box-border">
-      <div className="flex w-full z-50 justify-between p-5">
-        <div className="flex items-center justify-center w-[48px] h-[48px]">
+    <div className="fixed top-0 left-0 z-50 box-border w-full">
+      {/* Bar stays above the menu panel so controls remain visible; solid bg blocks page behind */}
+      <div className="relative z-[60] flex w-full justify-between bg-white p-5 dark:bg-black">
+        <div className="flex h-[48px] w-[48px] items-center justify-center">
           <LanguageSwitcher />
         </div>
 
@@ -31,18 +32,17 @@ export default function MobileNav({ items }) {
             duration={0.5}
           />
         </div>
-
       </div>
 
       <motion.nav
         initial={false}
         animate={open ? "visible" : "hidden"}
         variants={{
-          visible: { y: "-20%", opacity: 1, pointerEvents: "auto" },
+          visible: { y: "0%", opacity: 1, pointerEvents: "auto" },
           hidden: { y: "-100%", opacity: 0, pointerEvents: "none" },
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="absolute top-full left-0 w-full bg-white dark:invert flex flex-col items-start py-15 px-10 -z-10"
+        className="absolute left-0 top-full z-40 flex min-h-[calc(100dvh-5rem)] w-full flex-col items-start bg-white px-10 py-15 dark:invert"
       >
         {items.map((item, index) => (
           <Link
