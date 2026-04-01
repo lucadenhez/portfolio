@@ -83,9 +83,14 @@ export default async function ProjectArticlePage({ params }) {
                     services={project.services}
                 />
 
-                <article className="w-full sm:w-2/3 pb-24">
+                <article className="w-full sm:w-2/3 pb-20">
                     <MdxContent components={mdxComponents} lang={lang} />
                 </article>
+
+                <div className="w-full sm:w-2/3 flex justify-between">
+                    <ReturnButton />
+                    {project.liveUrl ? <ViewButton url={project.liveUrl} /> : null}
+                </div>
             </div>
         </PageAnimation>
     );
