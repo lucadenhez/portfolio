@@ -1,25 +1,460 @@
 ---
-title: Project OEM
+title: Bespoke OEM Audio
 subtitle: Custom speaker integration with OEM-level fit and finish.
 category: automotive
 year: 2026
 month: Jan
-team: [{ name: "Luca Denhez", avatar: /avatars/luca.png }]
-tools: [{ name: "React", avatar: "/tools/react.svg"}, { name: "Next.js", avatar: "/tools/nextjs.svg" }, { name: "Figma", avatar: "/tools/figma.svg"}]
-services: ["Product Design", "Mechanical Engineering"]
+team: [{ name: "Luca", avatar: /avatars/luca.png }]
+tools: [{ name: "Solidworks", avatar: "/tools/solidworks_filled.png"}, { name: "Heges", avatar: "/tools/heges.png" }]
+services: ["Surface Modeling", "FDM Rapid Prototyping", "DSP Tuning", "Wiring"]
 coverImage: /works/speakers/cover.png
 ---
 
-## Context
+## BMW's base audio system is lackluster.
 
-I wanted to integrate a custom sound system in a way that looked factory-installed.
+I bought a used 2011 BMW 135i with a broken reverse gear last summer for cheap from Copart. I've had a ton of fun repairing it and working through all the challenges it's brought me — seized brake components, hairline fractures in the cooling system, etc.
 
-## Build Highlights
+Additionally, something I've enjoyed about this car is the balance between analog tactility and modern technology. The car has a hydraulic steering rack, manual gearbox, but still has a relatively modern infotainment system (BMW CIC) that I've been able to retrofit wireless Carplay onto, and some helpful digital readouts and displays in the tach.
 
-- Complex surface modeling in SolidWorks
-- Printed prototypes and fitment testing
-- Final parts in CF PETG
+But the audio is not good. For BMW's base audio system, the front stage consists of two midrange drivers, two shallow-mount 'subwoofers' beneath the seats, and the rear stage is similarly lacking. Notice how I didn't mention tweeters? There are none.
 
-## Result
+The system gets plenty loud for my liking, but treble is muddy and unclear as soon as there is any bass, bass is boomy rather than clear, and there is no kick in the 100 - 450hz range.
 
-The final integration feels seamless and preserves the car's original design language while improving audio performance.
+TLDR — A speaker upgrade turned into a two month long design and engineering project. Join me on my journey to good audio!
+
+## Exploring solutions
+
+I asked friends and researched through car audio forums to see what people usually do when they have a lacking OEM sound system. For older cars, it's common to purchase a higher-end set of speakers that fit into factory locations with factory wiring — vastly improving the sound quality and imaging. However, BMW's unique system doesen't really allow for that.
+
+### Problem 1 — Original amplification system
+
+The BMW HiFi, Harmon Kardon, and Logic 7 soundsystems all include an amplifier in the trunk of the car.
+
+![](/works/speakers/image.png)
+
+This amplifier takes the low-level, line-out signal from the BMW CIC iDrive system, amplifies it, EQs front and rear stage differnetly, then sends power to all speakers.
+
+However, the base system has no amplifier. Instead, the iDrive headunit amplifies all speakers and EQs them, at a weak ~150W total. Not for each speaker, total wattage. This means the base stereo can't amplify almost all aftermarket speakers, and a more powerful aftermarket amp would be required.
+
+![](/works/speakers/image%202.png)
+
+### Problem 2 — Factory speaker sizes
+
+Awesome websites like [Crutchfield](https://www.crutchfield.com/) will let you enter your vehicle information online and be given all speakers that will fit in your vehicle, pre-made adapters, and any other equipment you will need.
+
+However, after an empty results list for my 135i and a call with an employee, almost no aftermarket speakers will fit in the car without modification to the vehicle, or some select proprietary BMW spec speakers that cost a fortune.
+
+Additionally, if I want tweeters to have clearer high frequencies, I didn't have many options.
+
+I could have purchased the BMW OEM Harmon Kardon tweeter covers. (Part no. 51337270890 and 51337270889) They would have had an OEM fit in the doorsill, however they only accepted a very small tweeter, the clips were properitary so I would have to modify them anyways, and if I wanted to mount the tweeters on-axis with the listener, the tweeter would extend past the grill at a given angle and defeat the purpose.
+
+![](/works/speakers/image%203.png)
+
+![](/works/speakers/image%204.png)
+
+So I would need to fabricate my own bespoke tweeter pods.
+
+### Problem 3 — Limited locations for aftermarket amplifiers
+
+BMW typically mounts the car battery in the trunk for improved weight distribution. This is great, because if I mount my amplifier(s) in the trunk I won't need to run a long power cable all the way from the front of the car to the back.
+
+This meant I was able to run a 4 AWG power cable for very short runs isolated to the trunk.
+
+I estimated I would have about 1300W of power from class D amplifiers.
+
+Per Joule's law:
+
+
+$$
+P = VI
+$$
+
+Power is equal to voltage times current. For voltage, average the running and non-running voltage of the car. Class D amplifiers are ~75% efficient. So account for the increased current draw.
+
+$$
+1300W = \frac{12V + 14.4V}{2} * 0.75
+$$
+$$
+1300W = 9.9A
+$$
+Divide by 9.9 to get the estimated current draw
+
+$$
+\frac{9.9A}{9.9} = \frac{1300W}{9.9}
+$$
+$$
+≈ 132 A
+$$
+![](/works/speakers/image%205.png)
+
+For oxygen free copper wiring, for roughly 132 amps, I only needed 8 - 4 AWG wire for my short trunk run. If I had to source power from the front of the car, with the 135i being about 14 ft long, I would've had to run 2 AWG or even 1/0 gauge wire. For OFC wire, it gets expensive quick…
+
+Despite a beneficial wiring situation, finding a location for my amps was difficult. I planned to mount two amps, one for the main speakers and one for the subwoofer. I cut cardboard templates to scale to mock out the setup.
+
+![](/works/speakers/IMG_2100.jpeg)
+
+There was a good space next to the iDrive hard drive to mount an amp, but it was quite shallow and any vertical protrusion wouldn't allow the trunk cover to sit flush as it was far enough from the fold to not allow for play.
+
+There was ample space next to the battery, but the surface was extremely warped (heat?) and this is where I was planning to mount the fuses for the battery and respective amps, as they should be as close to the power source as possible to prevent fire.
+
+After some digging, I found an excellent space below the passenger side trunk wheel-well cover that could fit multiple amps.
+
+![](/works/speakers/IMG_2470.jpeg)
+
+## Creating the speaker mounts
+
+I bought a 'three-way' component set of Focal 165AS3 speakers. Six speakers in total, two tweeters, two mids, and two midbass.
+
+![](/works/speakers/Capture%20d%E2%80%99e%CC%81cran%202026-04-01%20a%CC%80%2001.18.09.png)
+
+In total, I needed to create:
+
+1. A tweeter housing that fits in the doorsill to hold the 4.5 cm diameter tweeter
+2. Midrange driver housing to hold the 9.4 cm diameter mid
+3. Midbass driver housing that clips into factory underseat housing, to hold the 16.5 cm driver
+
+## Tweeter Housing
+
+![](/works/speakers/IMG_2536.jpeg)
+
+![](/works/speakers/IMG_2539.jpeg)
+
+I don't yet have a proper 3D scanner, so I used the [Heges](https://apps.apple.com/us/app/heges-3d-scanner/id1382310112) app on my iPhone that leverages the more precise LiDAR in the Face ID system to make 3D scans. I made scans at 0.5mm accuracy.
+
+![](/works/speakers/Capture%20d%E2%80%99e%CC%81cran%202026-03-31%20a%CC%80%2023.34.07.png)
+
+I imported these scans into Solidworks as reference geometry to aid me in matching the curvurture of the flange for the doorsill surface, and creating a tight seal in the weather sealing.
+
+![](/works/speakers/IMG_2342.jpeg)
+![](/works/speakers/IMG_2343.jpeg)
+
+To start, I began by sketching splines on ortho planes that lined up with the edges of the reference, pierceing them to each other, and projecting the curves to create 3D curves.
+
+![](/works/speakers/Tweeter%20Project%20Curves.png)
+
+Then, I lofted the curves to form basic surfaces that followed correct curvurture in all axes
+
+![](/works/speakers/Tweeter%20Loft.png)
+
+Swept flange with composite curve
+
+![](/works/speakers/Tweeter%20Flange.png)
+
+While designing the housing, I had to keep in a mind a concept I learned while building this system.
+
+As audio frequencies get higher, it becomes more crucial that the speaker is on-axis with the listener.
+
+![](/works/speakers/image%206.png)
+
+The red frequency response representing an on-axis speaker shows signficantly less drop-off in volume at 2K HZ and higher compared to off-axis. Meaning if possible, one should aim to have the tweeters pointed right at them.
+
+I wanted a parametric way to adjust positioning of the tweeter relative to the housing so I can prototype quickly, or create new models fast targeted towards driver position, 50/50 split between driver and passenger, etc.
+
+So, I created three work planes:
+
+1. Tangential to a given point on the surface to control horizontal rotational axis
+2. Angled plane to control vertical rotational axis
+3. Depth adjustment to determine how far tweeter housing will protrude
+
+![](/works/speakers/Tweeter%20Tangent%20Plane.png)
+![](/works/speakers/Tweeter%20Angle%20Plane.png)
+![](/works/speakers/Tweeter%20Depth%20Plane.png)
+
+I sketched the ring for the speaker on the final plane and projected a large offset of it onto the original surface. I wanted to try and maintain a convex, elliptical shape.
+
+Guide curves helped me control this convexity, or else the loft would attempt to dish inwards and create an ugly concavity.
+
+![](/works/speakers/Tweeter%20Loft%20Guide%20Curves.png)
+
+![](/works/speakers/Tweeter%20Loft%20Zebra.png)
+
+![](/works/speakers/Tweeter%20G1.png)
+
+I am both parts engineer and designer. I want to design things that are functional, but I won't be happy if it isn't pretty.
+
+With the somewhat complex curvuture this part has, I maintained G0 continuity (tangency) throughout the part. With some pretty heavy fillets and forgiving nature of FDM printing, the resulting surface ended up being pretty smooth and organic.
+![](/works/speakers/Final%20tweeter%20above.png)
+
+![](/works/speakers/Final%20tweeter%20underside.png)
+
+![](/works/speakers/Final%20tweeter%20cross%20section.png)
+
+I've had a couple people tell me they had no idea it wasn't OEM, so that's a win in my book. 😁
+
+![](/works/speakers/IMG_2465.jpeg)
+
+I printed the tweeter housing with Bambu's PETG-CF because I wanted it to withstand the heat of a hot day inside the car. Also, the PETG-CF gives a nice, bumpy, textured feel that hides most of the layer lines and is more like the original injected molded parts.
+
+![](/works/speakers/IMG_2498.jpeg)
+
+![](/works/speakers/IMG_2500.jpeg)
+
+![](/works/speakers/IMG_2503.jpeg)
+
+Cyanoacrylate to make semi-permenant bond to PETG.
+
+![](/works/speakers/IMG_2536%202.jpeg)
+
+## Midrange Housing
+
+Similar process to the tweeter, I did a 3D scan of the dash with Heges, and started building the surface in Solidworks.
+
+![](/works/speakers/ASSEMBLY%20mock%20up%20scan.png)
+
+You may ask why I decided to place the mid here and not the factory door position? Although the frequency drop-off for midrange frequencies off-axis is much less severe than that of the high frequencies, an on-axis mid will give better imaging and a wider soundstage.
+
+This system of having a tweeter, midrange, and midbass driver is called a 'three-way' setup. Traditional three-way setups typically integrate the mid into the A-pillar molding below the tweeter.
+
+![](/works/speakers/image%207.png)
+
+However, this usually involves irreversably cutting into the factory A-pillar or clamping on a not so pretty sheath that does not look OEM.
+
+So, since I wasn't going to damage my nice A-pillar, I needed to find a way to locate the mid somewhere on-axis that wouldn't harm my visibility too much.
+
+![](/works/speakers/IMG_2204.jpeg)
+![](/works/speakers/IMG_2370.jpeg)
+
+I decided to attempt to design an enclosure that would seal along the window heater vent, curving to clear the a-pillar and dash hump, while using the heater vent flange and seperation between the dash and vents as physical support.
+
+The design had to:
+
+1. Provide full functionality to the driver-side heater
+2. Be fully reversible
+
+![](/works/speakers/Mid%20final%20front.png)
+
+![](/works/speakers/Mid%20final%20bottom%20quarter.png)
+
+![](/works/speakers/Mid%20final%20top.png)
+
+To accomplish this, I designed the flange to be perfectly tangent with the contours of the window heater vent.
+
+The vent cover comes off with simple clips, and the window heater vent can be removed to allow clearance:
+
+![](/works/speakers/IMG_2571.jpeg)
+
+I was trying to design clips so the enclosure would just snap on, but unfortunately I couldn't get anything to interface while still staying flush to the dashboard.
+
+So, I decided to make the flange thick enough to use a soldering iron and plastic weld it to the trim, only visible to the surface underneath. I also applied Cyanoacryalte for extra strength. It might not look pretty, but it was very strong and perfectly invisible from the top if removed.
+
+![](/works/speakers/IMG_0033.jpeg)
+![](/works/speakers/IMG_0023.jpeg)
+
+![](/works/speakers/Mid%20flange%20for%20vent.png)
+
+![](/works/speakers/Mid%20exhaust%20path.png)
+
+I added a small slot to allow speaker wire to pass through and a cutout on the rear to allow air to exhaust.
+
+Although it does not exhaust towards the side window anymore, I haven't noticed any problems.
+
+![](/works/speakers/IMG_0041.jpeg)
+
+## Midbass Bracket
+
+All 135i's (and E82, E87, E89) have underseat 'subwoofers'. I find this pretty cool, it gives you a nice thump in your feet and brings the bass closer to you.
+
+However, I say 'subwoofer' because the speaker is supposed to account for all low frequencies — basically everything 500HZ and below. Unfortunately, the very limited space under the seat means there is not room for much speaker excursion, so having a speaker capable of low, subwoofer frequencies is very difficult.
+
+![](/works/speakers/image%208.png)
+
+This is why I chose to attempt to mount the midbass driver in this factory ported enclosure, which will fill the gap of frequencies between the mid and the subwoofer. A subwoofer will be mounted in the trunk.
+
+This bracket was easier, because I could pop the enclosure out, (struggle to crunch all the factory glue to get the OEM speaker out), and then just take a photo as reference and sketch it in Solidworks.
+
+The factory speaker was glued, but also clipped in with strong cantilever clips. I tried to implement those clips as well.
+
+![](/works/speakers/Underseat%20initial%20sketch.png)
+
+![](/works/speakers/Underseat%20final.png)
+
+![](/works/speakers/Underseat%20final%20close%20up.png)
+
+The speaker enclosure has a feature that sticks out, so I used that as an opportunity to remove the degree of freedom of rotation.
+
+![](/works/speakers/IMG_2392.jpeg)
+
+## Assembly
+
+I printed all enclosures / brackets in Bambu's PETG-CF. Heat-resistant and gives a nice texture that hides layer lines pretty well.
+
+I used brass threaded inserts and counter-sunk torx hardware to ensure I could insert and remove the speakers over and over and to deter theft when visible in the car.
+
+![](/works/speakers/IMG_0032.jpeg)
+
+![](/works/speakers/IMG_0042.jpeg)
+
+The underseat brackets have a satisfying and strong snap to them as they clip onto the factory clips, and I ensured the speakers were at the minimum depth possible to give the speakers the most excursion possible without hitting the factory grilles.
+
+![](/works/speakers/IMG_2388.jpeg)![](/works/speakers/IMG_2350.jpeg)
+![](/works/speakers/IMG_2397.jpeg)
+
+The tweeter and mid have ample space between them, and I believe to be a pretty OEM+ look. (Other that the giant speaker now on the dash!)
+
+![](/works/speakers/IMG_0044.jpeg)
+
+## BMW Input Signal Shenanigans
+
+Ideally, you want to feed a low-level, (basically low voltage) non-EQed signal into an aftermarket amplifier or DSP. (Digital Sound Processor)
+
+The base sound system audio signal is high-level, to power the OEM speakers, EQed, and bass is rolled off on the rear stage.
+
+So, I was able to code the car with software called NCS Expert + Dummy and a OBD cable to tell the car my sound system is HiFi rather than Base.
+
+The HiFi system expects an OEM amp in the trunk to do the amplification an EQ, so that the headunit will output a clean, low-level signal.
+
+And it worked. Perfectly.
+
+![](/works/speakers/IMG_2452.jpeg)![](/works/speakers/IMG_2456.jpeg)
+
+Audio was no longer coming out of the stock speakers, so I presumed the signal was now low-level and did not have sufficient power to power the speakers.
+
+To tap this signal from the radio, I had to find where. I purchased a pigtail to convert speaker wire to RCA, and Positaps to make a clean tap from a set of audio signal wires.
+
+![](/works/speakers/image%209.png)
+![](/works/speakers/image%2010.png)
+
+After hours on Bimmerpost, no one has posted a pinout of the Base, iDrive, E8X radio yet.
+So, I was able to use BMW dealer level ISTA software to provide me the pinout of the connector.
+
+![](/works/speakers/IMG_2439.jpeg)
+![](/works/speakers/IMG_2442.jpeg)
+
+So for anyone looking to tap low-level signal on a base audio E8X, here you go!
+
+I ran a shielded RCA cable to the trunk of the car, below the carpet to remain discrete.
+
+![](/works/speakers/IMG_0068.jpeg)
+
+## Power
+
+Although I didn't mount amplifiers on the oddly warped surface beside the battery, there were two threaded standoffs that looked nice to use.
+
+![](/works/speakers/IMG_2406.jpeg)
+
+I layered two 1/8 » thick acrylic sheets and drilled holes to line up with the standoffs. Then I used two spare flange bolts I had leftover from my Mini to secure the board to the trunk.
+
+![](/works/speakers/IMG_0205.jpeg)
+
+It worked wonderfully. There is some deflection on the two ends where there aren't fasteners, however the tension of the thick cables provide enough support.
+
+For the ~130 amps the system will be drawing, I have an 120 amp inline fuse from the battery, to a distribution block with respective 50 and 60 amp fuses for the power of each amp.
+
+![](/works/speakers/IMG_0201.jpeg)
+
+The Audison SR6.600 six channel amplifier is stored beside a JL JD500/1 monoblock amplifier for the subwoofer.
+
+I wanted a way to secure the amps so that I could easily lift them up to adjust crossovers and levels, so I cut a factory piece of foam that was in that corner to hold each amp upright.
+
+![](/works/speakers/IMG_2473.jpeg)
+![](/works/speakers/IMG_2507.jpeg)![](/works/speakers/IMG_2510.jpeg)
+
+## Challenges
+
+This is my first experience working with any car audio. I've been interested about headphones and general audiophile stuff for a long time, but I've never done it myself! This was an incredible learning experience, and with successes come challenges.
+
+### Hurdle 1, Balanced Differential
+
+Long story short, even though I was able to get a low-level signal, the signal was not immediately usable.
+
+I was having all sorts of weird issues, with a loud whining noise that got louder as I drove faster,(with speaker gains all the way down) and the BMW chime being blaringly loud despite a normal level.
+
+Turns out the signal is called balanced differential. There is no ground. Meaning my signal was possibly grounding out with the chassis?.. Not really sure.
+
+My amplifier ended up frying itself a week after I figured this out, and I was luckily able to warranty it (as it was refurbished) and purchase a new amplifier.
+
+![](/works/speakers/IMG_0776.jpeg)
+
+This is a DSP amplifier. It can take a balanced differential signal with no issues, and gives me precise control over the EQ, level, and time alignment of each speaker. It is a little beast.
+
+Additionally, it is much smaller than the original amp and I was able to secure it below the trunk cover with industrial strength velcro.
+
+### Water!
+
+![](/works/speakers/IMG_0196.jpeg)
+
+As I worked on prototyping the speaker brackets, my nifty spot for the amps started filling up with water as it rained.
+
+As a temporary solution, I applied flex tape to all seams, and layed down a small towl below the foam insert.
+
+Seemingly no water returned, so I pray to this day my amp doesn't fry itself…
+
+### Visibility
+
+The tweeter pods provide excellent visibility and I am very happy with them. However, the mid pods do take away a decent amount of visibility.
+
+Being a smaller coupé body style, there is just less space than a larger SUV. So, I ended up removing the mid pods by re-melting the plastic welds, reinstalled the vent trim, and designed an in-door solution adapting factory mounting holes.
+
+![](/works/speakers/Final%20mid%20door%20card%20wo%20speaker.png)
+![](/works/speakers/IMG_0580.jpeg)
+![](/works/speakers/IMG_0582.jpeg)![](/works/speakers/IMG_0585.jpeg)
+
+Although it is true that the midrange performance will not be as good as if they were on-axis, it is ultimately less crucial than the tweeters being on-axis, and with the DSP I have been able to tune it so that the soundstage is still pretty good.
+
+They look good in the car and my visibility is improved. So I am happy!
+
+### Infinite tuning
+
+![](/works/speakers/IMG_0728.jpeg)
+
+Having a DSP where I can plug in my laptop and start changing settings for all the speakers is amazing. The possibilies are endless, and it's frankly overwhelming how many settings there are.
+
+![](/works/speakers/IMG_1852.jpeg)
+
+![](/works/speakers/IMG_1853.jpeg)
+
+I purchased a measurement microphone, the miniDSP UMIK-1 that is calibrated to be very accurate and record the frequency response of the speakers in your car. You position the microphone approximately where the listener will be.
+
+Then, you can use open-source software such as [REW](https://www.roomeqwizard.com/) to play test tones, make measurements, and fine tune your EQ to have the clearest image possible, or one to your liking.
+
+![](/works/speakers/IMG_1878.jpeg)
+![](/works/speakers/IMG_1883.jpeg)
+
+I have sat down to tune the speakers probably about five times now, and am still hearing improvements every time I learn new strategies. The learning curve is certainly high, but it is endlessly fulfilling to learn about some crazy time alignment trick to make it sound like the audio is coming from the center of the car. It is too cool.
+
+## Meaning
+
+This project was incredibly meaningful for me as en engineer, designer, and tinkerer. It bridged the gaps between multiple of my interests — I got to practice surface modeling in CAD, electrical wiring, rapid prototyping, and trying to design something natural as if it weren't there.
+
+It wasn't easy, it wasn't fast, but I had so much fun and that's what meant the most to me.
+
+My room was my car for a good part of two months,
+
+![](/works/speakers/IMG_2300.jpeg)
+![](/works/speakers/Capture%20d%E2%80%99e%CC%81cran%202026-04-01%20a%CC%80%2002.20.08.png)
+
+I was up until 3am trying to get a surface to thicken without errors so I could send a 3D print and have it by morning,
+
+![](/works/speakers/IMG_2294.PNG)
+
+Many of them didn't work…
+
+![](/works/speakers/IMG_2135.jpeg)
+
+Dodgy testing benches,
+
+![](/works/speakers/Capture%20d%E2%80%99e%CC%81cran%202026-04-01%20a%CC%80%2002.25.51.png)
+
+Friends helping wire and assemble,
+
+![](/works/speakers/IMG_2479.jpeg)
+![](/works/speakers/IMG_2483.jpeg)
+
+Friends helping tune and listen,
+
+![](/works/speakers/IMG_1023.jpeg)
+
+And some success in the end.
+
+![](/works/speakers/IMG_0273.jpeg)
+
+## What's next?
+
+- Tweeters have small gap between flanges at top that I can bridge
+- Doorcard mid brackets are not coplanar with door surface, need to tweak to allow OEM grilles to be inserted
+- Midbass doesn't feel punchy enough
+- Angle passenger side tweeter towards driver side
+- Keep tweaking DSP config to improve imaging and soundstage
+
+
+### Thank you for viewing my project.

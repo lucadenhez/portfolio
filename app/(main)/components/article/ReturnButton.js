@@ -19,9 +19,9 @@ export default function ReturnButton({ background = false }) {
                 }>
                 <div className={"flex items-center gap-2 "}>
                     <svg className="w-4 h-4 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke={"#000000"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <path stroke={"#ffffff"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
-                    <p className="text-black">{lang("returnButtonText")}</p>
+                    <p>{lang("returnButtonText")}</p>
                 </div>
             </Link >
         </div >

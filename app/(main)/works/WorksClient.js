@@ -26,7 +26,7 @@ export default function WorksClient({ projects }) {
     return (
         <ShortTransition>
             <div className="mx-5 my-0 md:mx-25 md:my-10">
-                <main>
+                <main className="flex flex-col gap-5">
                     <div className="space-y-1 sm:mt-20 mt-10 mb-15">
                         <p className="z-0 sm:text-[rem] md:text-[5.5rem] lg:text-[8.25rem] text-[3rem] font-medium tracking-tighter leading-none">Luca Denhez</p>
                         <p className="introduction sm:text-lg text-sm">Mechanical Engineer · Designer ·  Seattle, WA</p>
@@ -35,8 +35,7 @@ export default function WorksClient({ projects }) {
                     <div className="h-[10vh]" />
 
                     <div id="works">
-                        <p className="pb-5">Automotive Projects</p>
-
+                        {automotiveProjects.length > 0 ? <p className="pb-5">Automotive Projects</p> : null}
                         {automotiveProjects.map((project) => (
                             <div className="pb-5" key={project.slug}>
                                 <ProjectCard
@@ -50,13 +49,10 @@ export default function WorksClient({ projects }) {
                                 />
                             </div>
                         ))}
-
-                        <div className="h-[15vh]" />
                     </div>
 
                     <div id="works">
-                        <p className="pb-5">UI/UX</p>
-
+                        {uiuxProjects.length > 0 ? <p className="pb-5">UI/UX</p> : null}
                         {uiuxProjects.map((project) => (
                             <div className="pb-5" key={project.slug}>
                                 <ProjectCard
@@ -70,8 +66,6 @@ export default function WorksClient({ projects }) {
                                 />
                             </div>
                         ))}
-
-                        <div className="h-[15vh]" />
                     </div>
 
                     <div id="works">

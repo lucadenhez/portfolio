@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { compile, run } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -49,6 +51,8 @@ export default async function ProjectArticlePage({ params }) {
 
     const compiled = await compile(project.content, {
         outputFormat: "function-body",
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
     });
 
     const { default: MdxContent } = await run(compiled, {
