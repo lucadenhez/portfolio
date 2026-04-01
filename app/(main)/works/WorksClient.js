@@ -76,13 +76,9 @@ export default function WorksClient({ projects }) {
 
                     <div id="works">
                         <p className="pb-5">Unreliable Cars</p>
-                        <div className="flex flex-col lg:flex-row gap-0 md:gap-5">
+                        <div className="sm:w-3/4 w-full flex flex-col gap-5">
                             {cars.map((project, index) => (
-                                <div
-                                    className="pb-5 w-full"
-                                    key={index}
-                                    style={{ marginTop: width > 1024 ? `${index * 10}rem` : 0 }}
-                                >
+                                <div className="w-full" key={index}>
                                     <CarCard
                                         make={project.make}
                                         model={project.model}
@@ -100,7 +96,7 @@ export default function WorksClient({ projects }) {
                                 </div>
                             ))}
                         </div>
-                        <div className="h-[30vh]" />
+                        <div className="h-[10vh]" />
                     </div>
                 </main>
             </div>

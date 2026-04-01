@@ -74,7 +74,7 @@ export default function CarCard({
 
   if (width > 768) {
     return (
-      <div className="sm:h-[50rem] h-[10rem] relative overflow-hidden bg-[#111111] rounded-xl">
+      <div className="sm:h-[30rem] h-[10rem] relative overflow-hidden bg-[#111111] rounded-xl">
         <Link
           href={path}
           onMouseOver={() => setHovered(true)}
@@ -95,10 +95,7 @@ export default function CarCard({
               transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
             >
               <div className="h-full">
-                <motion.div
-                  animate={hovered ? { filter: "blur(5px)" } : { filter: "blur(0px)" }}
-                  transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                  className="w-full h-full"
+                <motion.div className="w-full h-full"
                 >
                   <Image
                     src={image}
@@ -123,8 +120,8 @@ export default function CarCard({
           </motion.div>
 
           <motion.div
-            className="p-5 absolute z-20 flex justify-between w-full items-center rounded-xl"
-            animate={hovered ? { y: 0 } : { y: -100 }}
+            className="p-5 bottom-0 absolute z-20 flex justify-between w-full items-center rounded-xl"
+            animate={hovered ? { y: 0 } : { y: 50 }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
           >
             <div className="flex gap-1 items-end">
@@ -195,7 +192,7 @@ export default function CarCard({
               <div className="bg-[#111111] w-full h-full z-0" />
             </div>
           </div>
-          <div className="p-5 absolute z-10 flex justify-between w-full items-center rounded-xl">
+          <div className="p-5 absolute z-10 flex justify-between w-full items-center rounded-xl bottom-0">
             <div className="flex gap-1 items-end">
               <p className="text-white sm:text-2xl text-xl">{`${year} ${make} ${model}`}</p>
               <svg

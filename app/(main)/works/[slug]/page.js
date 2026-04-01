@@ -58,7 +58,7 @@ export default async function ProjectArticlePage({ params }) {
 
     return (
         <PageAnimation title={project.title}>
-            <div className="p-5 flex flex-col gap-y-5">
+            <div className="p-5 md:p-15 flex flex-col gap-y-5">
                 <div className="w-full sm:w-2/3 flex justify-between">
                     <ReturnButton />
                     {project.liveUrl ? <ViewButton url={project.liveUrl} /> : null}

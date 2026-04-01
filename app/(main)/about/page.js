@@ -13,49 +13,47 @@ export default function About() {
     <ShortTransition>
       <div className="mx-5 md:mx-15 mt-15">
         <div className="flex flex-col items-center gap-20">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-5 w-3/4">
-            <div className="gap-10 flex flex-col sm:flex-row sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
-              <p className="flex whitespace-pre-line">
-                {lang("bio")}
-              </p>
-
+          <div className="flex flex-col sm:flex-row justify-center items-start gap-5 sm:w-full w-3/4">
+            <div className="gap-10 flex flex-col sm:text-left justify-between sm:items-start items-center sm:w-3/4 w-full">
+              <p className="flex whitespace-pre-line">{lang("bio")}</p>
               <div className="flex flex-col sm:items-start items-center">
                 <InlineLink label="Linkedin" url="https://linkedin.com/in/lucadenhez" />
                 <InlineLink label="Github" url="https://github.com/lucadenhez" />
                 <InlineLink label="Instagram" url="https://instagram.com/lucadenhez" />
               </div>
             </div>
-            <div className="h-[5rem]" />
+            <div className="h-20" />
+            <div className="flex flex-col gap-10">
+              <motion.div
+                className="z-10 rotate-1 w-full overflow-hidden rounded-3xl"
+                whileHover={{ y: -10, scale: 1.01 }}
+              >
+                <Image
+                  src="/avatars/luca_sunny.jpeg"
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  style={{ width: "100%", height: "auto" }}
+                  alt="Photo of Luca"
+                />
+              </motion.div>
 
-            <motion.div
-              className="z-10 rotate-1 w-full overflow-hidden rounded-3xl"
-              whileHover={{ y: -10, scale: 1.01 }}
-            >
-              <Image
-                src="/avatars/luca_sunny.jpeg"
-                width={0}
-                height={0}
-                sizes="(max-width: 768px) 100vw, 66vw"
-                style={{ width: "100%", height: "auto" }}
-                alt="Photo of Luca"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              className="z-0 sm:translate-y-10 -rotate-2 w-full overflow-hidden rounded-3xl"
-              whileHover={{ y: -10, scale: 1.01 }}
-            >
-              <Image
-                src="/images/doggies.png"
-                width={0}
-                height={0}
-                sizes="(max-width: 768px) 100vw, 66vw"
-                style={{ width: "100%", height: "auto" }}
-                alt="Photo of my silken windhound doggies"
-              />
-            </motion.div>
+              <motion.div
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                className="z-0 sm:translate-y-10 -rotate-2 w-full overflow-hidden rounded-3xl"
+                whileHover={{ y: -10, scale: 1.01 }}
+              >
+                <Image
+                  src="/images/doggies.png"
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  style={{ width: "100%", height: "auto" }}
+                  alt="Photo of my silken windhound doggies"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
 
