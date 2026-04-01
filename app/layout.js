@@ -2,43 +2,15 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ViewTransitions } from "next-view-transitions";
 import localFont from 'next/font/local';
-import { getSelectorsByUserAgent } from "react-device-detect"
-import { headers } from "next/headers"
-
+import { ThemeProvider } from "next-themes";
 import SmoothScroll from "./(main)/components/SmoothScroll";
-import DarkMode from "./(main)/components/DarkMode";
 
 import "./globals.css";
-import Whoops from "./(main)/whoops/page";
 
 
 const diatypeVariable = localFont({
     src: '../public/fonts/ABCDiatypeVariable-Trial.woff2',
 });
-
-
-/*
-
-MOBILE DETECTION
-
-if (isMobile) {
-        return (
-            <ViewTransitions>
-                <html lang={locale}>
-                    <head>
-                        <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
-                    </head>
-                    <body>
-                        <NextIntlClientProvider locale={locale} messages={messages}>
-                            <Whoops />
-                        </NextIntlClientProvider>
-                    </body>
-                </html >
-            </ViewTransitions>
-        );
-    } else {
-
-*/
 
 const helveticaVariable = localFont({
     src: [
@@ -74,23 +46,31 @@ export default async function RootLayout({ children }) {
     const locale = await getLocale();
     const messages = await getMessages();
 
-
     return (
-        <ViewTransitions>
-            <html lang={locale} suppressHydrationWarning>
-                <head>
-                    <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
-                </head>
-                <body
-                    className={`antialiased ${helveticaVariable.className}`} suppressHydrationWarning
-                >
-                    <NextIntlClientProvider locale={locale} messages={messages}>
-                        <SmoothScroll>
-                            {children}
-                        </SmoothScroll>
-                    </NextIntlClientProvider>
-                </body>
-            </html >
-        </ViewTransitions>
+        // 1. Keep suppressHydrationWarning only on <html>
+        <html lang={locale} suppressHydrationWarning>
+            <head>
+                <link rel="icon" href="/icons/rain_cloud.png" sizes="any" />
+            </head>
+            <body className={`antialiased ${helveticaVariable.className}`} suppressHydrationWarning>
+                <div className="dark:bg-black dark:text-white">
+                    <ThemeProvider
+                        attribute="class"
+                        forcedTheme="dark"
+                        enableSystem={false}
+                        disableTransitionOnChange
+                        enableColorScheme
+                    >
+                        <NextIntlClientProvider locale={locale} messages={messages}>
+                            <ViewTransitions>
+                                <SmoothScroll>
+                                    {children}
+                                </SmoothScroll>
+                            </ViewTransitions>
+                        </NextIntlClientProvider>
+                    </ThemeProvider>
+                </div>
+            </body>
+        </html>
     );
 }

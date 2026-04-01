@@ -92,7 +92,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                         router.push(path);
                     }}
                 >
-                    <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#040404] to-transparent">
+                    <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5 bg-gradient-to-t from-[#262626] to-transparent">
                         <div className="space-y-1 mb-5">
                             <p className="text-2xl leading-[1.1]tracking-tight font-medium text-white">{title}</p>
                             <p className="text-md text-white tracking-tight leading-tight">{subtitle}</p>
@@ -138,7 +138,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                     <p className="text-white text-sm">{`${month} ${year}`}</p>
                 </div>
 
-                <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-7 bg-gradient-to-t from-[#040404] to-transparent">
+                <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-7 bg-gradient-to-t from-[#262626] to-transparent">
                     <div className="">
                         <p className="text-2xl leading-[1.1] tracking-tight font-medium text-white">{title}</p>
                         <p className="text-[0.8rem] text-white tracking-tight leading-tight">{subtitle}</p>

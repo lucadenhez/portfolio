@@ -186,7 +186,7 @@ export default function CarCard({
                   objectPosition: "50% 70%"
                 }}
                 alt={`Image of Luca's ${make} ${model}.`}
-                className="w-full h-full mask-t-from-75%"
+                className="w-full h-full"
                 quality={100}
               />
               <div className="bg-[#111111] w-full h-full z-0" />

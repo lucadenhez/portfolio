@@ -49,7 +49,7 @@ export default function ProjectInfo({ team, tools, services }) {
                 <p className="uppercase font-medium text-xl">{lang("aspects")}</p>
                 <div className="flex gap-2 text-center">
                     {services.map((service, index) => (
-                        <p key={index} className="leading-none bg-purple-100 p-3 rounded-full">{service}</p>
+                        <p key={index} className="leading-none bg-[#3700B3] p-3 rounded-full">{service}</p>
                     ))}
                 </div>
 
