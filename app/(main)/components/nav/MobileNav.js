@@ -46,7 +46,7 @@ export default function MobileNav({ items }) {
       >
         {items.map((item, index) => (
           <Link
-            className="dark:invert"
+            className="text-black"
             href={item.path}
             key={index}
             onClick={(e) => {
