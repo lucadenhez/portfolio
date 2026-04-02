@@ -56,7 +56,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
     );
 
     // Desktop
-    if (true) {
+    if (width > 768) {
         return (
             <motion.div
                 className="h-[40rem] relative overflow-hidden rounded-xl"
