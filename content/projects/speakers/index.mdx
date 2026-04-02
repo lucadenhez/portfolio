@@ -10,7 +10,7 @@ services: ["Surface Modeling", "FDM Rapid Prototyping", "DSP Tuning", "Wiring"]
 coverImage: /works/speakers/cover.png
 ---
 
-## BMW's base audio system is lackluster.
+# What if you could have a classic BMW with a modern sound system?
 
 I bought a used 2011 BMW 135i with a broken reverse gear last summer for cheap from Copart. I've had a ton of fun repairing it and working through all the challenges it's brought me — seized brake components, hairline fractures in the cooling system, etc.
 
@@ -22,11 +22,11 @@ The system gets plenty loud for my liking, but treble is muddy and unclear as so
 
 TLDR — A speaker upgrade turned into a two month long design and engineering project. Join me on my journey to good audio!
 
-## Exploring solutions
+# Exploring solutions
 
 I asked friends and researched through car audio forums to see what people usually do when they have a lacking OEM sound system. For older cars, it's common to purchase a higher-end set of speakers that fit into factory locations with factory wiring — vastly improving the sound quality and imaging. However, BMW's unique system doesen't really allow for that.
 
-### Problem 1 — Original amplification system
+## Problem 1 — Original amplification system
 
 The BMW HiFi, Harmon Kardon, and Logic 7 soundsystems all include an amplifier in the trunk of the car.
 
@@ -38,7 +38,7 @@ However, the base system has no amplifier. Instead, the iDrive headunit amplifie
 
 ![](/works/speakers/image%202.png)
 
-### Problem 2 — Factory speaker sizes
+## Problem 2 — Factory speaker sizes
 
 Awesome websites like [Crutchfield](https://www.crutchfield.com/) will let you enter your vehicle information online and be given all speakers that will fit in your vehicle, pre-made adapters, and any other equipment you will need.
 
@@ -54,7 +54,7 @@ I could have purchased the BMW OEM Harmon Kardon tweeter covers. (Part no. 51337
 
 So I would need to fabricate my own bespoke tweeter pods.
 
-### Problem 3 — Limited locations for aftermarket amplifiers
+## Problem 3 — Limited locations for aftermarket amplifiers
 
 BMW typically mounts the car battery in the trunk for improved weight distribution. This is great, because if I mount my amplifier(s) in the trunk I won't need to run a long power cable all the way from the front of the car to the back.
 
@@ -101,7 +101,7 @@ After some digging, I found an excellent space below the passenger side trunk wh
 
 ![](/works/speakers/IMG_2470.jpeg)
 
-## Creating the speaker mounts
+# Creating the speaker mounts
 
 I bought a 'three-way' component set of Focal 165AS3 speakers. Six speakers in total, two tweeters, two mids, and two midbass.
 
@@ -113,7 +113,7 @@ In total, I needed to create:
 2. Midrange driver housing to hold the 9.4 cm diameter mid
 3. Midbass driver housing that clips into factory underseat housing, to hold the 16.5 cm driver
 
-## Tweeter Housing
+# Tweeter Housing
 
 ![](/works/speakers/IMG_2536.jpeg)
 
@@ -195,7 +195,7 @@ Cyanoacrylate to make semi-permenant bond to PETG.
 
 ![](/works/speakers/IMG_2536%202.jpeg)
 
-## Midrange Housing
+# Midrange Housing
 
 Similar process to the tweeter, I did a 3D scan of the dash with Heges, and started building the surface in Solidworks.
 
@@ -250,7 +250,7 @@ Although it does not exhaust towards the side window anymore, I haven't noticed 
 
 ![](/works/speakers/IMG_0041.jpeg)
 
-## Midbass Bracket
+# Midbass Bracket
 
 All 135i's (and E82, E87, E89) have underseat 'subwoofers'. I find this pretty cool, it gives you a nice thump in your feet and brings the bass closer to you.
 
@@ -274,7 +274,7 @@ The speaker enclosure has a feature that sticks out, so I used that as an opport
 
 ![](/works/speakers/IMG_2392.jpeg)
 
-## Assembly
+# Assembly
 
 I printed all enclosures / brackets in Bambu's PETG-CF. Heat-resistant and gives a nice texture that hides layer lines pretty well.
 
@@ -293,7 +293,7 @@ The tweeter and mid have ample space between them, and I believe to be a pretty 
 
 ![](/works/speakers/IMG_0044.jpeg)
 
-## BMW Input Signal Shenanigans
+# BMW Input Signal Shenanigans
 
 Ideally, you want to feed a low-level, (basically low voltage) non-EQed signal into an aftermarket amplifier or DSP. (Digital Sound Processor)
 
@@ -326,7 +326,7 @@ I ran a shielded RCA cable to the trunk of the car, below the carpet to remain d
 
 ![](/works/speakers/IMG_0068.jpeg)
 
-## Power
+# Power
 
 Although I didn't mount amplifiers on the oddly warped surface beside the battery, there were two threaded standoffs that looked nice to use.
 
@@ -349,11 +349,11 @@ I wanted a way to secure the amps so that I could easily lift them up to adjust 
 ![](/works/speakers/IMG_2473.jpeg)
 ![](/works/speakers/IMG_2507.jpeg)![](/works/speakers/IMG_2510.jpeg)
 
-## Challenges
+# Challenges
 
 This is my first experience working with any car audio. I've been interested about headphones and general audiophile stuff for a long time, but I've never done it myself! This was an incredible learning experience, and with successes come challenges.
 
-### Hurdle 1, Balanced Differential
+## Hurdle 1, Balanced Differential
 
 Long story short, even though I was able to get a low-level signal, the signal was not immediately usable.
 
@@ -369,7 +369,7 @@ This is a DSP amplifier. It can take a balanced differential signal with no issu
 
 Additionally, it is much smaller than the original amp and I was able to secure it below the trunk cover with industrial strength velcro.
 
-### Water!
+## Water!
 
 ![](/works/speakers/IMG_0196.jpeg)
 
@@ -379,7 +379,7 @@ As a temporary solution, I applied flex tape to all seams, and layed down a smal
 
 Seemingly no water returned, so I pray to this day my amp doesn't fry itself…
 
-### Visibility
+## Visibility
 
 The tweeter pods provide excellent visibility and I am very happy with them. However, the mid pods do take away a decent amount of visibility.
 
@@ -393,7 +393,7 @@ Although it is true that the midrange performance will not be as good as if they
 
 They look good in the car and my visibility is improved. So I am happy!
 
-### Infinite tuning
+## Infinite tuning
 
 ![](/works/speakers/IMG_0728.jpeg)
 
@@ -412,17 +412,18 @@ Then, you can use open-source software such as [REW](https://www.roomeqwizard.co
 
 I have sat down to tune the speakers probably about five times now, and am still hearing improvements every time I learn new strategies. The learning curve is certainly high, but it is endlessly fulfilling to learn about some crazy time alignment trick to make it sound like the audio is coming from the center of the car. It is too cool.
 
-## Meaning
+# A Meaningful Outcome
 
-This project was incredibly meaningful for me as en engineer, designer, and tinkerer. It bridged the gaps between multiple of my interests — I got to practice surface modeling in CAD, electrical wiring, rapid prototyping, and trying to design something natural as if it weren't there.
+This project was incredibly meaningful for me as an engineer, designer, and tinkerer. It bridged the gaps between many of my interests — I got to practice surface modeling in CAD, electrical wiring, rapid prototyping, and trying to design something natural as if it weren't there.
 
 It wasn't easy, it wasn't fast, but I had so much fun and that's what meant the most to me.
 
-My car was inoperable for a good part of two months,
+
+My car was inoperable for a good part of two months
 
 ![](/works/speakers/IMG_2300.jpeg)
 
-I was up until 3am trying to get a surface to thicken without errors so I could send a 3D print and have it by morning,
+I was up until 3am trying to get a surface to thicken without errors so I could send a 3D print and have it by morning
 
 ![](/works/speakers/IMG_2294.PNG)
 
@@ -430,16 +431,16 @@ Many of them didn't work…
 
 ![](/works/speakers/IMG_2135.jpeg)
 
-Dodgy testing benches,
+Dodgy testing benches
 
 ![](/works/speakers/dodgy.jpeg)
 
-Friends helping wire and assemble,
+Friends helping wire and assemble
 
 ![](/works/speakers/IMG_2479.jpeg)
 ![](/works/speakers/IMG_2483.jpeg)
 
-Friends helping tune and listen,
+Friends helping tune and listen
 
 ![](/works/speakers/IMG_1023.jpeg)
 
@@ -447,7 +448,7 @@ And some success in the end.
 
 ![](/works/speakers/IMG_0273.jpeg)
 
-## What's next?
+# What's next?
 
 - Tweeters have small gap between flanges at top that I can bridge
 - Doorcard mid brackets are not coplanar with door surface, need to tweak to allow OEM grilles to be inserted
@@ -456,4 +457,4 @@ And some success in the end.
 - Keep tweaking DSP config to improve imaging and soundstage
 
 
-### Thank you for viewing my project.
+## Thank you for viewing my project.

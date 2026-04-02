@@ -3,6 +3,7 @@ import { compile, run } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import withToc from "@stefanprobst/rehype-extract-toc";
 
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -13,6 +14,8 @@ import PageAnimation from "@/app/(main)/components/transitions/TextTransition";
 import { mdxComponents } from "@/lib/mdx-components";
 import { getProjectBySlug, getProjects } from "@/lib/projects";
 import ProjectInfo from "../../components/article/ProjectInfo";
+import TableOfContents from "../../components/TableOfContents";
+
 
 export async function generateStaticParams() {
     const projects = await getProjects();
@@ -32,7 +35,6 @@ export default async function ProjectArticlePage({ params }) {
     const locale = await getLocale();
     let t = null;
     try {
-        // Optional: only works if you have a matching namespace in your `messages/*.json`.
         t = await getTranslations(project.slug);
     } catch {
         t = null;
@@ -52,8 +54,13 @@ export default async function ProjectArticlePage({ params }) {
     const compiled = await compile(project.content, {
         outputFormat: "function-body",
         remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
+        rehypePlugins: [
+            rehypeKatex,
+            withToc,
+        ],
     });
+
+    const headers = compiled.data.toc;
 
     const { default: MdxContent } = await run(compiled, {
         ...runtime,
@@ -83,9 +90,15 @@ export default async function ProjectArticlePage({ params }) {
                     services={project.services}
                 />
 
-                <article className="w-full sm:w-2/3 pb-20">
-                    <MdxContent components={mdxComponents} lang={lang} />
-                </article>
+                <div className="flex justify-between gap-20">
+                    <article className="w-full pb-20">
+                        <MdxContent components={mdxComponents} lang={lang} />
+                    </article>
+
+                    <div className="hidden sm:block sticky top-10 self-start max-w-1/4">
+                        <TableOfContents headers={headers} />
+                    </div>
+                </div>
 
                 <div className="w-full sm:w-2/3 flex justify-between">
                     <ReturnButton />

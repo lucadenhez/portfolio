@@ -6,7 +6,7 @@ export default function ProjectInfo({ team, tools, services }) {
     const lang = useTranslations("projectInfo");
 
     return (
-        <div className="flex flex-col sm:flex-row gap-10 justify-between w-2/3">
+        <div className="flex flex-col sm:flex-row justify-between gap-x-15 gap-y-10">
             <div className="flex flex-col items-center gap-5">
                 <p className="uppercase font-medium text-xl">{lang("team")}</p>
                 <div className="space-y-3">
@@ -48,7 +48,7 @@ export default function ProjectInfo({ team, tools, services }) {
                 <p className="uppercase font-medium text-xl">{lang("aspects")}</p>
                 <div className="lg:flex-row flex-col items-center flex gap-2 text-center">
                     {services.map((service, index) => (
-                        <p key={index} className="w-fit leading-none bg-[#3700B3] p-3 rounded-full">{service}</p>
+                        <p key={index} className="w-fit leading-none bg-[#4905e7] p-3 rounded-full">{service}</p>
                     ))}
                 </div>
 
