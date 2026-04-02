@@ -47,7 +47,7 @@
     },
     "about": {
         "old_bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things.\nI am a product designer and web developer with experience in React and Swift.\n\nI have always appreciated design that is simple and intuitive, and I love building tools and experiences for people that are thoughtful and help the world.",
-        "bio": "Hi! My name is Luca.\n\nI am from Seattle, WA and I like to make things. I am an undergraduate university student and aspiring Product Designer.\n\nI thrive on prototyping hands-on with CAD and 3D printing, coding engaging experiences with React and SwiftUI, and bringing fun and exciting design into the products we use today.\n\nWith equal love for programming and design, I bring versatility and a Swiss army knife approach to creating technology that is accessible, natural, and fun."
+        "bio": "Hi, my name is Luca. I am from Seattle and I like to make things. I am a mechanical engineering student at Seattle University and aspiring Product Designer.\n\nI thrive on prototyping hands-on, coding engaging experiences, and tinkering with cars.\n\nWith equal love for engineering and design, I bring versatility and a Swiss army knife approach to creating technology that is natural, functional, and beautiful.\n\nFeel free to reach out with projects or questions, I am always looking to explore something new."
     },
     "corvoCribs": {
         "transitionMessage": "Helping OSU students find affordable housing",
@@ -84,8 +84,8 @@
     },
     "projectInfo": {
         "team": "Team",
-        "tools": "Tools",
-        "aspects": "Aspects",
+        "tools": "Software",
+        "aspects": "Disciplines",
         "returnButtonText": "Back to all works",
         "viewButtonText": "Visit site"
     }

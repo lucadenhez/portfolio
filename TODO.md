@@ -1,10 +1,5 @@
 - Update lang
-- Create Playground
-- Drop down hamburger on mobile in dark mode cant read, also weird gap
-- Car pages crashing client side
-- Work on animations
-- Smaller text on about me page
-
+- Add Honesty project
 
 - New name?
 - Aspects, tools, rename?
@@ -15,10 +10,6 @@ This car is built this way, but I really wanted this awesome sound system. I'd r
 State of the art, modular
 
 Link Solidworks files
-
-Sources to images, image subtitles
-
-Executive summary
 
 More standardized headers
 

@@ -39,7 +39,7 @@ export default function TableOfContents({ headers }, ...props) {
     }, [headers]);
 
     return (
-        <div className="mt-10 p-5 rounded-xl flex flex-col gap-5 sticky top-10" {...props}>
+        <div className="mt-10 p-5 rounded-xl flex flex-col gap-5 sticky " {...props}>
             <p className="ml-5 text-sm font-medium">In This Project</p>
             <div className="flex flex-col gap-5">
                 {headers.map((header, index) => (
@@ -47,7 +47,6 @@ export default function TableOfContents({ headers }, ...props) {
                         onClick={(e) => {
                             e.preventDefault();
                             const success = smoothScrollToHash(`#${getAnchor(header.value)}`);
-                            console.log(`Scroll Success? ${success}`);
                         }}
                         key={index}
                         className="hover:cursor-pointer text-left flex items-center justify-start w-full gap-5 transition-all duration-500 ease-in-out"

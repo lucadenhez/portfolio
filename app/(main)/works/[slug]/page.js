@@ -85,7 +85,7 @@ export default async function ProjectArticlePage({ params }) {
                     tools={project.tools}
                     services={project.services}
                 />
-                <div className="flex justify-between gap-20 lg:mx-20 mx-0">
+                <div className="flex justify-between gap-20 lg:ml-20 mx-0">
                     <article className="w-full pb-20">
                         <MdxContent components={mdxComponents} lang={lang} />
                     </article>
