@@ -7,20 +7,26 @@ month: Jan
 team: [{ name: "Luca", avatar: /avatars/luca.png }]
 tools: [{ name: "Solidworks", avatar: "/tools/solidworks_filled.png"}, { name: "Heges", avatar: "/tools/heges.png" }]
 services: ["Surface Modeling", "FDM Rapid Prototyping", "DSP Tuning", "Wiring"]
-coverImage: /works/speakers/cover.png
+coverImage: /works/speakers/IMG_0273.jpeg
 ---
 
 # What if you could have a classic BMW with a modern sound system?
 
 I bought a used 2011 BMW 135i with a broken reverse gear last summer for cheap from Copart. I've had a ton of fun repairing it and working through all the challenges it's brought me — seized brake components, hairline fractures in the cooling system, etc.
 
-Additionally, something I've enjoyed about this car is the balance between analog tactility and modern technology. The car has a hydraulic steering rack, manual gearbox, but still has a relatively modern infotainment system (BMW CIC) that I've been able to retrofit wireless Carplay onto, and some helpful digital readouts and displays in the tach.
+Additionally, something I love about this car is the balance between analog tactility and modern technology. The car has a hydraulic steering rack, manual gearbox, but still has a relatively modern infotainment system (BMW CIC) that I've been able to retrofit wireless Carplay onto, and some helpful digital readouts and displays in the tach.
 
-But the audio is not good. For BMW's base audio system, the front stage consists of two midrange drivers, two shallow-mount 'subwoofers' beneath the seats, and the rear stage is similarly lacking. Notice how I didn't mention tweeters? There are none.
+But the audio is pretty dated for today's standards. For BMW's base audio system, the front stage consists of two midrange drivers, two shallow-mount 'subwoofers' beneath the seats, and the two more mids for the rear stage. There are no tweeters.
 
 The system gets plenty loud for my liking, but treble is muddy and unclear as soon as there is any bass, bass is boomy rather than clear, and there is no kick in the 100 - 450hz range.
 
-TLDR — A speaker upgrade turned into a two month long design and engineering project. Join me on my journey to good audio!
+# Executive Summary
+
+Fabricated original housings for tweeters, mids, and midbass speakers that blend into the interior as if they were OEM. Modeled in Solidworks, enclosures maintain G0 continuity and were designed so vertical and horizontal listening angle are modifiable parametrically via 3 variables. 3D printed in PETG-CF with brass heat-press inserts and countersunk torx hardware to deter theft.
+
+Audio signal is converted from high-level to a clean line-level, tapped and ran to a DSP capable of balanced differential signal. All fuses are located next to battery and fastened to OEM standoffs. Amplifiers are hidden underneath the trunk cover and passenger wheel well cover.
+
+Project took me two months.
 
 # Exploring solutions
 
@@ -30,13 +36,13 @@ I asked friends and researched through car audio forums to see what people usual
 
 The BMW HiFi, Harmon Kardon, and Logic 7 soundsystems all include an amplifier in the trunk of the car.
 
-![](/works/speakers/image.png)
+![2addicts.com/forums/showthread.php?t=1202389](/works/speakers/image.png)
 
 This amplifier takes the low-level, line-out signal from the BMW CIC iDrive system, amplifies it, EQs front and rear stage differnetly, then sends power to all speakers.
 
 However, the base system has no amplifier. Instead, the iDrive headunit amplifies all speakers and EQs them, at a weak ~150W total. Not for each speaker, total wattage. This means the base stereo can't amplify almost all aftermarket speakers, and a more powerful aftermarket amp would be required.
 
-![](/works/speakers/image%202.png)
+![ebay.com/itm/204663378282](/works/speakers/image%202.png)
 
 ## Problem 2 — Factory speaker sizes
 
@@ -48,7 +54,7 @@ Additionally, if I want tweeters to have clearer high frequencies, I didn't have
 
 I could have purchased the BMW OEM Harmon Kardon tweeter covers. (Part no. 51337270890 and 51337270889) They would have had an OEM fit in the doorsill, however they only accepted a very small tweeter, the clips were properitary so I would have to modify them anyways, and if I wanted to mount the tweeters on-axis with the listener, the tweeter would extend past the grill at a given angle and defeat the purpose.
 
-![](/works/speakers/image%203.png)
+![ebay.com/itm/255483180886](/works/speakers/image%203.png)
 
 ![](/works/speakers/image%204.png)
 
@@ -85,7 +91,7 @@ $$
 $$
 ≈ 132 A
 $$
-![](/works/speakers/image%205.png)
+![bigjeffaudio.com/pages/amplifier-wire-gauge-chart](/works/speakers/image%205.png)
 
 For oxygen free copper wiring, for roughly 132 amps, I only needed 8 - 4 AWG wire for my short trunk run. If I had to source power from the front of the car, with the 135i being about 14 ft long, I would've had to run 2 AWG or even 1/0 gauge wire. For OFC wire, it gets expensive quick…
 
@@ -105,7 +111,7 @@ After some digging, I found an excellent space below the passenger side trunk wh
 
 I bought a 'three-way' component set of Focal 165AS3 speakers. Six speakers in total, two tweeters, two mids, and two midbass.
 
-![](/works/speakers/focal.jpeg)
+![focal.com/products/165-as3](/works/speakers/focal.jpeg)
 
 In total, I needed to create:
 
@@ -144,7 +150,7 @@ While designing the housing, I had to keep in a mind a concept I learned while b
 
 As audio frequencies get higher, it becomes more crucial that the speaker is on-axis with the listener.
 
-![](/works/speakers/image%206.png)
+![Andy Wehmeyer, Audiofrog Enthusiasts](/works/speakers/image%206.png)
 
 The red frequency response representing an on-axis speaker shows signficantly less drop-off in volume at 2K HZ and higher compared to off-axis. Meaning if possible, one should aim to have the tweeters pointed right at them.
 
@@ -205,7 +211,7 @@ You may ask why I decided to place the mid here and not the factory door positio
 
 This system of having a tweeter, midrange, and midbass driver is called a 'three-way' setup. Traditional three-way setups typically integrate the mid into the A-pillar molding below the tweeter.
 
-![](/works/speakers/image%207.png)
+![skyhighcaraudio.com/custom-speaker-pods/](/works/speakers/image%207.png)
 
 However, this usually involves irreversably cutting into the factory A-pillar or clamping on a not so pretty sheath that does not look OEM.
 
@@ -256,7 +262,7 @@ All 135i's (and E82, E87, E89) have underseat 'subwoofers'. I find this pretty c
 
 However, I say 'subwoofer' because the speaker is supposed to account for all low frequencies — basically everything 500HZ and below. Unfortunately, the very limited space under the seat means there is not room for much speaker excursion, so having a speaker capable of low, subwoofer frequencies is very difficult.
 
-![](/works/speakers/image%208.png)
+![babybmw.net/threads/e82-drivers-underseat-speaker-and-passenger-door-speaker-not-working.94582/](/works/speakers/image%208.png)
 
 This is why I chose to attempt to mount the midbass driver in this factory ported enclosure, which will fill the gap of frequencies between the mid and the subwoofer. A subwoofer will be mounted in the trunk.
 
@@ -311,8 +317,8 @@ Audio was no longer coming out of the stock speakers, so I presumed the signal w
 
 To tap this signal from the radio, I had to find where. I purchased a pigtail to convert speaker wire to RCA, and Positaps to make a clean tap from a set of audio signal wires.
 
-![](/works/speakers/image%209.png)
-![](/works/speakers/image%2010.png)
+![posi-products.com](/works/speakers/image%209.png)
+![crutchfield.com](/works/speakers/image%2010.png)
 
 After hours on Bimmerpost, no one has posted a pinout of the Base, iDrive, E8X radio yet.
 So, I was able to use BMW dealer level ISTA software to provide me the pinout of the connector.
@@ -419,34 +425,18 @@ This project was incredibly meaningful for me as an engineer, designer, and tink
 It wasn't easy, it wasn't fast, but I had so much fun and that's what meant the most to me.
 
 
-My car was inoperable for a good part of two months
+![My car was inoperable for a good part of two months](/works/speakers/IMG_2300.jpeg)
+![I was up until 3am trying to get a surface to thicken without errors so I could send a 3D print and have it by morning](/works/speakers/IMG_2294.PNG)
+![Many of them didn't work…](/works/speakers/IMG_2135.jpeg)
+![Dodgy testing benches](/works/speakers/dodgy.jpeg)
+![Friends helping wire and assemble](/works/speakers/IMG_2479.jpeg)
 
-![](/works/speakers/IMG_2300.jpeg)
-
-I was up until 3am trying to get a surface to thicken without errors so I could send a 3D print and have it by morning
-
-![](/works/speakers/IMG_2294.PNG)
-
-Many of them didn't work…
-
-![](/works/speakers/IMG_2135.jpeg)
-
-Dodgy testing benches
-
-![](/works/speakers/dodgy.jpeg)
-
-Friends helping wire and assemble
-
-![](/works/speakers/IMG_2479.jpeg)
 ![](/works/speakers/IMG_2483.jpeg)
 
-Friends helping tune and listen
+![Friends helping tune and listen](/works/speakers/IMG_1023.jpeg)
+![And some success in the end.](/works/speakers/IMG_0273.jpeg)
 
-![](/works/speakers/IMG_1023.jpeg)
 
-And some success in the end.
-
-![](/works/speakers/IMG_0273.jpeg)
 
 # What's next?
 

@@ -10,6 +10,9 @@ export default function CandidImage({ image }) {
                 sizes="(max-width: 768px) 100vw, 66vw"
                 style={{ width: "100%", height: "auto", borderRadius: "0.75rem" }}
                 alt="Image in article"
+                loading="eager"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
             />
         </div>
     );

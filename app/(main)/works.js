@@ -1,4 +1,6 @@
-export const cars = [
+export const cars = [];
+
+export const carsBackup = [
     {
         make: "BMW",
         model: "135i",

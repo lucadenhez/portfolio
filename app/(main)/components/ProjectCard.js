@@ -56,16 +56,16 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
     );
 
     // Desktop
-    if (width > 768) {
+    if (true) {
         return (
             <motion.div
-                className="h-[30rem] w-3/4 relative overflow-hidden rounded-xl"
+                className="h-[40rem] relative overflow-hidden rounded-xl"
                 ref={container}
             >
                 <motion.div
                     style={{ y }}
                     className="absolute inset-0 z-10"
-                    animate={{ scale: hovered ? hoverScale : baseScale }}
+                    animate={{ scale: hovered ? hoverScale : 1 }}
                     transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
                 >
                     <motion.div

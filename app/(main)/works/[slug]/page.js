@@ -72,37 +72,29 @@ export default async function ProjectArticlePage({ params }) {
             <div className="p-5 md:p-15 flex flex-col gap-y-5">
                 <div className="w-full sm:w-2/3 flex justify-between">
                     <ReturnButton />
-                    {project.liveUrl ? <ViewButton url={project.liveUrl} /> : null}
                 </div>
-
                 <ArticleHeader
                     year={project.year}
                     month={project.month}
                     title={project.title}
                 />
             </div>
-
-
             <div className="mx-5 md:mx-15 pt-5 gap-y-10 flex flex-col items-center">
                 <ProjectInfo
                     team={project.team}
                     tools={project.tools}
                     services={project.services}
                 />
-
-                <div className="flex justify-between gap-20">
+                <div className="flex justify-between gap-20 lg:mx-20 mx-0">
                     <article className="w-full pb-20">
                         <MdxContent components={mdxComponents} lang={lang} />
                     </article>
-
-                    <div className="hidden sm:block sticky top-10 self-start max-w-1/4">
+                    <div className="hidden sm:block sticky top-10 self-start max-w-1/5">
                         <TableOfContents headers={headers} />
                     </div>
                 </div>
-
-                <div className="w-full sm:w-2/3 flex justify-between">
+                <div className="w-full flex justify-between lg:px-20 px-0">
                     <ReturnButton />
-                    {project.liveUrl ? <ViewButton url={project.liveUrl} /> : null}
                 </div>
             </div>
         </PageAnimation>

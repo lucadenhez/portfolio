@@ -69,7 +69,7 @@ export default function WorksClient({ projects }) {
                     </div>
 
                     <div id="works">
-                        <p className="pb-5">Unreliable Cars</p>
+                        {cars.length > 0 ? <p className="pb-5">Unreliable Cars</p> : null}
                         <div className="sm:w-3/4 w-full flex flex-col gap-5">
                             {cars.map((project, index) => (
                                 <div className="w-full" key={index}>
