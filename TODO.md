@@ -12,5 +12,3 @@ State of the art, modular
 Link Solidworks files
 
 More standardized headers
-
-Live sidebar

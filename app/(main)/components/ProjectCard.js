@@ -9,9 +9,9 @@ import { useTransitionRouter } from "next-view-transitions";
 
 const PARALLAX_INTENSITY = 30; // vh
 
-export default function ProjectCard({ title, subtitle, path, year, month, image, viewButtonText }) {
+export default function ProjectCard({ title, subtitle, path, year, month, image, darkText = false, viewButtonText }) {
     const [width, setWidth] = useState(0);
-    const [baseScale, setBaseScale] = useState(1.2);
+    const [baseScale, setBaseScale] = useState(1);
 
     useEffect(() => {
         const updateWidth = () => setWidth(window.innerWidth);
@@ -56,7 +56,7 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
     );
 
     // Desktop
-    if (width > 768) {
+    if (true) {
         return (
             <motion.div
                 className="h-[40rem] relative overflow-hidden rounded-xl"
@@ -69,14 +69,13 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                     transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
                 >
                     <motion.div
-                        animate={hovered ? { filter: "blur(5px)" } : { filter: "blur(0px)" }}
                         transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
                         className="w-full h-full"
                     >
                         <Image
                             src={image}
                             fill
-                            style={{ objectFit: "cover" }}
+                            style={{ objectFit: "cover", scale: 1.1 }}
                             alt={`Image of ${title} project`}
                             className="w-full h-full"
                             quality={100}
@@ -91,14 +90,15 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                         e.preventDefault();
                         router.push(path);
                     }}
+                    style={{ color: darkText ? "#000000" : "#ffffff" }}
                 >
                     <div className="w-full flex justify-between items-end gap-2 px-5 pt-12 pb-5">
                         <div className="space-y-1 mb-5">
-                            <p className="text-2xl leading-[1.1]tracking-tight font-medium text-white">{title}</p>
-                            <p className="text-md text-white tracking-tight leading-tight">{subtitle}</p>
+                            <p className="text-2xl leading-[1.1] tracking-tight font-medium">{title}</p>
+                            <p className="text-md tracking-tight leading-tight">{subtitle}</p>
                         </div>
                         <svg className="w-7 h-7 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            <path stroke={darkText ? "#000000" : "#ffffff"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </div>
                 </Link>
@@ -130,18 +130,19 @@ export default function ProjectCard({ title, subtitle, path, year, month, image,
                     e.preventDefault();
                     router.push(path);
                 }}
+                style={{ color: darkText ? "#000000" : "#ffffff" }}
             >
                 <div className="p-5 w-full flex justify-between">
                     <svg className="w-5 h-5 rotate-[-45deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <path stroke={darkText ? "#000000" : "#ffffff"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
-                    <p className="text-white text-sm">{`${month} ${year}`}</p>
+                    <p className="text-sm">{`${month} ${year}`}</p>
                 </div>
 
                 <div className="w-full flex flex-col gap-2 px-5 pt-12 pb-7">
                     <div className="">
-                        <p className="text-2xl leading-[1.1] tracking-tight font-medium text-white">{title}</p>
-                        <p className="text-[0.8rem] text-white tracking-tight leading-tight">{subtitle}</p>
+                        <p className="text-2xl leading-[1.1] tracking-tight font-medium">{title}</p>
+                        <p className="text-[0.8rem] tracking-tight leading-tight">{subtitle}</p>
                     </div>
 
 

@@ -7,6 +7,7 @@ import ShortTransition from "../components/transitions/ShortTransition";
 import CarCard from "../components/CarCard";
 import ProjectCard from "../components/ProjectCard";
 import { cars } from "../works";
+import ScrollText from "../components/animations/ScrollText";
 
 export default function WorksClient({ projects }) {
     const [width, setWidth] = useState(0);
@@ -27,9 +28,15 @@ export default function WorksClient({ projects }) {
         <ShortTransition>
             <div className="mx-5 my-0 md:mx-25 md:my-10">
                 <main className="flex flex-col gap-5">
-                    <div className="space-y-1 sm:mt-20 mt-10 mb-15">
-                        <p className="z-0 sm:text-[rem] md:text-[5.5rem] lg:text-[8.25rem] text-[3rem] font-medium tracking-tighter leading-none">Luca Denhez</p>
-                        <p className="introduction sm:text-lg text-sm">Mechanical Engineer · Designer ·  Seattle, WA</p>
+                    <div className="sm:mt-20 mt-10 mb-15">
+                        <ScrollText
+                            type="lines" delay={1}
+                            className="z-0 sm:text-[rem] md:text-[5.5rem] lg:text-[8.25rem] text-[3rem] font-medium tracking-tighter leading-none"
+                        >Luca Denhez</ScrollText>
+
+                        <ScrollText type="words" delay={1.2}
+                            className="introduction sm:text-lg text-sm"
+                        >Mechanical Engineer · Designer ·  Seattle, WA</ScrollText>
                     </div>
 
                     <div className="h-[10vh]" />
@@ -46,9 +53,11 @@ export default function WorksClient({ projects }) {
                                     month={project.month}
                                     image={project.coverImage}
                                     viewButtonText={lang("projectViewButton")}
+                                    darkText={project.darkText}
                                 />
                             </div>
-                        ))}
+                        )
+                        )}
                     </div>
 
                     <div id="works">
@@ -63,6 +72,7 @@ export default function WorksClient({ projects }) {
                                     month={project.month}
                                     image={project.coverImage}
                                     viewButtonText={lang("projectViewButton")}
+                                    darkText={project.darkText}
                                 />
                             </div>
                         ))}

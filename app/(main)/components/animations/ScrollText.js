@@ -1,33 +1,61 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import SplitType from "split-type";
 import { animate, stagger } from "motion";
 
-class ScrollText {
-    words(querySelector) {
-        document.querySelector(querySelector).style.opacity = "100%";
-        animate(new SplitType(querySelector,
-            { types: "lines, words", lineClass: "line" }).words,
-            { opacity: 1, y: ["120%", 0] },
-            { duration: 1, delay: stagger(0.075), ease: "circOut" }
-        );
-    }
-     
-    chars(querySelector) {
-        document.querySelector(querySelector).style.opacity = "100%";
-        animate(new SplitType(querySelector,
-            { types: "lines, words, chars", lineClass: "line" }).chars,
-            { opacity: 1, y: ["150%", 0] },
-            { duration: 1.5, delay: stagger(0.1), ease: "circOut" }
-        );
-    }
+export default function ScrollText({ children, type = "words", delay = 0, ...props }) {
+    const textRef = useRef(null);
 
-    lines(querySelector) {
-        document.querySelector(querySelector).style.opacity = "100%";
-        animate(new SplitType(querySelector,
-            { types: "lines", lineClass: "line" }).lines,
-            { opacity: 1, y: ["120%", 0] },
-            { duration: 1, delay: stagger(0.075), ease: "circOut" }
-        );
-    }
+    useEffect(() => {
+        if (!textRef.current) return;
+
+        textRef.current.style.opacity = "1";
+
+        let split;
+
+        if (type === "words") {
+            split = new SplitType(textRef.current, { types: "lines, words", lineClass: "line" });
+            animate(split.words,
+                { y: ["100%", 0] },
+                {
+                    duration: 2,
+                    delay: stagger(0.05, { startDelay: delay }),
+                    ease: [0.16, 1, 0.3, 1]
+                }
+            );
+        }
+
+        else if (type === "chars") {
+            split = new SplitType(textRef.current, { types: "lines, words, chars", lineClass: "line" });
+            animate(split.chars,
+                { y: ["100%", 0] },
+                {
+                    duration: 2,
+                    delay: stagger(0.05, { startDelay: delay }),
+                    ease: [0.16, 1, 0.3, 1]
+                }
+            );
+        }
+
+        else if (type === "lines") {
+            split = new SplitType(textRef.current, { types: "lines, words", lineClass: "line" });
+            animate(split.words,
+                { y: ["100%", 0] },
+                {
+                    duration: 2,
+                    delay: delay,
+                    ease: [0.16, 1, 0.3, 1]
+                }
+            )
+        }
+
+        return () => split.revert();
+    }, [children, type]);
+
+    return (
+        <p ref={textRef} style={{ opacity: 0 }} {...props}>
+            {children}
+        </p>
+    );
 }
-
-export default new ScrollText();
