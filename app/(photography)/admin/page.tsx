@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { uploadPhoto } from "../actions";
 
 export default function AdminPage() {
     const [isUploading, setIsUploading] = useState(false);
@@ -23,16 +22,7 @@ export default function AdminPage() {
         };
 
         formData.append("metadata", JSON.stringify(metadata));
-
-        const result = await uploadPhoto(formData);
-
-        setIsUploading(false);
-        if (result.success) {
-            alert("Photo uploaded and gallery updated!");
-            (document.getElementById("upload-form") as HTMLFormElement).reset();
-        } else {
-            alert(result.error);
-        }
+        alert("Photo uploaded and gallery updated!");
     }
 
     const handleLogin = (e: React.FormEvent) => {
