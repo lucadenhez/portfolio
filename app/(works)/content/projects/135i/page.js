@@ -1,16 +1,15 @@
 
 "use client";
 
-import ArticleHeader from "@/app/(works)/components/article/ArticleHeader";
-import Paragraph from "@/app/(works)/components/article/Paragraph";
-import ReturnButton from "@/app/(works)/components/article/ReturnButton";
-import PageAnimation from "@/app/(works)/components/transitions/TextTransition";
-import { useTranslations } from "next-intl";
-import ArticleImage from "../../components/article/ArticleImage";
-import CarInfo from "../../components/car_article/CarInfo";
-import { mechanicalWorks } from "../../components/car_article/cars_info";
-import { Tooltip } from "../../components/car_article/Tooltip";
-import ForzaVista from "../../components/car_article/Forzavista";
+import ArticleHeader from "../../../components/article/ArticleHeader";
+import Paragraph from "../../../components/article/Paragraph";
+import ReturnButton from "../../../components/article/ReturnButton";
+import PageAnimation from "../../../components/transitions/TextTransition";
+import ArticleImage from "../../../components/article/ArticleImage";
+import CarInfo from "../../../components/car_article/CarInfo";
+import { mechanicalWorks } from "../../../components/car_article/cars_info";
+import { Tooltip } from "../../../components/car_article/Tooltip";
+import ForzaVista from "../../../components/car_article/Forzavista"
 import { articles } from "./articles/articles";
 
 

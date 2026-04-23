@@ -1,21 +1,11 @@
-import ArticleHeader from "@/app/(works)/components/article/ArticleHeader";
-import Paragraph from "@/app/(works)/components/article/Paragraph";
-import ProjectInfo from "@/app/(works)/components/article/ProjectInfo";
-import ReturnButton from "@/app/(works)/components/article/ReturnButton";
-import PageAnimation from "@/app/(works)/components/transitions/TextTransition";
-import ParallaxImage from "@/app/(works)/components/universal/ParallaxImage";
-import { useTranslations } from "next-intl";
-import ArticleImage from "../../components/article/ArticleImage";
-import CandidImage from "../../components/article/CandidImage";
-import CandidGallery from "../../components/article/CandidGallery";
-import Checklist from "../../components/article/Checklist";
-import Keywords from "../../components/article/Keywords";
-import ViewButton from "../../components/article/ViewButton";
-import CarInfo from "../../components/car_article/CarInfo";
-import { mechanicalWorks } from "../../components/car_article/cars_info";
-import { Tooltip } from "../../components/car_article/Tooltip";
-import ForzaVista from "../../components/car_article/Forzavista";
-import Exhaust from "./articles/exhaust/Downpipe";
+import ArticleHeader from "../../../components/article/ArticleHeader";
+import Paragraph from "../../../components/article/Paragraph";
+import ReturnButton from "../../../components/article/ReturnButton";
+import PageAnimation from "../../../components/transitions/TextTransition";
+import CarInfo from "../../../components/car_article/CarInfo";
+import { mechanicalWorks } from "../../../components/car_article/cars_info";
+import { Tooltip } from "../../../components/car_article/Tooltip";
+import ForzaVista from "../../../components/car_article/Forzavista"
 
 
 export default function mini_r56_jcw() {

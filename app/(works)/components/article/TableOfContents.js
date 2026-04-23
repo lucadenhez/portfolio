@@ -1,6 +1,6 @@
 "use client";
 
-import { smoothScrollToHash } from "@/lib/smooth-scroll";
+import { smoothScrollToHash } from "../../../../lib/smooth-scroll";
 import { useState, useEffect } from "react";
 
 function getAnchor(text) {

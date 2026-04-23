@@ -7,11 +7,11 @@ import withToc from "@stefanprobst/rehype-extract-toc";
 
 import { getLocale, getTranslations } from "next-intl/server";
 
-import ArticleHeader from "@/app/(works)/components/article/ArticleHeader";
-import ReturnButton from "@/app/(works)/components/article/ReturnButton";
-import PageAnimation from "@/app/(works)/components/transitions/TextTransition";
-import { mdxComponents } from "@/lib/mdx-components";
-import { getProjectBySlug, getProjects } from "@/lib/projects";
+import ArticleHeader from "../../components/article/ArticleHeader";
+import ReturnButton from "../../components/article/ReturnButton";
+import PageAnimation from "../../components/transitions/TextTransition";
+import { mdxComponents } from "../../../../lib/mdx-components";
+import { getProjectBySlug, getProjects } from "../../../../lib/projects";
 import ProjectInfo from "../../components/article/ProjectInfo";
 import TableOfContents from "../../components/article/TableOfContents";
 
