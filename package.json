@@ -26,8 +26,9 @@
     "next-view-transitions": "^0.3.4",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-modal-sheet": "^5.2.1",
+    "react-photo-album": "^3.6.0",
     "react-syntax-highlighter": "^15.6.1",
     "rehype": "^13.0.2",
     "rehype-katex": "^7.0.1",
@@ -38,8 +39,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "^15.3.2",
     "tailwindcss": "^4"
   }
 }
