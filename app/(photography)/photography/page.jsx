@@ -7,6 +7,7 @@ import "react-photo-album/masonry.css";
 import { motion } from "framer-motion";
 import photosData from "../data/photos.json";
 import ShimmerImage from "../components/ShimmerImage";
+import ScrollText from "../components/ScrollText";
 
 export default function Photography() {
   const [index, setIndex] = useState(-1);
@@ -15,7 +16,7 @@ export default function Photography() {
   return (
     <div className="min-h-screen bg-white p-5 md:p-15">
       <header className="mb-12">
-        <h1 className="text-5xl">Photos</h1>
+        <ScrollText className="text-5xl" delay={1}>Photos</ScrollText>
       </header>
 
       <MasonryPhotoAlbum
@@ -90,7 +91,7 @@ export default function Photography() {
       <div className="h-[10rem]" />
 
       <footer className="w-full flex items-center justify-center">
-        <p className="text-black/40">Do not distribute</p>
+        <p className="text-black/40">Do not distribute without permission</p>
       </footer>
     </div>
   );
