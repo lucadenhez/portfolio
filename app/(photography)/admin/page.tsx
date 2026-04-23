@@ -77,7 +77,7 @@ export default function AdminPage() {
                 <input name="location" placeholder="Location (e.g. Seattle)" className="border p-2 w-full" />
 
                 <select name="camera" className="w-full p-2 border">
-                    <option value="Sony a7Riii">Sony a7Riii</option>
+                    <option value="Sony A7Riii">Sony A7Riii</option>
                     <option value="Leica Q1">Leica Q1</option>
                     <option value="Sony RX100 VA">Sony RX100 VA</option>
                     <option value="Lumix GH5">Lumix GH5</option>

@@ -90,7 +90,7 @@ export default function Photography() {
       <div className="h-[10rem]" />
 
       <footer className="w-full flex items-center justify-center">
-        <p className="text-black/40">lucadenhez@icloud.com</p>
+        <p className="text-black/40">Do not distribute</p>
       </footer>
     </div>
   );
