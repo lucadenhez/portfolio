@@ -1,18 +1,19 @@
 [
     {
-        "location": "Pioneer Squre",
+        "location": "Kerry Park",
         "camera": "Sony A7Riii",
-        "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
-        "aperture": "f/2.8",
-        "shutter": "1/500",
-        "date": "2026-05-07",
-        "width": 5295,
-        "height": 7939,
-        "id": "1778568053810",
-        "src": "/photography/1778568053746-DSC05839.jpg"
+        "lens": "Sony FE 40mm f/2.5 G",
+        "aperture": "Various",
+        "shutter": "HDR",
+        "date": "2024-04-10",
+        "width": 9277,
+        "height": 6188,
+        "id": "1776937518829",
+        "src": "/photography/1776937518806-DSC04844-HDR-2_Full_Res.JPG",
+        "hero": true
     },
     {
-        "location": "Pioneer Squre",
+        "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
@@ -24,7 +25,19 @@
         "src": "/photography/1778567911056-DSC05816.jpg"
     },
     {
-        "location": "Pioneer Squre",
+        "location": "Pioneer Square",
+        "camera": "Sony A7Riii",
+        "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
+        "aperture": "f/2.8",
+        "shutter": "1/500",
+        "date": "2026-05-07",
+        "width": 5295,
+        "height": 7939,
+        "id": "1778568053810",
+        "src": "/photography/1778568053746-DSC05839.jpg"
+    },
+    {
+        "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
@@ -36,7 +49,7 @@
         "src": "/photography/1778568632682-DSC05531_2.jpg"
     },
     {
-        "location": "Pioneer Squre",
+        "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
@@ -144,7 +157,7 @@
         "src": "/photography/1778567342041-DSC05650.jpg"
     },
     {
-        "location": "Pioneer Squre",
+        "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
@@ -156,7 +169,19 @@
         "src": "/photography/1778567663338-DSC05796.jpg"
     },
     {
-        "location": "Pioneer Squre",
+        "location": "Pioneer Square",
+        "camera": "Sony A7Riii",
+        "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
+        "aperture": "f/2.8",
+        "shutter": "1/500",
+        "date": "2026-05-07",
+        "width": 5304,
+        "height": 7952,
+        "id": "1778567162264",
+        "src": "/photography/1778567162231-DSC05591.jpg"
+    },
+    {
+        "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
@@ -185,23 +210,11 @@
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
         "aperture": "f/2.8",
         "shutter": "1/2000",
-        "date": "0006-05-07",
+        "date": "2026-05-07",
         "width": 5103,
         "height": 7651,
         "id": "1778567196467",
         "src": "/photography/1778567196456-DSC05592.jpg"
-    },
-    {
-        "location": "Pioneer Square",
-        "camera": "Sony A7Riii",
-        "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
-        "aperture": "f/2.8",
-        "shutter": "1/500",
-        "date": "2026-05-07",
-        "width": 5304,
-        "height": 7952,
-        "id": "1778567162264",
-        "src": "/photography/1778567162231-DSC05591.jpg"
     },
     {
         "location": "Pioneer Square",
@@ -215,7 +228,7 @@
         "id": "1778567130434",
         "src": "/photography/1778567130394-DSC05582.jpg"
     },
-     {
+    {
         "location": "Pioneer Square",
         "camera": "Sony A7Riii",
         "lens": "Tamron 70-180mm f/2.8 Di III VXD FE",
@@ -262,18 +275,6 @@
         "height": 7710,
         "id": "1778566644172",
         "src": "/photography/1778566644145-DSC05149.jpg"
-    },
-    {
-        "location": "Kerry Park",
-        "camera": "Sony A7Riii",
-        "lens": "Sony FE 40mm f/2.5 G",
-        "aperture": "Various",
-        "shutter": "HDR",
-        "date": "2024-04-10",
-        "width": 9277,
-        "height": 6188,
-        "id": "1776937518829",
-        "src": "/photography/1776937518806-DSC04844-HDR-2_Full_Res.JPG"
     },
     {
         "location": "Capitol Hill",
@@ -570,6 +571,19 @@
         "aperture": "f/4",
         "shutter": "N/A",
         "date": "2026-02-28",
+        "width": 3225,
+        "height": 4837,
+        "id": "1776939472147",
+        "src": "/photography/1776939472146-L1030393.JPG",
+        "hero": true
+    },
+    {
+        "location": "West Seattle",
+        "camera": "Leica Q1",
+        "lens": "Summilux 28mm f/1.7",
+        "aperture": "f/4",
+        "shutter": "N/A",
+        "date": "2026-02-28",
         "width": 2152,
         "height": 3228,
         "id": "1776939442267",
@@ -585,7 +599,7 @@
         "width": 3225,
         "height": 4837,
         "id": "1776939472147",
-        "src": "/photography/1776939472146-L1030393.JPG"
+        "src": "/photography/1776939472146-L1030393_vertical.JPG"
     },
     {
         "location": "Meydenbauer Bay Park",

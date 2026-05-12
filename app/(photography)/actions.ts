@@ -15,14 +15,11 @@ export async function uploadPhoto(formData: FormData) {
         const buffer = Buffer.from(await file.arrayBuffer());
         const filename = `${Date.now()}-${file.name.replaceAll(" ", "_")}`;
 
-        // 1. Save the image to public/photos
         const publicPath = path.join(process.cwd(), "public/photography");
 
-        // Ensure directory exists
         await fs.mkdir(publicPath, { recursive: true });
         await fs.writeFile(path.join(publicPath, filename), buffer);
-
-        // 2. Update the JSON data
+        
         const jsonPath = path.join(process.cwd(), "app/(photography)/data/photos.json");
         const currentRaw = await fs.readFile(jsonPath, "utf8");
         const currentData = JSON.parse(currentRaw);
