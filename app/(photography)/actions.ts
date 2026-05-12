@@ -1,22 +1,45 @@
 "use server";
-import fs from 'fs';
-import path from 'path';
 
-export async function saveMetadata(newPhoto: any) {
-    if (process.env.NODE_ENV === "production") {
-        return { success: false, error: "This only works on your local computer!" };
-    }
+import fs from "fs/promises";
+import path from "path";
+import { revalidatePath } from "next/cache";
+
+export async function uploadPhoto(formData: FormData) {
+    const file = formData.get("file") as File;
+    const metadataStr = formData.get("metadata") as string;
+
+    if (!file || !metadataStr) return { error: "Missing data" };
 
     try {
-        const filePath = path.join(process.cwd(), 'data/photos.json');
-        const fileData = fs.readFileSync(filePath, 'utf8');
-        const photos = JSON.parse(fileData);
+        const metadata = JSON.parse(metadataStr);
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const filename = `${Date.now()}-${file.name.replaceAll(" ", "_")}`;
 
-        photos.push(newPhoto);
+        // 1. Save the image to public/photos
+        const publicPath = path.join(process.cwd(), "public/photography");
 
-        fs.writeFileSync(filePath, JSON.stringify(photos, null, 2));
+        // Ensure directory exists
+        await fs.mkdir(publicPath, { recursive: true });
+        await fs.writeFile(path.join(publicPath, filename), buffer);
+
+        // 2. Update the JSON data
+        const jsonPath = path.join(process.cwd(), "app/(photography)/data/photos.json");
+        const currentRaw = await fs.readFile(jsonPath, "utf8");
+        const currentData = JSON.parse(currentRaw);
+
+        currentData.unshift({
+            ...metadata,
+            id: Date.now().toString(),
+            src: `/photography/${filename}`,
+        });
+
+        await fs.writeFile(jsonPath, JSON.stringify(currentData, null, 2));
+
+        revalidatePath("/photography");
+
         return { success: true };
-    } catch (e) {
-        return { success: false, error: "Save failed." };
+    } catch (err) {
+        console.error(err);
+        return { error: "Upload failed" };
     }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { uploadPhoto } from "../actions";
 
 export default function AdminPage() {
     const [isUploading, setIsUploading] = useState(false);
@@ -22,7 +23,16 @@ export default function AdminPage() {
         };
 
         formData.append("metadata", JSON.stringify(metadata));
-        alert("Photo uploaded and gallery updated!");
+
+        const result = await uploadPhoto(formData);
+
+        setIsUploading(false);
+        if (result.success) {
+            alert("Photo uploaded and gallery updated!");
+            (document.getElementById("upload-form") as HTMLFormElement).reset();
+        } else {
+            alert(result.error);
+        }
     }
 
     const handleLogin = (e: React.FormEvent) => {
@@ -77,6 +87,7 @@ export default function AdminPage() {
 
                 <select name="lens" className="w-full p-2 border">
                     <option value="Sony FE 40mm f/2.5 G">Sony FE 40mm f/2.5 G</option>
+                    <option value="Tamron 70-180mm f/2.8 Di III VXD FE">Tamron 70-180mm f/2.8 Di III VXD FE</option>
                     <option value="Summilux 28mm f/1.7">Summilux 28mm f/1.7</option>
                     <option value="24 - 70mm f/1.8">24 - 70mm f/1.8</option>
                     <option value="Lumix G X Vario 12 - 35mm f/2.8">Lumix G X Vario 12 - 35mm f/2.8</option>
