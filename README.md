@@ -9,12 +9,12 @@ This site is a showcase of my Next.js learning over the past two years, so it's 
 
 With each project, I try and build the codebase more cleanly, aiming to re-use as many components as possible.
 
-
+<br />
 
 #### Flow
 I wanted a way to as easily as possible write and upload my blog posts, so I am using **MDX**, which allows me to write my articles in Markdown and inject custom JSX components where I want. Each article has an `<ArticleHeader />` and `<CandidGallery />` to show project info and the teammates involved, followed by Markdown.
 
-
+<br />
 
 #### The main packages and frameworks used are:
 
@@ -26,7 +26,7 @@ I wanted a way to as easily as possible write and upload my blog posts, so I am 
 - Lenis
 - React Photo Album
 
-  
+</br>
 
 #### The site is viewable at [https://www.lucadenhez.com](www.lucadenhez.com)
 
