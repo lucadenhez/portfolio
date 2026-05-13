@@ -1,4 +1,4 @@
-### This is the code for my personal portfolio at www.lucadenhez.com
+### This is the code for my personal portfolio, www.lucadenhez.com
 
 This site is a showcase of my Next.js learning over the past year, so it's somewhat messily organized and for the most part is not in TypeScript! (I will add types soon...)
 
