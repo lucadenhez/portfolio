@@ -1,3 +1,5 @@
+[!](/public/home.png)
+
 ### This is the code for my personal portfolio, www.lucadenhez.com
 
 Here you can view my various engineering projects along with fun explorations and case studies. I also love front-end web development, so this is a fun way for me to build my skills and tailor my blog posts to my liking.
