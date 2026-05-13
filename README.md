@@ -3,6 +3,7 @@
 
 ![](/public/home.png)
 
+#### Overview
 Here you can view my various engineering projects along with fun explorations and case studies. I also love front-end web development, so this is a fun way for me to build my skills and tailor my blog posts to my liking.
 
 This site is a showcase of my Next.js learning over the past two years, so it's somewhat messily organized and for the most part *is not* in TypeScript. **(I will add types soon!)**
