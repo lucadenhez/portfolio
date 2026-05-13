@@ -1,4 +1,4 @@
-[!](/public/home.png)
+![](/public/home.png)
 
 ### This is the code for my personal portfolio, www.lucadenhez.com
 
