@@ -1,7 +1,7 @@
+![](/public/home.png)
+
 ### This is the code for my personal portfolio, www.lucadenhez.com
 <br />
-
-![](/public/home.png)
 
 #### Overview
 Here you can view my various engineering projects along with fun explorations and case studies. I also love front-end web development, so this is a fun way for me to build my skills and tailor my blog posts to my liking.
@@ -26,6 +26,6 @@ I wanted a way to as easily as possible write and upload my blog posts, so I am 
 - React Photo Album
 </br>
 
-#### The site is viewable at [https://www.lucadenhez.com](www.lucadenhez.com)
+#### The site is viewable at [www.lucadenhez.com](https://www.lucadenhez.com)
 
 #### Thanks for looking! 😀
