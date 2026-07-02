@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { uploadPhoto } from "../actions";
 
-export default function AdminPage() {
+export default function UploadPage() {
     const [isUploading, setIsUploading] = useState(false);
     const [password, setPassword] = useState("");
     const [isAuthenticated, setIsAuthenticated] = useState(false);
