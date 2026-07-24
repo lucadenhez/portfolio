@@ -6,13 +6,13 @@
         "easter_egg": "Basically I am slow at coding."
     },
     "home": {
-        "worksCard": "Works",
+        "worksCard": "Projects",
         "playgroundCard": "Playground",
         "transitionMessage": "Nice to meet you!"
     },
     "nav": {
         "home": "Home",
-        "works": "Works",
+        "works": "Projects",
         "photography": "Photography",
         "playground": "Playground",
         "resume": "Resumé",
@@ -35,7 +35,7 @@
         "city": "Seattle, WA",
         "university": " Seattle University",
         "projectViewButton": "View Project",
-        "works": "Works",
+        "works": "Projects",
         "projects": {
             "honesty": "Honesty",
             "wardrobe": "Wardrobe",
@@ -85,9 +85,9 @@
     },
     "projectInfo": {
         "team": "Team",
-        "tools": "Software",
+        "tools": "Tools",
         "aspects": "Disciplines",
-        "returnButtonText": "Back to all works",
+        "returnButtonText": "Back to all projects",
         "viewButtonText": "Visit site"
     }
 }
