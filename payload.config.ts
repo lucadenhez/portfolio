@@ -8,7 +8,6 @@ import {
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import path from "path";
 import { buildConfig } from "payload";
-import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 import { mdxComponentBlocks } from "./blocks/mdx-components";
@@ -17,8 +16,8 @@ import { Media } from "./collections/Media";
 import { Projects } from "./collections/Projects";
 import { Categories } from "./collections/Categories";
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+const filename = __filename;
+const dirname = __dirname;
 
 export default buildConfig({
   admin: {

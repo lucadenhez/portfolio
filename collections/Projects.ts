@@ -13,10 +13,10 @@ export const Projects: CollectionConfig = {
       async ({ doc, req, context }) => {
         if (context?.skipMdxSync) return;
 
-        const { syncProjectToMdx } = await import("../lib/sync-project-mdx");
+        const { syncProjectToMdx } = await import("../lib/sync-project-mdx.ts");
 
         const populated = await req.payload.findByID({
-          collection: "projects",
+          collection: "projects" as any,
           id: doc.id,
           depth: 2,
           req,
@@ -60,7 +60,7 @@ export const Projects: CollectionConfig = {
                 {
                   name: "category",
                   type: "relationship",
-                  relationTo: "categories",
+                  relationTo: "categories" as any,
                   required: true,
                   admin: {
                     description: "Select an existing category or click '+' to create a new one.",

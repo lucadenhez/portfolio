@@ -136,7 +136,7 @@ async function importProject(
   }
 
   const existing = await payload.find({
-    collection: "projects",
+    collection: "projects" as any,
     where: { slug: { equals: slug } },
     limit: 1,
   });
@@ -180,7 +180,7 @@ async function importProject(
 
   if (existing.docs.length > 0) {
     await payload.update({
-      collection: "projects",
+      collection: "projects" as any,
       id: existing.docs[0].id,
       data: projectData,
       context,
@@ -190,7 +190,7 @@ async function importProject(
   }
 
   await payload.create({
-    collection: "projects",
+    collection: "projects" as any,
     data: projectData,
     context,
   });

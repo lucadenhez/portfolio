@@ -69,7 +69,7 @@ async function richTextToMdx(
   });
 
   return convertLexicalToMarkdown({
-    data: content,
+    data: content as any,
     editorConfig,
   });
 }
