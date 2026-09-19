@@ -20,9 +20,8 @@ export default function LanguageSwitcher({ dark }) {
             setLocale(cookieLocale)
         } else {
             console.log("Can't find cookie")
-            const browserLocale = navigator.language.slice(0, 2);
-            setLocale(browserLocale);
-            document.cookie = `LOCALE=${browserLocale};`;
+            setLocale("en");
+            document.cookie = "LOCALE=en;";
             router.refresh();
         }
     }, [router, locale]);

@@ -4,6 +4,8 @@ import path from "node:path";
 import matter from "gray-matter";
 import type { PayloadRequest } from "payload";
 
+import { resolveMediaUrl } from "./media-url";
+
 const projectsDirectory = path.join(
   process.cwd(),
   "app",
@@ -24,7 +26,7 @@ type MediaValue =
 function getMediaUrl(value: MediaValue): string {
   if (!value) return "";
   if (typeof value === "object" && "url" in value && value.url) {
-    return value.url;
+    return resolveMediaUrl(value.url);
   }
   return "";
 }
