@@ -16,14 +16,13 @@ import { Media } from "./collections/Media";
 import { Projects } from "./collections/Projects";
 import { Categories } from "./collections/Categories";
 
-const filename = __filename;
-const dirname = __dirname;
+const projectRoot = process.cwd();
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     importMap: {
-      baseDir: path.resolve(dirname),
+      baseDir: projectRoot,
     },
   },
   collections: [Users, Media, Projects, Categories],
@@ -45,7 +44,7 @@ export default buildConfig({
   }),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
-    outputFile: path.resolve(dirname, "payload-types.ts"),
+    outputFile: path.resolve(projectRoot, "payload-types.ts"),
   },
   db: mongooseAdapter({
     url: process.env.DATABASE_URL || "",
